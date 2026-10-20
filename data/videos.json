@@ -1,0 +1,53 @@
+[
+  {
+    "id": "QPn7uxOAiD4",
+    "title": "Why Older Adults Shuffle When Walking (And How To Help)",
+    "category": "balance",
+    "categoryLabel": "Fall Prevention",
+    "duration": "Official Guide",
+    "badge": "Official Video",
+    "youtubeId": "QPn7uxOAiD4",
+    "youtubeUrl": "https://www.youtube.com/watch?v=QPn7uxOAiD4",
+    "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "authority": "CDC STEADI & Public Health Agency of Canada",
+    "citationTitle": "CDC STEADI Clinical Guidelines & Seniors' Falls in Canada",
+    "citationUrl": "https://www.cdc.gov/steadi/",
+    "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
+  },
+  {
+    "id": "HDYnhxxh-Dk",
+    "title": "5 Neurodegenerative Diseases Explained: A Guide for Caregivers",
+    "category": "brain",
+    "categoryLabel": "Brain Health & Neurological Support",
+    "duration": "Official Guide",
+    "badge": "Official Video",
+    "youtubeId": "HDYnhxxh-Dk",
+    "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
+    "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "authority": "National Institute on Aging (NIA / NIH) & Health Canada",
+    "citationTitle": "NIA / NIH: Neurodegenerative Diseases & Alzheimer's Caregiving Guidelines",
+    "citationUrl": "https://www.nia.nih.gov/health/alzheimers-and-dementia",
+    "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
+  },
+  {
+    "id": "QDtxZd36Zog",
+    "title": "Introduction to Evergreen Aging",
+    "category": "mobility",
+    "categoryLabel": "Mobility & Joints",
+    "duration": "Official Guide",
+    "badge": "Official Video",
+    "youtubeId": "QDtxZd36Zog",
+    "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
+    "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "authority": "Health Canada & Mayo Clinic",
+    "citationTitle": "Joint Preservation & Functional Mobility in Healthy Aging",
+    "citationUrl": "https://www.canada.ca/en/public-health/services/publications/healthy-living/physical-activity-tips-older-adults-65-years-older.html",
+    "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
+  }
+]
