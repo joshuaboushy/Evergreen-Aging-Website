@@ -41,11 +41,11 @@ CATEGORY_DEFAULTS = {
         "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
     },
     "nutrition": {
-        "categoryLabel": "Nutrition & Protein",
+        "categoryLabel": "Nutrition, Protein & Hydration",
         "authority": "Health Canada & Mayo Clinic",
-        "citationTitle": "Canada's Food Guide: Dietary Protein & Sarcopenia Prevention in Older Adults",
+        "citationTitle": "Canada's Food Guide: Dietary Protein, Hydration & Sarcopenia Prevention in Older Adults",
         "citationUrl": "https://food-guide.canada.ca/en/",
-        "keyFinding": "Consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
+        "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
     },
     "mobility": {
         "categoryLabel": "Mobility & Joints",
@@ -64,7 +64,7 @@ def infer_category(title, desc=""):
         return "seated"
     if any(k in text for k in ["neuro", "brain", "dementia", "alzheimer", "memory", "cognitive", "parkinson"]):
         return "brain"
-    if any(k in text for k in ["protein", "nutrition", "diet", "meal", "hydration", "vitamin"]):
+    if any(k in text for k in ["protein", "nutrition", "diet", "meal", "hydration", "water", "fluid", "electrolytes", "vitamin"]):
         return "nutrition"
     return "mobility"
 

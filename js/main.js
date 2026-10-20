@@ -61,7 +61,7 @@ const categoryLabels = {
   mobility: "Mobility & Joints",
   balance: "Fall Prevention",
   seated: "Chair / Seated Only",
-  nutrition: "Nutrition & Protein",
+  nutrition: "Nutrition, Protein & Hydration",
   brain: "Brain Health"
 };
 
@@ -718,7 +718,7 @@ window.openAddVideoModal = function() {
               <option value="balance">Fall Prevention</option>
               <option value="seated">Chair / Seated Only</option>
               <option value="brain">Brain Health &amp; Neurological</option>
-              <option value="nutrition">Nutrition &amp; Protein</option>
+              <option value="nutrition">Nutrition, Protein &amp; Hydration</option>
             </select>
           </div>
           <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.5rem;">
@@ -771,7 +771,7 @@ window.submitNewVideo = async function(e) {
     balance: { label: "Fall Prevention", auth: "CDC STEADI & PHAC", cite: "CDC STEADI Fall Prevention Guidelines", url: "https://www.cdc.gov/steadi/" },
     seated: { label: "Chair / Seated Only", auth: "Health Canada & Mayo Clinic", cite: "Seated Physical Activity Standards", url: "https://www.canada.ca/" },
     brain: { label: "Brain Health & Neurological Support", auth: "NIA / NIH & Health Canada", cite: "NIA / NIH: Cognitive Vitality Guidelines", url: "https://www.nia.nih.gov/" },
-    nutrition: { label: "Nutrition & Protein", auth: "Health Canada & Mayo Clinic", cite: "Canada Food Guide: Senior Protein Guidelines", url: "https://food-guide.canada.ca/" },
+    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada & Mayo Clinic", cite: "Canada Food Guide: Senior Nutrition, Protein & Hydration Guidelines", url: "https://food-guide.canada.ca/" },
     mobility: { label: "Mobility & Joints", auth: "Health Canada & Mayo Clinic", cite: "Joint Preservation & Mobility Guidelines", url: "https://www.canada.ca/" }
   }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Physical Activity Guidelines", url: "https://www.canada.ca/" };
 
