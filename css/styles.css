@@ -159,6 +159,16 @@ html.high-contrast .share-resource-preview {
   border: 2px solid #000000 !important;
   background: #ffffff !important;
 }
+html.high-contrast .btn-vault-expand {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .btn-vault-expand:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
 
 /* User Accessible Font Scaling on Root HTML Element */
 html {
@@ -1063,6 +1073,72 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+/* Fluid Vault Expand / View More Button */
+.vault-expand-wrap {
+  text-align: center;
+  margin-top: 2.25rem;
+}
+
+.btn-vault-expand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  color: var(--primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: 9999px;
+  padding: 0.8rem 1.85rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  font-family: inherit;
+}
+
+.btn-vault-expand:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: #0d281e;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.vault-expand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vault-expand-icon svg {
+  display: block;
+  stroke: currentColor;
+}
+
+.btn-vault-expand.expanded .vault-expand-icon {
+  transform: rotate(180deg);
+}
+
+/* Fluid reveal animations for expanded video cards */
+.video-item.revealing {
+  animation: vaultCardFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes vaultCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Lead Magnet / Guide Banner */

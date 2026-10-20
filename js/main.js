@@ -4,6 +4,23 @@
 // ONLY videos published to the official Evergreen Aging channel are included
 const channelVideos = [
   {
+    "id": "EY_q0rRr_7Y",
+    "title": "Why Mild Dehydration Looks Like Dementia in Seniors (And How to Fix It)",
+    "category": "brain",
+    "categoryLabel": "Brain Health & Neurological Support",
+    "duration": "Official Guide",
+    "badge": "Official Video",
+    "youtubeId": "EY_q0rRr_7Y",
+    "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
+    "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "authority": "National Institute on Aging (NIA / NIH) & Health Canada",
+    "citationTitle": "NIA / NIH: Neurodegenerative Diseases & Alzheimer's Caregiving Guidelines",
+    "citationUrl": "https://www.nia.nih.gov/health/alzheimers-and-dementia",
+    "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
+  },
+  {
     "id": "QPn7uxOAiD4",
     "title": "Why Older Adults Shuffle When Walking (And How To Help)",
     "category": "balance",
@@ -409,12 +426,34 @@ function initScrollSpy() {
   window.addEventListener("load", updateActiveSection);
 }
 
-// 3. Render Videos with Coming Soon state for empty categories
-function renderVideos(videosToRender, category = "all", query = "") {
+// 3. Render Videos with 3-Video Limit, Fluid View-More Expander & Coming Soon state
+let isVaultExpanded = false;
+const VAULT_INITIAL_LIMIT = 3;
+const VAULT_MAX_LIMIT = 9;
+
+window.toggleVaultExpansion = function() {
+  isVaultExpanded = !isVaultExpanded;
+  filterAndRender(currentCategory, currentSearchQuery, true);
+
+  if (!isVaultExpanded) {
+    const target = document.getElementById("videos");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+};
+
+function renderVideos(videosToRender, category = "all", query = "", isToggleAction = false) {
   const container = document.getElementById("videoGrid");
+  const expandWrap = document.getElementById("vaultExpandWrap");
+  const expandBtn = document.getElementById("vaultExpandBtn");
+  const expandText = document.getElementById("vaultExpandText");
+
   if (!container) return;
 
   if (videosToRender.length === 0) {
+    if (expandWrap) expandWrap.style.display = "none";
+
     if (query) {
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 3.5rem 1.5rem; background: var(--bg-card); border: 2px dashed var(--border-color); border-radius: var(--radius-lg);">
@@ -458,38 +497,73 @@ function renderVideos(videosToRender, category = "all", query = "") {
     return;
   }
 
-  container.innerHTML = videosToRender.map(v => `
-    <article class="video-item" data-id="${v.id}">
-      <div class="video-item-thumb" onclick="openVideoModal('${v.id}')">
-        <img src="${v.thumbnail}" alt="${v.title}" loading="lazy">
-        <div class="mini-play" aria-label="Play video">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <span class="video-badge">${v.badge}</span>
-        <span class="video-duration">${v.duration}</span>
-      </div>
-      <div class="video-item-info">
-        <span class="video-meta-tag">${v.categoryLabel}</span>
-        <h3 class="video-item-title">${v.title}</h3>
-        <p class="video-item-desc">${v.description}</p>
+  // Handle the fluid "View More" expander toggle
+  if (videosToRender.length <= VAULT_INITIAL_LIMIT) {
+    if (expandWrap) expandWrap.style.display = "none";
+  } else {
+    if (expandWrap) expandWrap.style.display = "block";
+    const totalAvailable = Math.min(videosToRender.length, VAULT_MAX_LIMIT);
 
-        <div class="video-item-footer" style="margin-top: auto; padding-top: 0.5rem;">
-          <button class="card-link" onclick="openVideoModal('${v.id}')" style="background:none;border:none;cursor:pointer;font-size:0.95rem;font-weight:700;">
-            Watch Lesson &rarr;
-          </button>
-          <button class="btn-listen" onclick="readAloud('${v.title}. ${v.description}')" title="Listen to summary">
-            🔊 Listen
-          </button>
-        </div>
+    if (isVaultExpanded) {
+      if (expandText) expandText.textContent = "Show Fewer Lessons";
+      if (expandBtn) {
+        expandBtn.classList.add("expanded");
+        expandBtn.setAttribute("aria-expanded", "true");
+      }
+    } else {
+      const remainingCount = totalAvailable - VAULT_INITIAL_LIMIT;
+      if (expandText) expandText.textContent = `View More Video Lessons (${remainingCount} more)`;
+      if (expandBtn) {
+        expandBtn.classList.remove("expanded");
+        expandBtn.setAttribute("aria-expanded", "false");
+      }
+    }
+  }
 
-        <!-- Supporting clinical source listed cleanly at the bottom -->
-        <div class="bottom-source-note">
-          <span>Supporting source: <strong>${v.authority}</strong></span>
-          <a href="${v.citationUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
+  const displayedVideos = isVaultExpanded 
+    ? videosToRender.slice(0, VAULT_MAX_LIMIT)
+    : videosToRender.slice(0, VAULT_INITIAL_LIMIT);
+
+  container.innerHTML = displayedVideos.map((v, idx) => {
+    const isRevealed = isVaultExpanded && idx >= VAULT_INITIAL_LIMIT;
+    const revealClass = isRevealed ? " revealing" : "";
+    const revealDelay = isRevealed ? ` style="animation-delay: ${(idx - VAULT_INITIAL_LIMIT) * 80}ms;"` : "";
+    const escapedTitle = (v.title || "").replace(/'/g, "\\'");
+    const escapedDesc = (v.description || "").replace(/'/g, "\\'");
+
+    return `
+      <article class="video-item${revealClass}" data-id="${v.id}"${revealDelay}>
+        <div class="video-item-thumb" onclick="openVideoModal('${v.id}')">
+          <img src="${v.thumbnail}" alt="${v.title}" loading="lazy">
+          <div class="mini-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-badge">${v.badge}</span>
+          <span class="video-duration">${v.duration}</span>
         </div>
-      </div>
-    </article>
-  `).join("");
+        <div class="video-item-info">
+          <span class="video-meta-tag">${v.categoryLabel}</span>
+          <h3 class="video-item-title">${v.title}</h3>
+          <p class="video-item-desc">${v.description}</p>
+
+          <div class="video-item-footer" style="margin-top: auto; padding-top: 0.5rem;">
+            <button class="card-link" onclick="openVideoModal('${v.id}')" style="background:none;border:none;cursor:pointer;font-size:0.95rem;font-weight:700;">
+              Watch Lesson &rarr;
+            </button>
+            <button class="btn-listen" onclick="readAloud('${escapedTitle}. ${escapedDesc}')" title="Listen to summary">
+              🔊 Listen
+            </button>
+          </div>
+
+          <!-- Supporting clinical source listed cleanly at the bottom -->
+          <div class="bottom-source-note">
+            <span>Supporting source: <strong>${v.authority}</strong></span>
+            <a href="${v.citationUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 // 4. Video Category Filters
@@ -525,9 +599,14 @@ function initSearch() {
 let currentCategory = "all";
 let currentSearchQuery = "";
 
-function filterAndRender(category, query) {
+function filterAndRender(category, query, isToggleAction = false) {
   currentCategory = category || "all";
   currentSearchQuery = query || "";
+  
+  if (!isToggleAction) {
+    isVaultExpanded = false;
+  }
+
   let filtered = channelVideos;
 
   if (category && category !== "all") {
@@ -545,7 +624,7 @@ function filterAndRender(category, query) {
     );
   }
 
-  renderVideos(filtered, category, query);
+  renderVideos(filtered, category, query, isToggleAction);
 }
 
 // 6. Video Modal with Complete Visible Citations
