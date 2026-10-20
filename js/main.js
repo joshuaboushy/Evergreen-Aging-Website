@@ -472,10 +472,6 @@ function renderVideos(videosToRender, category = "all", query = "") {
         <span class="video-meta-tag">${v.categoryLabel}</span>
         <h3 class="video-item-title">${v.title}</h3>
         <p class="video-item-desc">${v.description}</p>
-        
-        <div style="background:var(--bg-surface); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.82rem; margin-bottom: 0.75rem; color: var(--text-main);">
-          ♿ <strong>Mobility note:</strong> ${v.accessibleGuide}
-        </div>
 
         <div class="video-item-footer" style="margin-top: auto; padding-top: 0.5rem;">
           <button class="card-link" onclick="openVideoModal('${v.id}')" style="background:none;border:none;cursor:pointer;font-size:0.95rem;font-weight:700;">
@@ -545,7 +541,7 @@ function filterAndRender(category, query) {
       v.authority.toLowerCase().includes(query) ||
       v.citationTitle.toLowerCase().includes(query) ||
       v.categoryLabel.toLowerCase().includes(query) ||
-      v.accessibleGuide.toLowerCase().includes(query)
+      (v.accessibleGuide ? v.accessibleGuide.toLowerCase().includes(query) : false)
     );
   }
 
