@@ -1814,11 +1814,12 @@ body {
   gap: 1.25rem;
   margin-bottom: 2.25rem;
   width: 100%;
+  align-items: stretch;
 }
 @media (max-width: 768px) {
   .poster-comparison-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 }
 .poster-comparison-card {
@@ -1832,13 +1833,14 @@ body {
 }
 .poster-comparison-avoid,
 .poster-comparison-empower {
-  border-radius: var(--radius-md);
-  padding: 1.35rem 1.25rem;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   min-width: 0;
   box-sizing: border-box;
   overflow: hidden;
+  height: 100%;
 }
 .poster-comparison-avoid {
   background: #fff5f5;
@@ -1891,6 +1893,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   border-bottom: 1.5px solid;
+  min-height: 2.3rem;
+  box-sizing: border-box;
 }
 .poster-comparison-avoid .poster-comparison-head {
   color: #991b1b;
@@ -1906,26 +1910,49 @@ body {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.75rem;
   width: 100%;
+  flex: 1;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .poster-comparison-avoid ul,
+  .poster-comparison-empower ul,
+  .poster-comparison-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    height: auto;
+  }
 }
 .poster-comparison-avoid li,
 .poster-comparison-empower li,
-.poster-comparison-list li {
+.poster-comparison-list li,
+.phrase-item {
   position: relative;
   font-size: 0.98rem;
   line-height: 1.45;
   padding: 0.75rem 0.9rem;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
   background: #ffffff;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.65rem;
   word-break: break-word;
   overflow-wrap: break-word;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .poster-comparison-avoid li,
+  .poster-comparison-empower li,
+  .poster-comparison-list li,
+  .phrase-item {
+    height: auto;
+  }
 }
 .poster-comparison-avoid li {
   border: 1px solid #fecaca;
@@ -1943,18 +1970,25 @@ body {
   color: #dc2626;
   font-weight: 900;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .poster-comparison-empower li .phrase-icon {
   color: #16a34a;
   font-weight: 900;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .poster-comparison-avoid li .phrase-text,
-.poster-comparison-empower li .phrase-text {
+.poster-comparison-empower li .phrase-text,
+.phrase-text {
   flex: 1;
   min-width: 0;
 }
