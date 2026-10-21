@@ -33,6 +33,61 @@
   --transition: all 0.25s ease-in-out;
 }
 
+/* Dark Theme Variables (Device preference or user toggle) */
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) {
+    --primary: #52b788;
+    --primary-hover: #74c69d;
+    --primary-light: #40916c;
+    --secondary: #74c69d;
+    --accent: #52b788;
+    --accent-light: #1b3629;
+    --accent-subtle: #12241b;
+    --yt-red: #ff4d6d;
+    --yt-dark: #d90429;
+
+    --bg-main: #0c1813;
+    --bg-card: #14231b;
+    --bg-surface: #1b3026;
+    --bg-dark: #08100c;
+
+    --text-main: #eef6f1;
+    --text-muted: #a6c2b1;
+    --text-light: #ffffff;
+    --border-color: #243e31;
+
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.65);
+  }
+}
+
+html.theme-dark {
+  --primary: #52b788;
+  --primary-hover: #74c69d;
+  --primary-light: #40916c;
+  --secondary: #74c69d;
+  --accent: #52b788;
+  --accent-light: #1b3629;
+  --accent-subtle: #12241b;
+  --yt-red: #ff4d6d;
+  --yt-dark: #d90429;
+
+  --bg-main: #0c1813;
+  --bg-card: #14231b;
+  --bg-surface: #1b3026;
+  --bg-dark: #08100c;
+
+  --text-main: #eef6f1;
+  --text-muted: #a6c2b1;
+  --text-light: #ffffff;
+  --border-color: #243e31;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.65);
+}
+
 /* Accessible High Contrast Mode */
 html.high-contrast {
   --primary: #000000;
@@ -2952,4 +3007,514 @@ html.high-contrast .portal-card-icon {
 html.high-contrast .page-hero-banner {
   background: #ffffff !important;
   border-bottom: 2px solid #000000 !important;
+}
+
+/* ==========================================================================
+   Dark Theme Component Rules (Device preference or user toggle)
+   ========================================================================== */
+
+/* Base Surfaces & Backgrounds */
+html.theme-dark:not(.high-contrast) body,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+  }
+}
+
+/* Header & Navigation */
+html.theme-dark:not(.high-contrast) .site-header,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .site-header {
+    background: #102119;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .brand-title,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .brand-title {
+    color: var(--primary);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .brand-sub,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .brand-sub {
+    color: var(--text-muted);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .main-nav,
+html.theme-dark:not(.high-contrast) .mission-nav-bubble,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .main-nav,
+  html:not(.theme-light):not(.high-contrast) .mission-nav-bubble {
+    background: #172c21;
+    border-color: var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .nav-link,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .nav-link {
+    color: #d8e9df;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .nav-link:hover,
+html.theme-dark:not(.high-contrast) .nav-link.active,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .nav-link:hover,
+  html:not(.theme-light):not(.high-contrast) .nav-link.active {
+    background: #234232;
+    color: #74c69d;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .mobile-toggle,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .mobile-toggle {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: var(--primary);
+  }
+}
+
+/* Hero Sections */
+html.theme-dark:not(.high-contrast) .hero,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .hero {
+    background: linear-gradient(180deg, rgba(18, 38, 28, 0.6) 0%, rgba(12, 24, 19, 0.9) 60%, var(--bg-main) 100%);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .page-hero-banner,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .page-hero-banner {
+    background: linear-gradient(180deg, rgba(18, 38, 28, 0.65) 0%, rgba(12, 24, 19, 0.85) 100%);
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .hero-title,
+html.theme-dark:not(.high-contrast) .page-title,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .hero-title,
+  html:not(.theme-light):not(.high-contrast) .page-title {
+    color: #ffffff;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .hero-desc,
+html.theme-dark:not(.high-contrast) .page-desc,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .hero-desc,
+  html:not(.theme-light):not(.high-contrast) .page-desc {
+    color: var(--text-muted);
+  }
+}
+
+/* Stat Cards */
+html.theme-dark:not(.high-contrast) .hero-stat-card,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .hero-stat-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+  }
+}
+
+/* Action Boxes / Hero Action Links */
+html.theme-dark:not(.high-contrast) .btn-yt-outline,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .btn-yt-outline {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: #eef6f1;
+  }
+}
+
+/* Badges and Category Pills */
+html.theme-dark:not(.high-contrast) .badge-pill,
+html.theme-dark:not(.high-contrast) .category-pill,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .badge-pill,
+  html:not(.theme-light):not(.high-contrast) .category-pill {
+    background: #193325;
+    color: #74c69d;
+    border-color: #2b543d;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .cat-btn,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .cat-btn {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: var(--text-main);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .cat-btn:hover,
+html.theme-dark:not(.high-contrast) .cat-btn.active,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .cat-btn:hover,
+  html:not(.theme-light):not(.high-contrast) .cat-btn.active {
+    background: var(--primary);
+    color: #08120c;
+    border-color: var(--primary);
+  }
+}
+
+/* Search bar & Controls */
+html.theme-dark:not(.high-contrast) .library-controls,
+html.theme-dark:not(.high-contrast) .search-box,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .library-controls,
+  html:not(.theme-light):not(.high-contrast) .search-box {
+    background: #14251c;
+    border-color: var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .search-box input,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .search-box input {
+    color: var(--text-main);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .vault-action-btn,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .vault-action-btn {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: var(--primary);
+  }
+}
+
+/* Sections */
+html.theme-dark:not(.high-contrast) .library-section,
+html.theme-dark:not(.high-contrast) .toolkit-section,
+html.theme-dark:not(.high-contrast) .myths-section,
+html.theme-dark:not(.high-contrast) .caregiver-section,
+html.theme-dark:not(.high-contrast) .community-section,
+html.theme-dark:not(.high-contrast) .resources-section,
+html.theme-dark:not(.high-contrast) .references-section,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .library-section,
+  html:not(.theme-light):not(.high-contrast) .toolkit-section,
+  html:not(.theme-light):not(.high-contrast) .myths-section,
+  html:not(.theme-light):not(.high-contrast) .caregiver-section,
+  html:not(.theme-light):not(.high-contrast) .community-section,
+  html:not(.theme-light):not(.high-contrast) .resources-section,
+  html:not(.theme-light):not(.high-contrast) .references-section {
+    background: var(--bg-main) !important;
+  }
+}
+
+/* Cards (Video, Myth, Toolkit, Resource, Portal, Community) */
+html.theme-dark:not(.high-contrast) .video-item,
+html.theme-dark:not(.high-contrast) .myth-card,
+html.theme-dark:not(.high-contrast) .toolkit-card,
+html.theme-dark:not(.high-contrast) .resource-card,
+html.theme-dark:not(.high-contrast) .portal-card,
+html.theme-dark:not(.high-contrast) .community-box,
+html.theme-dark:not(.high-contrast) .caregiver-poster-card,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .video-item,
+  html:not(.theme-light):not(.high-contrast) .myth-card,
+  html:not(.theme-light):not(.high-contrast) .toolkit-card,
+  html:not(.theme-light):not(.high-contrast) .resource-card,
+  html:not(.theme-light):not(.high-contrast) .portal-card,
+  html:not(.theme-light):not(.high-contrast) .community-box,
+  html:not(.theme-light):not(.high-contrast) .caregiver-poster-card {
+    background: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+  }
+}
+
+/* Headings & Text inside cards */
+html.theme-dark:not(.high-contrast) .video-title,
+html.theme-dark:not(.high-contrast) .myth-claim,
+html.theme-dark:not(.high-contrast) .toolkit-title,
+html.theme-dark:not(.high-contrast) .section-title,
+html.theme-dark:not(.high-contrast) .portal-title,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .video-title,
+  html:not(.theme-light):not(.high-contrast) .myth-claim,
+  html:not(.theme-light):not(.high-contrast) .toolkit-title,
+  html:not(.theme-light):not(.high-contrast) .section-title,
+  html:not(.theme-light):not(.high-contrast) .portal-title {
+    color: #ffffff;
+  }
+}
+
+/* Myth Card Inner Fact Box */
+html.theme-dark:not(.high-contrast) .myth-fact-box,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .myth-fact-box {
+    background: #102018;
+    border-color: #234232;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .myth-fact-text,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .myth-fact-text {
+    color: var(--text-main);
+  }
+}
+
+/* Caregiver Poster Elements */
+html.theme-dark:not(.high-contrast) .poster-core-rule,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-core-rule {
+    background: #11241a;
+    border-color: var(--accent);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-core-rule-title,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-core-rule-title {
+    color: var(--primary);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-core-rule-desc,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-core-rule-desc {
+    color: var(--text-main);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-pillar-card,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-pillar-card {
+    background: #112218;
+    border-color: var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-pillar-title,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-pillar-title {
+    color: #ffffff;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-pillar-card li,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-pillar-card li {
+    color: var(--text-muted);
+  }
+}
+
+/* Comparison Boxes (Avoid & Empower) */
+html.theme-dark:not(.high-contrast) .poster-comparison-avoid,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-avoid {
+    background: #231214;
+    border-color: #522024;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-comparison-avoid .poster-comparison-head,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-avoid .poster-comparison-head {
+    color: #fca5a5;
+    border-bottom-color: #522024;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-comparison-avoid li,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-avoid li {
+    background: #170c0e;
+    border-color: #522024;
+    border-left-color: #ef4444;
+    color: #fecaca;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-comparison-empower,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-empower {
+    background: #11241a;
+    border-color: #1e4d34;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-comparison-empower .poster-comparison-head,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-empower .poster-comparison-head {
+    color: #86efac;
+    border-bottom-color: #1e4d34;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-comparison-empower li,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-comparison-empower li {
+    background: #0d1c14;
+    border-color: #1e4d34;
+    border-left-color: #22c55e;
+    color: #d1fae5;
+  }
+}
+
+/* Oxygen Mask Principle Box */
+html.theme-dark:not(.high-contrast) .poster-respite-box,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-respite-box {
+    background: #251d10;
+    border-color: #523e1b;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-respite-box h4,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-respite-box h4 {
+    color: #ffd166;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-respite-box p,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-respite-box p {
+    color: #f7e6c4;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .poster-bottom-sources,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .poster-bottom-sources {
+    background: #112218;
+    border-color: var(--border-color);
+    color: var(--text-muted);
+  }
+}
+
+/* Buttons in Dark Mode */
+html.theme-dark:not(.high-contrast) .btn-primary,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .btn-primary {
+    background: var(--primary);
+    color: #08120c;
+    font-weight: 800;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .btn-primary:hover,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .btn-primary:hover {
+    background: var(--primary-hover);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .btn-share,
+html.theme-dark:not(.high-contrast) .btn-listen,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .btn-share,
+  html:not(.theme-light):not(.high-contrast) .btn-listen {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: #eef6f1;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .btn-share:hover,
+html.theme-dark:not(.high-contrast) .btn-listen:hover,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .btn-share:hover,
+  html:not(.theme-light):not(.high-contrast) .btn-listen:hover {
+    background: #234232;
+    border-color: var(--primary);
+  }
+}
+
+/* Forms & Inputs */
+html.theme-dark:not(.high-contrast) input,
+html.theme-dark:not(.high-contrast) textarea,
+html.theme-dark:not(.high-contrast) select,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) input,
+  html:not(.theme-light):not(.high-contrast) textarea,
+  html:not(.theme-light):not(.high-contrast) select {
+    background: #14251c;
+    border-color: var(--border-color);
+    color: var(--text-main);
+  }
+}
+
+/* Modals */
+html.theme-dark:not(.high-contrast) .video-modal-content,
+html.theme-dark:not(.high-contrast) .toolkit-modal-content,
+html.theme-dark:not(.high-contrast) .share-modal-content,
+html.theme-dark:not(.high-contrast) .add-modal-content,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .video-modal-content,
+  html:not(.theme-light):not(.high-contrast) .toolkit-modal-content,
+  html:not(.theme-light):not(.high-contrast) .share-modal-content,
+  html:not(.theme-light):not(.high-contrast) .add-modal-content {
+    background: #14251c;
+    border-color: var(--border-color);
+    color: var(--text-main);
+  }
+}
+
+/* Reference List on sources.html */
+html.theme-dark:not(.high-contrast) .reference-item,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .reference-item {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .reference-item:hover,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .reference-item:hover {
+    background: #193025;
+    border-color: var(--primary);
+  }
+}
+
+html.theme-dark:not(.high-contrast) .reference-authority,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .reference-authority {
+    color: #ffffff;
+  }
+}
+
+html.theme-dark:not(.high-contrast) .reference-citation,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .reference-citation {
+    color: var(--text-muted);
+  }
+}
+
+/* Standalone Caregiver Poster Page nav bar */
+html.theme-dark:not(.high-contrast) .back-home,
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.high-contrast) .back-home {
+    background: #172c21;
+    border-color: var(--border-color);
+    color: var(--primary);
+  }
+}
+
+/* Dark Theme Toggle Button styling */
+#themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+#themeToggle.active {
+  background: #234232;
+  border-color: var(--primary);
+  color: #74c69d;
 }

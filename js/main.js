@@ -196,6 +196,7 @@ function initAccessibilityControls() {
   const root = document.documentElement;
   const sizeButtons = document.querySelectorAll(".font-resizer .font-btn, [data-size]");
   const contrastBtn = document.getElementById("contrastToggle");
+  const themeBtn = document.getElementById("themeToggle");
 
   let savedSize = "normal";
   try {
@@ -210,6 +211,105 @@ function initAccessibilityControls() {
   if (savedContrast) {
     root.classList.add("high-contrast");
     if (contrastBtn) contrastBtn.classList.add("active");
+  }
+
+  // --- Visual Theme Management (Device-matching & manual override) ---
+  let savedTheme = "auto";
+  try {
+    savedTheme = localStorage.getItem("evergreen_theme") || "auto";
+  } catch (e) {}
+
+  function applyThemeMode(mode) {
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (mode === "dark") {
+      root.classList.add("theme-dark");
+      root.classList.remove("theme-light");
+    } else if (mode === "light") {
+      root.classList.add("theme-light");
+      root.classList.remove("theme-dark");
+    } else {
+      // mode === 'auto'
+      root.classList.remove("theme-light");
+      if (prefersDark) {
+        root.classList.add("theme-dark");
+      } else {
+        root.classList.remove("theme-dark");
+      }
+    }
+
+    if (themeBtn) {
+      if (mode === "auto") {
+        themeBtn.innerHTML = prefersDark ? "🌓 Theme: Auto (Dark)" : "🌓 Theme: Auto (Light)";
+        themeBtn.title = "Current: Auto (matches device). Click to switch to Dark Mode.";
+        themeBtn.classList.remove("active");
+      } else if (mode === "dark") {
+        themeBtn.innerHTML = "🌙 Theme: Dark";
+        themeBtn.title = "Current: Dark. Click to switch to Light Mode.";
+        themeBtn.classList.add("active");
+      } else if (mode === "light") {
+        themeBtn.innerHTML = "☀️ Theme: Light";
+        themeBtn.title = "Current: Light. Click to switch to Auto (matches device).";
+        themeBtn.classList.remove("active");
+      }
+    }
+  }
+
+  // Initial apply
+  applyThemeMode(savedTheme);
+
+  // Dynamic listener for OS/Device theme changes when in Auto mode
+  if (window.matchMedia) {
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleOSChange = () => {
+      let currentTheme = "auto";
+      try {
+        currentTheme = localStorage.getItem("evergreen_theme") || "auto";
+      } catch (e) {}
+      if (currentTheme === "auto") {
+        applyThemeMode("auto");
+      }
+    };
+    if (mql.addEventListener) {
+      mql.addEventListener("change", handleOSChange);
+    } else if (mql.addListener) {
+      mql.addListener(handleOSChange);
+    }
+  }
+
+  // Theme toggle button click handler (Cycles: Auto -> Dark -> Light -> Auto)
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      let currentTheme = "auto";
+      try {
+        currentTheme = localStorage.getItem("evergreen_theme") || "auto";
+      } catch (e) {}
+
+      let nextTheme = "auto";
+      if (currentTheme === "auto") {
+        nextTheme = "dark";
+      } else if (currentTheme === "dark") {
+        nextTheme = "light";
+      } else {
+        nextTheme = "auto";
+      }
+
+      try {
+        localStorage.setItem("evergreen_theme", nextTheme);
+      } catch (e) {}
+
+      applyThemeMode(nextTheme);
+
+      if (typeof showToast === "function") {
+        if (nextTheme === "dark") {
+          showToast("🌙 Dark Mode Enabled");
+        } else if (nextTheme === "light") {
+          showToast("☀️ Light Mode Enabled");
+        } else {
+          showToast("🌓 Theme set to Auto (matches device settings)");
+        }
+      }
+    });
   }
 
   sizeButtons.forEach(btn => {
