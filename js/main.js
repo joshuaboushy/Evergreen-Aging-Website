@@ -1277,7 +1277,7 @@ window.openPrintableToolkit = function(toolkitKey) {
             <ul>
               <li>Thirst perception naturally declines with age; place a visible 32oz pitcher in plain view.</li>
               <li>Pair light daily movement with 25–30g dietary protein to preserve lean muscle.</li>
-              <li>Serve hydrating snacks like sliced citrus, berries, and warm herbal teas.</li>
+              <li>Serve hydrating snacks like sliced fruit, berries, and warm herbal teas.</li>
             </ul>
           </div>
 
