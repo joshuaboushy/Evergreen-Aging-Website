@@ -5,7 +5,7 @@
 const channelVideos = [
   {
     "id": "EY_q0rRr_7Y",
-    "title": "Why Mild Dehydration Looks Like Dementia in Seniors (And How to Fix It)",
+    "title": "Why Mild Dehydration Looks Like Dementia in Seniors",
     "category": "nutrition",
     "categoryLabel": "Nutrition, Protein & Hydration",
     "duration": "Official Guide",
