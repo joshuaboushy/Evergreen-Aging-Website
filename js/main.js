@@ -106,21 +106,20 @@ const healthToolkits = {
       "Medication Review: Ask doctor if any current prescription causes orthostatic dizziness when standing."
     ]
   },
-  doctor_prep: {
-    title: "\"Questions to Ask Your Doctor\" Appointment Prep Sheet",
-    category: "Clinical Advocacy",
-    authority: "Mayo Clinic & American Geriatrics Society",
-    citationTitle: "Mayo Clinic: Healthy Aging Guide & Medication Review Protocol",
-    citationUrl: "https://www.mayoclinic.org/healthy-lifestyle/healthy-aging/in-depth/fall-prevention/art-20047358",
-    description: "Maximize your 15-minute primary care visit by bringing this structured, evidence-based checklist to advocate for your mobility and healthspan.",
+  joint_warmup: {
+    title: "\"Morning Gentle Joint Warm-Up\" Printable Routine",
+    category: "Daily Mobility Routine",
+    authority: "Arthritis Foundation & Mayo Clinic Joint Preservation",
+    citationTitle: "Arthritis Foundation & Mayo Clinic: Joint Preservation & Synovial Fluid Circulation Protocol",
+    citationUrl: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20046440",
+    description: "A large-print, 5-minute seated routine seniors can do right beside the bed to circulate synovial fluid before walking. Directly combats morning stiffness, eases osteoarthritis discomfort, and builds movement confidence.",
     items: [
-      "Fall Risk: \"Can we conduct a 30-Second Chair Stand or Timed Up and Go (TUG) balance test today?\"",
-      "Medication Audit: \"Are any of my blood pressure, sleep, or mood prescriptions causing dizziness or interacting poorly?\"",
-      "Bone Density: \"Am I due for a DEXA bone density scan to assess my hip and lumbar spine bone mineral status?\"",
-      "Vitamin D & B12: \"Can we check my serum 25-hydroxy Vitamin D and B12 levels on my next routine blood draw?\"",
-      "Cardiovascular: \"What is my resting blood pressure target for my specific age and kidney health?\"",
-      "Physical Therapy: \"Would you write me a referral for preventative physical therapy to improve gait stability and knee strength?\"",
-      "Hearing & Vision: \"When should I schedule my annual hearing and macular vision screenings? (Hearing loss is a major fall risk factor).\""
+      "1. Seated Ankle Pumps & Circles: While seated on the edge of the bed or a sturdy chair, pump your feet up and down 10 times, then draw gentle circles with your toes (5 in each direction) to stimulate venous return and lubricate the ankle joints.",
+      "2. Seated Knee Extensions: Slowly straighten one leg out in front of you, holding for 3 seconds, then lower gently. Alternate legs for 8–10 repetitions per side to wake up the quadriceps and circulate synovial fluid across the knee joint.",
+      "3. Gentle Seated Pelvic Tilts: Place your hands on your thighs. Gently rock your pelvis backward to round your lower back slightly, then rock forward to sit tall with a gentle arch. Repeat 6–8 times to relieve lower spine morning tightness.",
+      "4. Slow Shoulder & Neck Rolls: Roll your shoulders backward in smooth, relaxed circles 5 times. Gently turn your head to look over your right shoulder, hold 3 seconds, then turn to the left to ease cervical stiffness.",
+      "5. Overhead Reaching & Deep Breathing: Inhale slowly through your nose as you raise both arms gently toward the ceiling (or to shoulder height if comfortable). Exhale slowly as you lower your arms. Repeat 4 times to expand your ribcage and awaken posture.",
+      "6. Safe Stand & First Steps Pause: Before walking, plant both feet flat on the floor directly beneath your knees. Take one calm grounding breath, use sturdy armrests to stand tall, pause for 5 seconds to ensure steadiness, and take your first step with confidence."
     ]
   },
   caregiver_guide: {
@@ -160,6 +159,9 @@ const healthToolkits = {
     ]
   }
 };
+
+// Backward compatibility alias
+toolkitsData.doctor_prep = toolkitsData.joint_warmup;
 
 document.addEventListener("DOMContentLoaded", () => {
   initAccessibilityControls();
@@ -1325,7 +1327,7 @@ window.openPrintableToolkit = function(toolkitKey) {
     return;
   }
 
-  // Standard Checklist layout for other toolkits (fall_proofing, doctor_prep, vital_card)
+  // Standard Checklist layout for other toolkits (fall_proofing, joint_warmup, vital_card)
   printWindow.document.write(`
     <!DOCTYPE html>
     <html lang="en">
