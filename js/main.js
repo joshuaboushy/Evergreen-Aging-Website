@@ -306,7 +306,7 @@ function initMobileMenu() {
   const navLinks = nav.querySelectorAll(".nav-link");
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      if (window.innerWidth <= 1120) {
+      if (window.innerWidth <= 1180) {
         nav.classList.remove("show");
         toggle.setAttribute("aria-expanded", "false");
         toggle.textContent = "☰";
