@@ -33,7 +33,7 @@
   --transition: all 0.25s ease-in-out;
 }
 
-/* Accessible High Contrast Mode */
+/* Accessible High Contrast Mode (WCAG AAA Senior-Accessible Black & Gold Theme) */
 html.high-contrast {
   --primary: #000000;
   --primary-hover: #1a1a1a;
@@ -51,55 +51,69 @@ html.high-contrast {
   --border-color: #000000;
 }
 
+html.high-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Accessibility bar */
+html.high-contrast .access-bar {
+  background: #000000 !important;
+  border-bottom: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+
 html.high-contrast .site-header {
-  background: #000000;
-  border-bottom: 2px solid #ffd700;
+  background: #000000 !important;
+  border-bottom: 2.5px solid #ffd700 !important;
 }
 html.high-contrast .brand-title {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 html.high-contrast .brand-sub {
-  color: #ffd700;
+  color: #ffd700 !important;
 }
 html.high-contrast .main-nav,
 html.high-contrast .mission-nav-bubble {
-  background: #111111;
-  border: 1.5px solid #ffd700;
+  background: #111111 !important;
+  border: 1.5px solid #ffd700 !important;
 }
 html.high-contrast .mission-nav-bubble .nav-link {
-  color: #ffd700;
-  font-weight: 800;
+  color: #ffd700 !important;
+  font-weight: 800 !important;
 }
 html.high-contrast .nav-link {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 html.high-contrast .nav-link:hover,
 html.high-contrast .nav-link.active {
-  background: #ffd700;
-  color: #000000;
-  font-weight: 800;
+  background: #ffd700 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
 }
 html.high-contrast .mobile-toggle {
-  background: #000000;
-  border-color: #ffd700;
-  color: #ffd700;
+  background: #000000 !important;
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
 }
 html.high-contrast .font-btn {
-  background: #000000;
-  border-color: #ffd700;
-  color: #ffffff;
+  background: #000000 !important;
+  border-color: #ffd700 !important;
+  color: #ffffff !important;
 }
 html.high-contrast .font-btn:hover {
-  background: #222222;
-  border-color: #ffffff;
+  background: #222222 !important;
+  border-color: #ffffff !important;
 }
-html.high-contrast .font-btn.active {
-  background: #ffd700;
-  color: #000000;
-  border-color: #ffd700;
-  font-weight: 900;
+html.high-contrast .font-btn.active,
+html.high-contrast #contrastToggle.active {
+  background: #ffd700 !important;
+  color: #000000 !important;
+  border-color: #ffd700 !important;
+  font-weight: 900 !important;
 }
 
+/* High Contrast Section Backgrounds */
 html.high-contrast .hero,
 html.high-contrast .myth-section,
 html.high-contrast .toolkit-section,
@@ -107,22 +121,136 @@ html.high-contrast .library-section,
 html.high-contrast .caregiver-section,
 html.high-contrast .community-section,
 html.high-contrast .resources-section,
-html.high-contrast .references-section {
+html.high-contrast .references-section,
+html.high-contrast .portal-section {
   background: #ffffff !important;
   border-bottom: 2px solid #000000 !important;
 }
-html.high-contrast .caregiver-banner {
-  background: #000000 !important;
-  border: 2px solid #ffd700 !important;
-  color: #ffffff !important;
+
+/* High Contrast Typography */
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
+html.high-contrast h4,
+html.high-contrast h5,
+html.high-contrast .section-title,
+html.high-contrast .page-title,
+html.high-contrast .hero h1 {
+  color: #000000 !important;
 }
+
+html.high-contrast .section-desc,
+html.high-contrast .page-desc,
+html.high-contrast .hero-desc,
+html.high-contrast p {
+  color: #111111 !important;
+}
+
+html.high-contrast .section-sub {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* High Contrast Badges */
+html.high-contrast .badge-pill,
+html.high-contrast .category-pill,
+html.high-contrast .video-badge,
+html.high-contrast .share-preview-badge,
+html.high-contrast .poster-badge {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 1.5px solid #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* High Contrast Buttons */
+html.high-contrast .btn-primary {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #000000 !important;
+  font-weight: 800 !important;
+}
+html.high-contrast .btn-primary:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+html.high-contrast .btn-outline {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  font-weight: 800 !important;
+}
+html.high-contrast .btn-outline:hover {
+  background: #000000 !important;
+  color: #ffd700 !important;
+}
+
+html.high-contrast .btn-yt {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd700 !important;
+}
+html.high-contrast .btn-yt:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+html.high-contrast .btn-listen {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 1.5px solid #000000 !important;
+}
+html.high-contrast .btn-listen:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+}
+
+html.high-contrast .card-link {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  text-decoration: underline !important;
+}
+
+/* High Contrast Cards & Containers */
+html.high-contrast .portal-card,
+html.high-contrast .video-item,
+html.high-contrast .video-preview-card,
+html.high-contrast .toolkit-card,
+html.high-contrast .myth-card,
 html.high-contrast .caregiver-poster-card,
+html.high-contrast .about-continuous-card,
+html.high-contrast .reference-item,
+html.high-contrast .community-box,
 html.high-contrast .poster-core-rule,
 html.high-contrast .poster-pillar-card,
 html.high-contrast .poster-respite-box {
   background: #ffffff !important;
   border: 2px solid #000000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
+
+html.high-contrast .portal-card:hover,
+html.high-contrast .video-item:hover,
+html.high-contrast .toolkit-card:hover {
+  border-color: #000000 !important;
+  background: #fffdf0 !important;
+}
+
+html.high-contrast .portal-card-icon {
+  background: #000000 !important;
+  color: #ffd700 !important;
+}
+
+/* Caregiver specific components */
+html.high-contrast .caregiver-banner {
+  background: #000000 !important;
+  border: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+
 html.high-contrast .poster-comparison-avoid {
   background: #ffffff !important;
   border: 2px solid #b91c1c !important;
@@ -137,9 +265,79 @@ html.high-contrast .poster-comparison-empower li {
   color: #000000 !important;
   border: 1.5px solid #000000 !important;
 }
+
+/* Video controls & search */
+html.high-contrast .cat-btn {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .cat-btn.active,
+html.high-contrast .cat-btn:hover {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border-color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.high-contrast .search-box {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .search-box input {
+  color: #000000 !important;
+}
+
+/* Myth Card distinctions */
+html.high-contrast .myth-card-myth {
+  background: #ffffff !important;
+  border-left: 5px solid #b91c1c !important;
+  border-bottom: 2px solid #000000 !important;
+}
+html.high-contrast .myth-card-fact {
+  background: #ffffff !important;
+  border-left: 5px solid #166534 !important;
+}
+
+/* Footer in High Contrast */
 html.high-contrast .site-footer {
   background: #000000 !important;
-  border-top: 2px solid #ffd700 !important;
+  border-top: 3px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+html.high-contrast .footer-col h5,
+html.high-contrast .footer-brand h4 {
+  color: #ffd700 !important;
+}
+html.high-contrast .footer-links a {
+  color: #ffffff !important;
+}
+html.high-contrast .footer-links a:hover {
+  color: #ffd700 !important;
+}
+html.high-contrast .footer-bottom {
+  border-top: 1px solid #333333 !important;
+  color: #cccccc !important;
+}
+
+/* Modal dialogs in High Contrast */
+html.high-contrast .modal-content,
+html.high-contrast .modal-card {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+}
+html.high-contrast .modal-header {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border-bottom: 2px solid #000000 !important;
+}
+html.high-contrast .modal-header .modal-title {
+  color: #ffd700 !important;
+}
+html.high-contrast .modal-close {
+  color: #ffffff !important;
+}
+html.high-contrast .modal-close:hover {
+  color: #ffd700 !important;
 }
 html.high-contrast .btn-share {
   background: #ffffff !important;
@@ -148,10 +346,6 @@ html.high-contrast .btn-share {
 }
 html.high-contrast .btn-share:hover {
   background: #ffd700 !important;
-}
-html.high-contrast .modal-card {
-  background: #ffffff !important;
-  border: 3px solid #000000 !important;
 }
 html.high-contrast .share-action-btn {
   border: 2px solid #000000 !important;
@@ -2992,6 +3186,149 @@ body {
   font-size: 0.88rem;
   color: var(--text-muted);
   line-height: 1.6;
+}
+
+/* Top First-Time Medical & Health Disclaimer Popup */
+.disclaimer-popup-wrap {
+  background: #fefce8;
+  border-bottom: 2px solid #fde047;
+  padding: 1.15rem 0;
+  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.08);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  position: relative;
+  z-index: 90;
+}
+
+.disclaimer-popup-wrap.dismissing {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.disclaimer-popup-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-left: 5px solid #d97706;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.disclaimer-popup-icon-wrap {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.disclaimer-popup-body {
+  flex-grow: 1;
+}
+
+.disclaimer-popup-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.disclaimer-popup-text {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #451a03;
+  margin: 0;
+}
+
+.disclaimer-popup-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.disclaimer-popup-btn {
+  background: #92400e;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.disclaimer-popup-btn:hover {
+  background: #78350f;
+  transform: translateY(-1px);
+}
+
+.disclaimer-popup-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.disclaimer-popup-close:hover {
+  background: #fde68a;
+  color: #451a03;
+  transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .disclaimer-popup-card {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .disclaimer-popup-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* High Contrast mode for Medical Disclaimer Popup */
+html.high-contrast .disclaimer-popup-wrap {
+  background: #ffffff !important;
+  border-bottom: 2px solid #000000 !important;
+}
+html.high-contrast .disclaimer-popup-card {
+  background: #ffffff !important;
+  border: 2.5px solid #000000 !important;
+  border-left: 6px solid #000000 !important;
+}
+html.high-contrast .disclaimer-popup-title {
+  color: #000000 !important;
+}
+html.high-contrast .disclaimer-popup-text {
+  color: #000000 !important;
+}
+html.high-contrast .disclaimer-popup-btn {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .disclaimer-popup-close {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
 }
 
 /* Standalone Page Banner / Hero Header */

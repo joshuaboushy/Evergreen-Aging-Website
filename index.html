@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261021_lightonly_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261021_highcontrast_v1">
 </head>
 <body>
 
@@ -73,6 +73,32 @@
 
   <main id="main-content">
     
+    <!-- Top First-Time Medical & Health Disclaimer Popup Box -->
+    <aside id="medicalDisclaimerPopup" class="disclaimer-popup-wrap" style="display: none;" role="region" aria-label="Medical and Health Disclaimer">
+      <div class="container">
+        <div class="disclaimer-popup-card">
+          <div class="disclaimer-popup-icon-wrap" aria-hidden="true">⚠️</div>
+          <div class="disclaimer-popup-body">
+            <h4 class="disclaimer-popup-title">Medical &amp; Health Disclaimer</h4>
+            <p class="disclaimer-popup-text">
+              Evergreen Aging is an independent educational initiative. Content provided on this website and on our YouTube channel is for educational and informational purposes only and does not constitute personalized medical advice, diagnosis, or clinical treatment. Always consult with your primary care physician, physical therapist, or qualified healthcare professional before beginning any new exercise routine, dietary adjustment, or lifestyle modification.
+            </p>
+          </div>
+          <div class="disclaimer-popup-actions">
+            <button type="button" class="disclaimer-popup-btn" onclick="dismissDisclaimerPopup()" aria-label="Acknowledge and close medical disclaimer">
+              I Understand
+            </button>
+            <button type="button" class="disclaimer-popup-close" onclick="dismissDisclaimerPopup()" aria-label="Close medical disclaimer" title="Close disclaimer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
     <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
@@ -244,13 +270,6 @@
       </div>
     </section>
 
-    <!-- Medical & Sourcing Disclaimer -->
-    <section class="container" style="padding-top: 2rem; padding-bottom: 3.5rem;">
-      <div class="page-disclaimer-box">
-        <strong>⚠️ Medical &amp; Health Disclaimer:</strong> Evergreen Aging is an independent educational initiative. Content provided on this website and on our YouTube channel is for educational and informational purposes only and does not constitute personalized medical advice, diagnosis, or clinical treatment. Always consult with your primary care physician, physical therapist, or qualified healthcare professional before beginning any new exercise routine, dietary adjustment, or lifestyle modification.
-      </div>
-    </section>
-
   </main>
 
   <!-- Video Playback Modal -->
@@ -333,6 +352,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261021_videofix_v2"></script>
+  <script src="js/main.js?v=20261021_disclaimer_v3"></script>
 </body>
 </html>

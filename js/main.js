@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccessibilityControls();
   initMobileMenu();
   initScrollSpy();
+  initDisclaimerPopup();
   loadCustomVideos();
   renderVideos(channelVideos, "all", "");
   initCategoryFilters();
@@ -176,6 +177,36 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   updateVaultStatusBadge();
 });
+
+// Top First-Time Medical & Health Disclaimer Popup (Homepage only)
+function initDisclaimerPopup() {
+  const popup = document.getElementById("medicalDisclaimerPopup");
+  if (!popup) return;
+
+  try {
+    const isDismissed = localStorage.getItem("evergreen_disclaimer_dismissed") === "true";
+    if (!isDismissed) {
+      popup.style.display = "block";
+    } else {
+      popup.style.display = "none";
+    }
+  } catch (e) {
+    popup.style.display = "block";
+  }
+}
+
+window.dismissDisclaimerPopup = function() {
+  const popup = document.getElementById("medicalDisclaimerPopup");
+  if (popup) {
+    popup.classList.add("dismissing");
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 220);
+  }
+  try {
+    localStorage.setItem("evergreen_disclaimer_dismissed", "true");
+  } catch (e) {}
+};
 
 // Load any custom videos added via the on-demand modal
 function loadCustomVideos() {
@@ -217,7 +248,10 @@ function initAccessibilityControls() {
   } catch (e) {}
   if (savedContrast) {
     root.classList.add("high-contrast");
-    if (contrastBtn) contrastBtn.classList.add("active");
+    if (contrastBtn) {
+      contrastBtn.classList.add("active");
+      contrastBtn.setAttribute("aria-pressed", "true");
+    }
   }
 
   sizeButtons.forEach(btn => {
@@ -239,11 +273,12 @@ function initAccessibilityControls() {
     contrastBtn.addEventListener("click", () => {
       const isHigh = root.classList.toggle("high-contrast");
       contrastBtn.classList.toggle("active", isHigh);
+      contrastBtn.setAttribute("aria-pressed", isHigh ? "true" : "false");
       try {
         localStorage.setItem("evergreen_contrast", isHigh ? "high" : "normal");
       } catch (e) {}
       if (typeof showToast === "function") {
-        showToast(isHigh ? "High-Contrast Black & Gold Mode Enabled" : "Standard Theme Restored");
+        showToast(isHigh ? "👁️ High-Contrast Mode Enabled" : "🌿 Standard Theme Restored");
       }
     });
   }
