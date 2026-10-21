@@ -58,14 +58,14 @@ CATEGORY_DEFAULTS = {
 
 def infer_category(title, desc=""):
     text = (title + " " + desc).lower()
+    if any(k in text for k in ["dehydration", "hydration", "protein", "nutrition", "diet", "meal", "water", "fluid", "electrolytes", "vitamin"]):
+        return "nutrition"
     if any(k in text for k in ["shuffle", "shuffling", "fall", "balance", "gait", "trip", "stumble", "steady"]):
         return "balance"
     if any(k in text for k in ["chair", "seated", "sitting", "wheelchair"]):
         return "seated"
     if any(k in text for k in ["neuro", "brain", "dementia", "alzheimer", "memory", "cognitive", "parkinson"]):
         return "brain"
-    if any(k in text for k in ["protein", "nutrition", "diet", "meal", "hydration", "water", "fluid", "electrolytes", "vitamin"]):
-        return "nutrition"
     return "mobility"
 
 def fetch_channel_videos():
