@@ -891,8 +891,12 @@ body {
 
 /* Video Library Section */
 .library-section {
-  padding: 3.75rem 0 4.5rem;
+  padding: 3.5rem 0 1.5rem;
   background: #ffffff;
+}
+
+.library-section + .community-section {
+  padding-top: 1.75rem;
 }
 
 .vault-hero-bar {
@@ -1128,7 +1132,12 @@ body {
 /* Fluid Vault Expand / View More Button */
 .vault-expand-wrap {
   text-align: center;
-  margin-top: 2.25rem;
+  margin-top: 1.25rem;
+}
+
+.library-yt-cta {
+  text-align: center;
+  margin-top: 1.15rem;
 }
 
 .btn-vault-expand {
@@ -2749,6 +2758,18 @@ body {
   .btn-vault-expand {
     width: 100%;
     justify-content: center;
+  }
+  .vault-expand-wrap {
+    margin-top: 1rem;
+  }
+  .library-yt-cta {
+    margin-top: 0.9rem;
+  }
+  .library-section {
+    padding-bottom: 1.25rem;
+  }
+  .library-section + .community-section {
+    padding-top: 1.25rem;
   }
   .community-box {
     padding: 1.75rem 1.25rem;
