@@ -161,7 +161,7 @@ const healthToolkits = {
 };
 
 // Backward compatibility alias
-toolkitsData.doctor_prep = toolkitsData.joint_warmup;
+healthToolkits.doctor_prep = healthToolkits.joint_warmup;
 
 document.addEventListener("DOMContentLoaded", () => {
   initAccessibilityControls();
