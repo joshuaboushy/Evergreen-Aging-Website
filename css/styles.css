@@ -1475,6 +1475,15 @@ body {
   background: linear-gradient(180deg, var(--bg-main) 0%, #f2f7f4 15%, #f2f7f4 85%, #ffffff 100%);
   border-bottom: none;
 }
+.myth-heading-single-line {
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  white-space: normal;
+}
+@media (min-width: 768px) {
+  .myth-heading-single-line {
+    white-space: nowrap;
+  }
+}
 .myth-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
