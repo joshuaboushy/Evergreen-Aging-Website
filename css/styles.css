@@ -244,6 +244,14 @@ html.high-contrast .portal-card-icon {
   color: #ffd700 !important;
 }
 
+html.high-contrast .video-kicker-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+html.high-contrast .video-title-text {
+  color: #000000 !important;
+}
+
 /* Caregiver specific components */
 html.high-contrast .caregiver-banner {
   background: #000000 !important;
@@ -987,10 +995,26 @@ body {
   padding: 1.25rem;
 }
 .video-card-body h4 {
-  font-size: 1.15rem;
-  color: var(--primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   line-height: 1.35;
+}
+.video-kicker-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+.video-title-text {
+  display: block;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
 }
 .video-card-body p {
   font-size: 0.9rem;
@@ -3364,6 +3388,14 @@ html.high-contrast .portal-card:hover {
 html.high-contrast .portal-card-icon {
   background: #000000 !important;
   color: #ffd700 !important;
+}
+
+html.high-contrast .video-kicker-label {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+html.high-contrast .video-title-text {
+  color: #000000 !important;
 }
 html.high-contrast .page-hero-banner {
   background: #ffffff !important;
