@@ -3659,6 +3659,21 @@ html.high-contrast .page-hero-banner {
   box-shadow: 0 2px 8px rgba(27, 67, 50, 0.04);
 }
 
+.founder-quote-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  background: rgba(45, 106, 79, 0.08);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.65rem;
+}
+
 .founder-quote-text {
   font-size: 1.02rem;
   font-style: italic;
@@ -3708,7 +3723,8 @@ html.high-contrast .founder-quote-author {
   color: #000000 !important;
   font-weight: 800 !important;
 }
-html.high-contrast .founder-badge {
+html.high-contrast .founder-badge,
+html.high-contrast .founder-quote-tag {
   background: #000000 !important;
   color: #ffd700 !important;
   border: 1.5px solid #000000 !important;
