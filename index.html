@@ -9,20 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261020_darkmode_v2">
-  <script>
-    (function() {
-      try {
-        var t = localStorage.getItem('evergreen_theme') || 'auto';
-        var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (t === 'dark' || (t === 'auto' && d)) {
-          document.documentElement.classList.add('theme-dark');
-        } else if (t === 'light') {
-          document.documentElement.classList.add('theme-light');
-        }
-      } catch(e) {}
-    })();
-  </script>
+  <link rel="stylesheet" href="css/styles.css?v=20261021_lightonly_v1">
 </head>
 <body>
 
@@ -32,7 +19,6 @@
       <span>🌿 <strong>Evergreen Aging</strong> &bull; 100% Free Public Health &amp; Senior Mobility Education</span>
       <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
         <button id="contrastToggle" class="font-btn" style="padding: 2px 10px;">👁️ High Contrast</button>
-        <button id="themeToggle" class="font-btn" style="padding: 2px 10px;" aria-label="Visual theme mode (Auto / Dark / Light)" title="Cycle theme: Auto (Device) / Dark / Light">🌓 Theme: Auto</button>
         <div class="font-resizer" role="group" aria-label="Accessible text size selection">
           <span>Text Size:</span>
           <button class="font-btn font-btn-sm active" data-size="normal" aria-label="Standard text size" title="Standard text size">A</button>
