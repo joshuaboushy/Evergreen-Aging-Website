@@ -201,6 +201,12 @@ section[id],
   padding: 0;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
@@ -327,16 +333,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.65rem 0;
-  gap: 1.25rem;
-  min-height: 64px;
+  padding: 0.6rem 0;
+  gap: 0.75rem;
+  min-height: 60px;
 }
 
 /* Brand Identity */
 .logo-area {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.55rem;
   text-decoration: none;
   color: var(--primary);
   flex-shrink: 0;
@@ -349,10 +355,10 @@ body {
 }
 
 .logo-img {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 9px;
   box-shadow: 0 2px 6px rgba(27, 67, 50, 0.12);
   border: 1.5px solid rgba(27, 67, 50, 0.18);
   flex-shrink: 0;
@@ -363,10 +369,10 @@ body {
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: 10px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -374,8 +380,8 @@ body {
   box-shadow: 0 2px 6px rgba(27,67,50,0.15);
 }
 .logo-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
 }
 
@@ -386,7 +392,7 @@ body {
 }
 
 .brand-title {
-  font-size: 1.22rem;
+  font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--primary);
@@ -394,7 +400,7 @@ body {
 }
 
 .brand-sub {
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -407,16 +413,16 @@ body {
 .nav-container {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
 }
 
 /* Unified Segmented Nav Pill Container (In-Page Sections) */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 2px;
   background: #e9f0eb;
-  padding: 4px;
+  padding: 3px;
   border-radius: var(--radius-pill);
   border: 1.25px solid rgba(27, 67, 50, 0.18);
   box-shadow: inset 0 1px 3px rgba(27, 67, 50, 0.05);
@@ -445,7 +451,7 @@ body {
   display: flex;
   align-items: center;
   background: rgba(27, 67, 50, 0.08);
-  padding: 4px;
+  padding: 3px;
   border-radius: var(--radius-pill);
   border: 1.25px solid rgba(27, 67, 50, 0.24);
   box-shadow: 0 1px 3px rgba(27, 67, 50, 0.04);
@@ -453,8 +459,9 @@ body {
 }
 
 .mission-nav-bubble .nav-link {
-  padding: 0.45rem 1rem;
+  padding: 0.42rem 0.75rem;
   font-weight: 700;
+  font-size: 0.84rem;
   color: var(--primary);
   border-radius: var(--radius-pill);
   transition: all 0.2s ease-in-out;
@@ -484,8 +491,8 @@ body {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
-  padding: 0.45rem 0.82rem;
+  font-size: 0.84rem;
+  padding: 0.42rem 0.65rem;
   border-radius: var(--radius-pill);
   white-space: nowrap;
   line-height: 1.25;
@@ -509,19 +516,19 @@ body {
 .header-cta {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
 .btn-yt {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   background: var(--yt-red);
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.52rem 1.15rem;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-pill);
   text-decoration: none;
   box-shadow: 0 3px 8px rgba(217, 4, 41, 0.25);
@@ -569,8 +576,8 @@ body {
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 2.75rem;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: clamp(1.5rem, 2.5vw, 2.75rem);
   align-items: center;
 }
 .badge-pill {
@@ -586,25 +593,25 @@ body {
   margin-bottom: 1.25rem;
 }
 .hero h1 {
-  font-size: 2.85rem;
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
   line-height: 1.15;
   font-weight: 800;
   color: var(--primary);
   letter-spacing: -0.03em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 .hero h1 span {
   color: var(--secondary);
 }
 .hero-desc {
-  font-size: 1.2rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.18rem);
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   line-height: 1.55;
 }
 .hero-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: clamp(0.4rem, 0.8vw, 0.75rem);
   align-items: center;
   margin-bottom: 1.5rem;
 }
@@ -612,13 +619,14 @@ body {
 .hero-actions .btn-outline,
 .hero-actions .btn-hero-yt {
   flex: 1 1 0;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.35rem;
   font-weight: 700;
-  font-size: 0.92rem;
-  padding: 0.82rem 0.65rem;
+  font-size: clamp(0.78rem, 0.95vw, 0.92rem);
+  padding: 0.8rem 0.45rem;
   border-radius: var(--radius-md);
   text-decoration: none;
   white-space: nowrap;
@@ -2347,27 +2355,49 @@ body {
    Comprehensive Responsive & Aspect Ratio System (Mobile, Tablet, Desktop)
    ========================================================================== */
 
-/* Laptop & Compact Desktop (1181px - 1340px) */
-@media (max-width: 1340px) and (min-width: 1181px) {
+/* Compact Desktop & Laptop (1081px - 1320px, e.g. with vertical tabs or browser sidebar) */
+@media (max-width: 1320px) and (min-width: 1081px) {
+  .header-inner {
+    gap: 0.45rem;
+  }
+  .logo-area {
+    gap: 0.4rem;
+  }
+  .logo-img {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-title {
+    font-size: 1.05rem;
+  }
+  .brand-sub {
+    display: none;
+  }
   .main-nav {
-    gap: 0.15rem;
-    padding: 3px;
+    gap: 1px;
+    padding: 2px;
   }
   .main-nav .nav-link {
-    padding: 0.45rem 0.65rem;
-    font-size: 0.88rem;
+    padding: 0.36rem 0.48rem;
+    font-size: 0.8rem;
   }
   .mission-nav-bubble .nav-link {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.88rem;
+    padding: 0.36rem 0.58rem;
+    font-size: 0.8rem;
   }
-  .header-inner {
-    gap: 0.75rem;
+  .header-cta .btn-yt {
+    padding: 0.38rem 0.72rem;
+    font-size: 0.8rem;
+    gap: 0.3rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.5rem;
   }
 }
 
-/* Tablet & Mobile Navigation Trigger (<= 1180px) */
-@media (max-width: 1180px) {
+/* Tablet & Mobile Navigation Trigger (<= 1080px) */
+@media (max-width: 1080px) {
   .mobile-toggle {
     display: inline-flex;
     align-items: center;
@@ -2449,25 +2479,11 @@ body {
   }
 }
 
-/* Hero Actions Single-Row Protection (641px - 1220px) */
-@media (max-width: 1220px) and (min-width: 641px) {
-  .hero-actions {
-    gap: 0.5rem;
-  }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-outline,
-  .hero-actions .btn-hero-yt {
-    font-size: 0.85rem;
-    padding: 0.76rem 0.45rem;
-    gap: 0.35rem;
-  }
-}
-
-/* Medium Tablets & Phablets (<= 900px) */
-@media (max-width: 900px) {
+/* Medium Tablets & Phablets (<= 960px) */
+@media (max-width: 960px) {
   .hero-grid, .lead-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.25rem;
   }
   .journey-grid {
     grid-template-columns: 1fr;
