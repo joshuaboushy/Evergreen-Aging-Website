@@ -168,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initScrollSpy();
   initDisclaimerPopup();
+  initAboutNavTabs();
   loadCustomVideos();
   renderVideos(channelVideos, "all", "");
   initCategoryFilters();
@@ -177,6 +178,27 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   updateVaultStatusBadge();
 });
+
+// Highlight active tab within Our Mission / Founder bubble
+function initAboutNavTabs() {
+  if (!window.location.pathname.includes("about.html")) return;
+  const missionLink = document.querySelector('.mission-nav-bubble a[href*="#mission"], .mission-nav-bubble a[href="about.html"]');
+  const founderLink = document.querySelector('.mission-nav-bubble a[href*="#founder"]');
+  if (!missionLink && !founderLink) return;
+
+  function updateAboutNavTabs() {
+    if (window.location.hash === "#founder") {
+      if (founderLink) founderLink.classList.add("active");
+      if (missionLink) missionLink.classList.remove("active");
+    } else {
+      if (missionLink) missionLink.classList.add("active");
+      if (founderLink) founderLink.classList.remove("active");
+    }
+  }
+
+  window.addEventListener("hashchange", updateAboutNavTabs);
+  updateAboutNavTabs();
+}
 
 // Top First-Time Medical & Health Disclaimer Popup (Homepage only)
 function initDisclaimerPopup() {
