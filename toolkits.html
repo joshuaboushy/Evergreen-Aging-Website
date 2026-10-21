@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable Senior Health &amp; Safety Toolkits | Evergreen Aging</title>
+  <meta name="description" content="Free, evidence-based printable senior health toolkits, home fall-proofing checklists, doctor visit prep sheets, and emergency refrigerator medical forms.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20261020_multipage_v1">
+</head>
+<body>
+
+  <!-- Top Accessibility Bar -->
+  <aside class="access-bar" aria-label="Accessibility settings">
+    <div class="container access-inner">
+      <span>🌿 <strong>Evergreen Aging</strong> &bull; 100% Free Public Health &amp; Senior Mobility Education</span>
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <button id="contrastToggle" class="font-btn" style="padding: 2px 10px;">👁️ High Contrast</button>
+        <div class="font-resizer" role="group" aria-label="Accessible text size selection">
+          <span>Text Size:</span>
+          <button class="font-btn font-btn-sm active" data-size="normal" aria-label="Standard text size" title="Standard text size">A</button>
+          <button class="font-btn font-btn-md" data-size="lg" aria-label="Large text size" title="Large text size">A</button>
+          <button class="font-btn font-btn-lg" data-size="xl" aria-label="Extra large text size" title="Extra large text size">A</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-area" aria-label="Evergreen Aging Home">
+        <img src="images/logo.jpg" alt="Evergreen Aging Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="brand-title">Evergreen Aging</span>
+          <span class="brand-sub">Longevity &amp; Mobility Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-container" aria-label="Primary Navigation">
+        <div class="main-nav" role="navigation" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="myths.html" class="nav-link">Myths vs. Science</a>
+          <a href="toolkits.html" class="nav-link active" aria-current="page">Printable Toolkits</a>
+          <a href="videos.html" class="nav-link">Video Lessons</a>
+          <a href="caregivers.html" class="nav-link">Caregiver Support</a>
+          <a href="sources.html" class="nav-link">Sources</a>
+        </div>
+
+        <div class="mission-nav-bubble">
+          <a href="about.html" class="nav-link">Our Mission</a>
+        </div>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://www.youtube.com/@evergreen_aging?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-yt" aria-label="Watch on YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <span class="badge-pill">Free Public Health Resources</span>
+        <h1 class="page-title">Printable Senior Health &amp; Safety Toolkits</h1>
+        <p class="page-desc">
+          Every guide below is engineered specifically for older adults and family caregivers: large high-contrast fonts, clean printer layouts, interactive checkable boxes, and strict adherence to CDC STEADI, Mayo Clinic, and Health Canada clinical literature.
+        </p>
+      </div>
+    </section>
+
+    <!-- Toolkits Grid Section -->
+    <section class="toolkit-section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-sub">Standardized Clinical Guides</span>
+          <h2 class="section-title">Free Downloadable Checklists &amp; Audit Forms</h2>
+          <p class="section-desc">Click "View &amp; Print" on any toolkit to open a print-ready interactive sheet, or "Share" to email it directly to family:</p>
+        </div>
+
+        <div class="toolkit-grid">
+          <!-- Toolkit 1: Home Fall-Proofing Audit -->
+          <article class="toolkit-card">
+            <div class="toolkit-badge">Safety Audit</div>
+            <h3 class="toolkit-title">12-Point Home Fall-Proofing Environmental Safety Audit</h3>
+            <p class="toolkit-desc">
+              Over 60% of senior falls occur within the home. This systematic room-by-room audit identifies throw rugs, lighting hazards, and stair issues before an accident occurs.
+            </p>
+            <div class="toolkit-actions">
+              <button onclick="openPrintableToolkit('fall_proofing')" class="btn-primary">
+                🖨️ View &amp; Print Checklist
+              </button>
+              <button onclick="readAloud('12-Point Home Fall-Proofing Environmental Safety Audit. Over 60% of senior falls occur in the home. This audit checks stairs, nightlights, rugs, grab bars, footwear, and medication reviews.')" class="btn-listen" aria-label="Listen to summary">
+                🔊 Listen
+              </button>
+              <button onclick="shareToolkit('fall_proofing')" class="btn-share" aria-label="Share toolkit via email">
+                ✉️ Share
+              </button>
+            </div>
+            <div class="bottom-source-note">
+              <span>Public Health Standard: <strong>CDC STEADI &amp; PHAC</strong></span>
+              <a href="sources.html#ref-1">Reference [1] &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Toolkit 2: Questions to Ask Your Doctor -->
+          <article class="toolkit-card">
+            <div class="toolkit-badge">Doctor Visit Advocacy</div>
+            <h3 class="toolkit-title">"Questions to Ask Your Doctor" Appointment Prep Sheet</h3>
+            <p class="toolkit-desc">
+              Empower your 15-minute doctor visit with structured, evidence-based mobility questions, medication reviews for dizziness, and preventative referrals.
+            </p>
+            <div class="toolkit-actions">
+              <button onclick="openPrintableToolkit('doctor_prep')" class="btn-primary">
+                🖨️ View &amp; Print Checklist
+              </button>
+              <button onclick="readAloud('Questions to Ask Your Doctor Appointment Prep Sheet. Standardized clinical questions to ask your physician regarding medications that cause dizziness, balance screenings, and physical therapy referrals.')" class="btn-listen" aria-label="Listen to summary">
+                🔊 Listen
+              </button>
+              <button onclick="shareToolkit('doctor_prep')" class="btn-share" aria-label="Share prep sheet via email">
+                ✉️ Share
+              </button>
+            </div>
+            <div class="bottom-source-note">
+              <span>Public Health Standard: <strong>Mayo Clinic &amp; AGS</strong></span>
+              <a href="sources.html#ref-5">Reference [5] &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Toolkit 3: Caregiver & Family Guide -->
+          <article class="toolkit-card">
+            <div class="toolkit-badge">Family &amp; Caregiver Support</div>
+            <h3 class="toolkit-title">Caregiver &amp; Family Guide: Preserving Daily Independence</h3>
+            <p class="toolkit-desc">
+              Practical guidance for adult children: the "10-Second Pause" rule, autonomy-preserving language phrasing, hydration reminders, and caregiver respite strategies.
+            </p>
+            <div class="toolkit-actions">
+              <a href="caregivers.html" class="btn-primary" style="display:inline-flex; align-items:center; justify-content:center;">
+                📖 View Full Guide &rarr;
+              </a>
+              <button onclick="openPrintableToolkit('caregiver_guide')" class="btn-outline">
+                🖨️ Print Poster
+              </button>
+              <button onclick="shareToolkit('caregiver_guide')" class="btn-share" aria-label="Share caregiver guide via email">
+                ✉️ Share
+              </button>
+            </div>
+            <div class="bottom-source-note">
+              <span>Public Health Standard: <strong>NIA / NIH &amp; Health Canada</strong></span>
+              <a href="sources.html#ref-3">Reference [3] &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Toolkit 4: Emergency Refrigerator Medical Sheet -->
+          <article class="toolkit-card">
+            <div class="toolkit-badge">Emergency Readiness</div>
+            <h3 class="toolkit-title">Emergency Refrigerator Medical Information Sheet</h3>
+            <p class="toolkit-desc">
+              Paramedics are trained to look on the refrigerator door during home 911 calls. Keep your allergies, daily prescription dosages, and emergency contacts immediately accessible.
+            </p>
+            <div class="toolkit-actions">
+              <button onclick="openPrintableToolkit('vital_card')" class="btn-primary">
+                🖨️ View &amp; Print Form
+              </button>
+              <button onclick="readAloud('Emergency Refrigerator Medical Information Sheet. First responders are trained to look on the refrigerator door. Displays allergies, prescriptions, and emergency contacts.')" class="btn-listen" aria-label="Listen to summary">
+                🔊 Listen
+              </button>
+              <button onclick="shareToolkit('vital_card')" class="btn-share" aria-label="Share form via email">
+                ✉️ Share
+              </button>
+            </div>
+            <div class="bottom-source-note">
+              <span>Public Health Standard: <strong>First Responder Standard</strong></span>
+              <a href="sources.html">View Sources &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet / Community Download Section -->
+    <section class="lead-section">
+      <div class="container lead-grid">
+        <div class="lead-text">
+          <span class="badge-pill" style="background: rgba(255,255,255,0.15); color: #fff; margin-bottom: 1rem;">100% Free Public Health Resource</span>
+          <h2>Join Our Free Senior Health Community</h2>
+          <p>
+            Evergreen Aging publishes free, evidence-based toolkits, home fall-proofing guides, and video routine companion printables. Every guide is completely free of charge.
+          </p>
+          <ul class="checklist">
+            <li><span>✓</span> Direct access to newly released print-ready senior guides</li>
+            <li><span>✓</span> Notification of weekly follow-along chair mobility videos</li>
+            <li><span>✓</span> Zero promotional spam, zero supplements, 100% science-backed</li>
+          </ul>
+        </div>
+
+        <div class="lead-form-box">
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: #fff;">Get Free Senior Health Toolkits</h3>
+          <p>Delivered directly to your inbox with zero tracking or commercial marketing.</p>
+          <form onsubmit="event.preventDefault(); showToast('Thank you! Your free Senior Health Toolkit package is on its way.'); this.reset();">
+            <input type="text" class="form-input" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" class="form-input" placeholder="Your Email Address" required aria-label="Your Email Address">
+            <button type="submit" class="btn-submit">Receive Free Toolkits &rarr;</button>
+          </form>
+          <p style="font-size: 0.8rem; color: #8fa89b; margin-top: 0.75rem; text-align: center; margin-bottom:0;">
+            🔒 Strictly confidential. Unsubscribe anytime with 1 click.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 1.3;">
+          <div style="display:flex; align-items:center; gap:0.65rem; margin-bottom:0.75rem;">
+            <img src="images/logo.jpg" alt="Evergreen Aging Logo" style="width:36px; height:36px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
+            <h4 style="margin-bottom:0; font-size:1.35rem; color:#fff;">Evergreen Aging</h4>
+          </div>
+          <p>An independent educational channel and companion website dedicated to raising awareness, preventing debilitating falls, and extending active, joyful healthspan for older adults.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Free Toolkits</h5>
+          <ul class="footer-links">
+            <li><a href="toolkits.html">Home Fall-Proofing Audit</a></li>
+            <li><a href="toolkits.html">Doctor Visit Prep Sheet</a></li>
+            <li><a href="caregivers.html">Caregiver Infographic Guide</a></li>
+            <li><a href="toolkits.html">Refrigerator Medical Sheet</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Health Topics</h5>
+          <ul class="footer-links">
+            <li><a href="myths.html">Aging Myths Debunked</a></li>
+            <li><a href="videos.html">Fall Prevention Protocols</a></li>
+            <li><a href="videos.html">Chair &amp; Seated Routines</a></li>
+            <li><a href="videos.html">Nutrition, Protein &amp; Hydration</a></li>
+            <li><a href="videos.html">Brain Vitality &amp; Sleep</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Public Education</h5>
+          <ul class="footer-links">
+            <li>
+              <a href="https://www.youtube.com/@evergreen_aging?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="color: #ff6b6b; font-weight: 700;">
+                ▶ YouTube: @evergreen_aging
+              </a>
+            </li>
+            <li><a href="about.html">Our Non-Profit Mission</a></li>
+            <li><a href="about.html#contact">Community Inquiries</a></li>
+            <li><a href="sources.html">Clinical Sources &amp; Citations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Evergreen Aging &bull; Free Public Health Companion &bull; <a href="https://evergreenaging.ca" style="color:var(--accent);">evergreenaging.ca</a></p>
+        <p>Built for accessibility, high-contrast, screen-readers, and easy printing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261020_multipage_v1"></script>
+</body>
+</html>

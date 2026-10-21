@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caregiver &amp; Family Guide: Preserving Daily Independence | Evergreen Aging</title>
+  <meta name="description" content="Evidence-based educational infographic guide for family caregivers. Dignity-first phrasing, the 10-Second Pause rule, hydration habits, and caregiver respite.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css?v=20261020_multipage_v1">
+</head>
+<body>
+
+  <!-- Top Accessibility Bar -->
+  <aside class="access-bar" aria-label="Accessibility settings">
+    <div class="container access-inner">
+      <span>🌿 <strong>Evergreen Aging</strong> &bull; 100% Free Public Health &amp; Senior Mobility Education</span>
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <button id="contrastToggle" class="font-btn" style="padding: 2px 10px;">👁️ High Contrast</button>
+        <div class="font-resizer" role="group" aria-label="Accessible text size selection">
+          <span>Text Size:</span>
+          <button class="font-btn font-btn-sm active" data-size="normal" aria-label="Standard text size" title="Standard text size">A</button>
+          <button class="font-btn font-btn-md" data-size="lg" aria-label="Large text size" title="Large text size">A</button>
+          <button class="font-btn font-btn-lg" data-size="xl" aria-label="Extra large text size" title="Extra large text size">A</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-area" aria-label="Evergreen Aging Home">
+        <img src="images/logo.jpg" alt="Evergreen Aging Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="brand-title">Evergreen Aging</span>
+          <span class="brand-sub">Longevity &amp; Mobility Hub</span>
+        </div>
+      </a>
+
+      <nav class="nav-container" aria-label="Primary Navigation">
+        <div class="main-nav" role="navigation" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="myths.html" class="nav-link">Myths vs. Science</a>
+          <a href="toolkits.html" class="nav-link">Printable Toolkits</a>
+          <a href="videos.html" class="nav-link">Video Lessons</a>
+          <a href="caregivers.html" class="nav-link active" aria-current="page">Caregiver Support</a>
+          <a href="sources.html" class="nav-link">Sources</a>
+        </div>
+
+        <div class="mission-nav-bubble">
+          <a href="about.html" class="nav-link">Our Mission</a>
+        </div>
+      </nav>
+
+      <div class="header-cta">
+        <a href="https://www.youtube.com/@evergreen_aging?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-yt" aria-label="Watch on YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="page-hero-banner">
+      <div class="container">
+        <span class="badge-pill">Family &amp; Caregiver Support</span>
+        <h1 class="page-title">Caregiver &amp; Family Guide: Preserving Daily Independence</h1>
+        <p class="page-desc">
+          Balancing safety with a loved one's independence can be emotionally and physically overwhelming. This clinical guide translates occupational therapy protocols and geriatric psychology into actionable daily habits that honor autonomy and prevent burnout.
+        </p>
+      </div>
+    </section>
+
+    <!-- Caregiver Poster Section -->
+    <section class="caregiver-section" style="padding-top: 3.5rem;">
+      <div class="container">
+
+        <!-- The Full Educational Infographic Poster Card -->
+        <article class="caregiver-poster-card" id="caregiverGuideCard">
+          <div class="poster-top-bar">
+            <div>
+              <span class="poster-badge">Family &amp; Caregiver Support</span>
+              <h3>Caregiver &amp; Family Guide: Preserving Daily Independence</h3>
+              <p>Practical, evidence-based techniques to help older adults stay physically active and confident while preserving personal dignity and agency.</p>
+            </div>
+            <div class="poster-top-actions">
+              <button onclick="shareToolkit('caregiver_guide')" class="btn-share" aria-label="Share caregiver poster via email">
+                ✉️ Share with Family
+              </button>
+              <button onclick="openPrintableToolkit('caregiver_guide')" class="btn-primary" aria-label="Print full caregiver poster">
+                🖨️ View &amp; Print Poster
+              </button>
+              <button onclick="readAloud('Caregiver and Family Guide: Preserving Daily Independence. The Occupational Therapy Rule: Do With, Not For. Before stepping in to assist, pause for ten seconds to give neural pathways time to initiate movement.')" class="btn-listen" aria-label="Listen to audio narration">
+                🔊 Listen
+              </button>
+            </div>
+          </div>
+
+          <!-- The Occupational Therapy Rule -->
+          <div class="poster-core-rule">
+            <span class="poster-core-rule-tag">The Occupational Therapy Rule</span>
+            <div class="poster-core-rule-title">"Do With, Not For" — The 10-Second Pause</div>
+            <p class="poster-core-rule-desc">
+              Taking over daily tasks prematurely accelerates muscle deconditioning and "learned helplessness". Before stepping in to assist with rising from a chair, tying shoes, or reaching, <strong>pause for 10 seconds</strong>. Give neural pathways time to initiate the motor command independently.
+            </p>
+          </div>
+
+          <!-- Phrases of Dignity Comparison Grid -->
+          <div class="poster-block-title">
+            <span>🗣️ Phrases of Dignity</span> — Reframing Daily Interactions
+          </div>
+          <div class="poster-comparison-grid">
+            <div class="poster-comparison-avoid">
+              <div class="poster-comparison-head">❌ Phrases to Avoid (Disempowering)</div>
+              <ul>
+                <li>"Let me just do that for you before you hurt yourself."</li>
+                <li>"Sit back down, you shouldn't be walking alone today."</li>
+                <li>"You're too frail to carry that laundry basket."</li>
+                <li>"Hurry up, we have to leave right now."</li>
+              </ul>
+            </div>
+            <div class="poster-comparison-empower">
+              <div class="poster-comparison-head">✅ Phrases to Empower (Autonomy-Preserving)</div>
+              <ul>
+                <li>"Take your time, I am right beside you if you want an arm."</li>
+                <li>"Would you like to try standing on your own, or with light support?"</li>
+                <li>"Could you help me fold these towels while seated?"</li>
+                <li>"Let me know when you feel steady and ready to take the next step."</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4 Practical Pillars Grid -->
+          <div class="poster-block-title">
+            <span>🏛️ Four Practical Pillars</span> for Safe, Dignified Daily Care
+          </div>
+          <div class="poster-pillars-grid">
+            <div class="poster-pillar-card">
+              <div class="poster-pillar-header">
+                <div class="poster-pillar-num">1</div>
+                <div class="poster-pillar-title">Mobility &amp; Daily Movement</div>
+              </div>
+              <ul>
+                <li>Encourage gentle seated ankle pumps and knee extensions during morning coffee.</li>
+                <li>Break sedentary stretches every 45–60 minutes with a supported standing pause.</li>
+                <li>Practice sit-to-stand transitions from a sturdy armchair 3–5 times daily.</li>
+              </ul>
+            </div>
+
+            <div class="poster-pillar-card">
+              <div class="poster-pillar-header">
+                <div class="poster-pillar-num">2</div>
+                <div class="poster-pillar-title">Environmental Micro-Adjustments</div>
+              </div>
+              <ul>
+                <li>Ensure favorite chairs are firm, 18–20 inches high, and have armrests for leverage.</li>
+                <li>Keep main walkways clear of cords and runners without moving their personal belongings.</li>
+                <li>Install high-lumen, glare-free nightlights along the nocturnal bed-to-bathroom path.</li>
+              </ul>
+            </div>
+
+            <div class="poster-pillar-card">
+              <div class="poster-pillar-header">
+                <div class="poster-pillar-num">3</div>
+                <div class="poster-pillar-title">Hydration &amp; Nutrition Anchors</div>
+              </div>
+              <ul>
+                <li>Thirst perception naturally declines with age; keep a visible 32oz pitcher in plain sight.</li>
+                <li>Pair light daily movement with 25–30g dietary protein to preserve lean muscle tissue.</li>
+                <li>Serve hydrating foods throughout the day: sliced citrus, berries, and warm broths.</li>
+              </ul>
+            </div>
+
+            <div class="poster-pillar-card">
+              <div class="poster-pillar-header">
+                <div class="poster-pillar-num">4</div>
+                <div class="poster-pillar-title">Dignity &amp; Cognitive Vitality</div>
+              </div>
+              <ul>
+                <li>Involve loved ones in daily choices and light tasks (folding laundry, preparing tea, watering plants).</li>
+                <li>Validate frustrations empathetically rather than fact-checking minor memory lapses.</li>
+                <li>Celebrate daily micro-wins: walking to the mailbox, completing a gentle seated routine.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Caregiver Respite Box -->
+          <div class="poster-respite-box">
+            <div class="poster-respite-icon">💡</div>
+            <div class="poster-respite-content">
+              <h4>The Caregiver's Oxygen Mask Principle</h4>
+              <p>
+                Caregiver fatigue is a recognized clinical factor in home accidents and burnout. Taking 20 minutes daily for personal quiet, deep breathing, or a walk is not selfish—it is necessary for compassionate, sustainable care.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Sources -->
+          <div class="poster-bottom-sources">
+            <div>
+              <strong>Public Health Standards:</strong> Formulated in consultation with guidelines from <strong>National Institute on Aging (NIA / NIH)</strong> &amp; <strong>Health Canada</strong>.
+            </div>
+            <div>
+              <a href="sources.html" style="color:var(--primary); font-weight:700; text-decoration:underline;">View Complete Citations &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Companion Action Box -->
+        <div style="margin-top: 3.5rem; padding: 2.5rem; background: var(--bg-surface); border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); text-align: center;">
+          <span class="badge-pill">Complete Your Caregiver Toolkit</span>
+          <h3 style="font-size: 1.65rem; color: var(--primary); margin-top: 0.5rem; margin-bottom: 0.75rem;">Explore Free Environmental &amp; Exercise Resources</h3>
+          <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.75rem; line-height: 1.6;">
+            Pair this communication guide with our 12-point room-by-room home fall-proofing audit and gentle chair routines.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="toolkits.html" class="btn-primary" style="padding: 0.85rem 1.75rem;">
+              📋 Printable Fall-Proofing Audit &rarr;
+            </a>
+            <a href="videos.html" class="btn-outline" style="padding: 0.85rem 1.75rem;">
+              🎥 Follow-Along Video Lessons &rarr;
+            </a>
+            <a href="about.html#contact" class="btn-outline" style="padding: 0.85rem 1.75rem;">
+              🤝 Community &amp; Senior Inquiries &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 1.3;">
+          <div style="display:flex; align-items:center; gap:0.65rem; margin-bottom:0.75rem;">
+            <img src="images/logo.jpg" alt="Evergreen Aging Logo" style="width:36px; height:36px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);">
+            <h4 style="margin-bottom:0; font-size:1.35rem; color:#fff;">Evergreen Aging</h4>
+          </div>
+          <p>An independent educational channel and companion website dedicated to raising awareness, preventing debilitating falls, and extending active, joyful healthspan for older adults.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Free Toolkits</h5>
+          <ul class="footer-links">
+            <li><a href="toolkits.html">Home Fall-Proofing Audit</a></li>
+            <li><a href="toolkits.html">Doctor Visit Prep Sheet</a></li>
+            <li><a href="caregivers.html">Caregiver Infographic Guide</a></li>
+            <li><a href="toolkits.html">Refrigerator Medical Sheet</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Health Topics</h5>
+          <ul class="footer-links">
+            <li><a href="myths.html">Aging Myths Debunked</a></li>
+            <li><a href="videos.html">Fall Prevention Protocols</a></li>
+            <li><a href="videos.html">Chair &amp; Seated Routines</a></li>
+            <li><a href="videos.html">Nutrition, Protein &amp; Hydration</a></li>
+            <li><a href="videos.html">Brain Vitality &amp; Sleep</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Public Education</h5>
+          <ul class="footer-links">
+            <li>
+              <a href="https://www.youtube.com/@evergreen_aging?sub_confirmation=1" target="_blank" rel="noopener noreferrer" style="color: #ff6b6b; font-weight: 700;">
+                ▶ YouTube: @evergreen_aging
+              </a>
+            </li>
+            <li><a href="about.html">Our Non-Profit Mission</a></li>
+            <li><a href="about.html#contact">Community Inquiries</a></li>
+            <li><a href="sources.html">Clinical Sources &amp; Citations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Evergreen Aging &bull; Free Public Health Companion &bull; <a href="https://evergreenaging.ca" style="color:var(--accent);">evergreenaging.ca</a></p>
+        <p>Built for accessibility, high-contrast, screen-readers, and easy printing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261020_multipage_v1"></script>
+</body>
+</html>

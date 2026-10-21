@@ -1717,10 +1717,12 @@ window.shareToolkit = function(toolkitKey) {
   };
 
   const isCaregiver = toolkitKey === "caregiver_guide";
-  const baseUrl = window.location.href.split('#')[0].replace(/\/index\.html$/, '/').replace(/\/caregiver-poster\.html$/, '/');
+  const origin = window.location.origin || "";
+  let basePath = window.location.pathname;
+  basePath = basePath.substring(0, basePath.lastIndexOf("/") + 1);
   const resourceUrl = isCaregiver 
-    ? (baseUrl.endsWith('/') ? baseUrl + 'caregiver-poster.html' : baseUrl + '/caregiver-poster.html')
-    : (baseUrl.endsWith('/') ? baseUrl + 'index.html#toolkits' : baseUrl + '/index.html#toolkits');
+    ? (origin + basePath + "caregivers.html")
+    : (origin + basePath + "toolkits.html");
 
   let shareModal = document.getElementById("shareModal");
   if (!shareModal) {
