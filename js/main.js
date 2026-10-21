@@ -1193,51 +1193,50 @@ window.openPrintableToolkit = function(toolkitKey) {
 
         <!-- Dignity Communication Comparison (Say This, Not That) -->
         <div class="poster-section-title">
-          <span>🗣️ Communication Reframe: Phrases of Dignity</span>
+          <span>🗣️ Phrases of Dignity — Reframing Daily Interactions</span>
         </div>
         <div class="comparison-grid">
           <div class="compare-card avoid-col">
-            <strong>❌ Disempowering Phrasing:</strong>
-            <p>"You shouldn't be doing that anymore, let me do it."</p>
-            <div class="avoid-reason">Creates dependency &amp; feelings of burden.</div>
+            <strong>❌ Phrases to Avoid (Disempowering)</strong>
+            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li style="background: white; border: 1px solid #fecaca; border-left: 3px solid #dc2626; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #7f1d1d; display: flex; gap: 6px;">
+                <span style="color: #dc2626; font-weight: bold;">✕</span>
+                <span>"Let me just do that for you before you hurt yourself."</span>
+              </li>
+              <li style="background: white; border: 1px solid #fecaca; border-left: 3px solid #dc2626; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #7f1d1d; display: flex; gap: 6px;">
+                <span style="color: #dc2626; font-weight: bold;">✕</span>
+                <span>"Sit back down, you shouldn't be walking alone today."</span>
+              </li>
+              <li style="background: white; border: 1px solid #fecaca; border-left: 3px solid #dc2626; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #7f1d1d; display: flex; gap: 6px;">
+                <span style="color: #dc2626; font-weight: bold;">✕</span>
+                <span>"You're too frail to carry that laundry basket."</span>
+              </li>
+              <li style="background: white; border: 1px solid #fecaca; border-left: 3px solid #dc2626; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #7f1d1d; display: flex; gap: 6px;">
+                <span style="color: #dc2626; font-weight: bold;">✕</span>
+                <span>"Hurry up, we have to leave right now."</span>
+              </li>
+            </ul>
           </div>
           <div class="compare-card empower-col">
-            <strong>✅ Empowering Alternative:</strong>
-            <p>"Take all the time you need. I'm right here beside you if you'd like a hand."</p>
-            <div class="empower-reason">Preserves autonomy and control.</div>
-          </div>
-
-          <div class="compare-card avoid-col">
-            <strong>❌ Disempowering Phrasing:</strong>
-            <p>"Be careful! You're going to fall!"</p>
-            <div class="avoid-reason">Triggers fear reflex &amp; stiffens gait.</div>
-          </div>
-          <div class="compare-card empower-col">
-            <strong>✅ Empowering Alternative:</strong>
-            <p>"Let's pause and steady our feet together before our next step."</p>
-            <div class="empower-reason">Promotes deliberate, calm balance habits.</div>
-          </div>
-
-          <div class="compare-card avoid-col">
-            <strong>❌ Disempowering Phrasing:</strong>
-            <p>"Just sit down and rest all day—don't exert yourself."</p>
-            <div class="avoid-reason">Promotes joint stiffness &amp; muscle atrophy.</div>
-          </div>
-          <div class="compare-card empower-col">
-            <strong>✅ Empowering Alternative:</strong>
-            <p>"Let's walk over to the porch together so our knees stay loose."</p>
-            <div class="empower-reason">Encourages functional synovial joint lubrication.</div>
-          </div>
-
-          <div class="compare-card avoid-col">
-            <strong>❌ Disempowering Phrasing:</strong>
-            <p>"Did you forget to drink your water again?"</p>
-            <div class="avoid-reason">Feels patronizing; blunted thirst is biological.</div>
-          </div>
-          <div class="compare-card empower-col">
-            <strong>✅ Empowering Alternative:</strong>
-            <p>"I poured us both a cold glass with lemon—let's enjoy it together."</p>
-            <div class="empower-reason">Uses hospitality instead of policing.</div>
+            <strong>✅ Phrases to Empower (Autonomy-Preserving)</strong>
+            <ul style="list-style: none; padding: 0; margin: 0.5rem 0 0 0; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li style="background: white; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #14532d; font-weight: 600; display: flex; gap: 6px;">
+                <span style="color: #16a34a; font-weight: bold;">✓</span>
+                <span>"Take your time, I am right beside you if you want an arm."</span>
+              </li>
+              <li style="background: white; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #14532d; font-weight: 600; display: flex; gap: 6px;">
+                <span style="color: #16a34a; font-weight: bold;">✓</span>
+                <span>"Would you like to try standing on your own, or with light support?"</span>
+              </li>
+              <li style="background: white; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #14532d; font-weight: 600; display: flex; gap: 6px;">
+                <span style="color: #16a34a; font-weight: bold;">✓</span>
+                <span>"Could you help me fold these towels while seated?"</span>
+              </li>
+              <li style="background: white; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; padding: 6px 10px; border-radius: 4px; font-size: 10pt; color: #14532d; font-weight: 600; display: flex; gap: 6px;">
+                <span style="color: #16a34a; font-weight: bold;">✓</span>
+                <span>"Let me know when you feel steady and ready to take the next step."</span>
+              </li>
+            </ul>
           </div>
         </div>
 
