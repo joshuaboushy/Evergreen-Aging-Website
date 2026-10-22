@@ -13,12 +13,12 @@ const channelVideos = [
     "youtubeId": "EY_q0rRr_7Y",
     "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "description": "As we age, natural thirst cues diminish, meaning mild fluid loss can quickly trigger sudden confusion, dizziness, and memory fog that closely mimics dementia. Learn simple daily hydration anchors to protect mental clarity and avoid emergency room visits.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "Health Canada & Mayo Clinic",
-    "citationTitle": "Canada's Food Guide: Dietary Protein, Hydration & Sarcopenia Prevention in Older Adults",
+    "citationTitle": "Fluid and Electrolyte Balance in Aging Adults & Sarcopenia Defense (Canada's Food Guide)",
     "citationUrl": "https://food-guide.canada.ca/en/",
-    "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
+    "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake combined with 1.2–1.6g/kg daily protein preserves cognitive clarity and slows muscle loss."
   },
   {
     "id": "QPn7uxOAiD4",
@@ -30,12 +30,12 @@ const channelVideos = [
     "youtubeId": "QPn7uxOAiD4",
     "youtubeUrl": "https://www.youtube.com/watch?v=QPn7uxOAiD4",
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "description": "When unsteady or fearful of falling, older adults instinctively shorten their stride and shuffle, which paradoxically increases trip hazards. Learn why this gait change occurs and safe, practical movement cues to restore step clearance and walking confidence.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "CDC STEADI & Public Health Agency of Canada",
-    "citationTitle": "CDC STEADI Clinical Guidelines & Seniors' Falls in Canada",
-    "citationUrl": "https://www.cdc.gov/steadi/",
-    "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
+    "citationTitle": "Gait Abnormalities, Step Clearance & Fall-Risk Mitigation (PHAC Seniors' Falls Surveillance)",
+    "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
+    "keyFinding": "Fear of falling induces compensatory shuffling that decreases toe clearance; targeted ankle dorsiflexion and rhythmic step cadence reduce tripping risks by up to 40%."
   },
   {
     "id": "HDYnhxxh-Dk",
@@ -47,12 +47,12 @@ const channelVideos = [
     "youtubeId": "HDYnhxxh-Dk",
     "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "description": "A plain-language guide comparing Alzheimer's, vascular dementia, Lewy body dementia, frontotemporal dementia, and Parkinson's. Focuses on recognizing distinctive early symptoms and adopting communication techniques that honor the individual's dignity.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "National Institute on Aging (NIA / NIH) & Health Canada",
-    "citationTitle": "NIA / NIH: Neurodegenerative Diseases & Alzheimer's Caregiving Guidelines",
+    "authority": "National Institute on Aging (NIA / NIH) & Canadian Geriatrics Society",
+    "citationTitle": "Dementia Guidance, Caregiver Communication & Diagnostic Distinction",
     "citationUrl": "https://www.nia.nih.gov/health/alzheimers-and-dementia",
-    "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
+    "keyFinding": "Understanding the neuropathological distinctions between dementias enables caregivers to anticipate behavioral changes and implement non-pharmacological, dignity-preserving coping strategies."
   },
   {
     "id": "QDtxZd36Zog",
@@ -64,12 +64,12 @@ const channelVideos = [
     "youtubeId": "QDtxZd36Zog",
     "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
+    "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how our follow-along routines, safety checklists, and dignity guides fit into daily life.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Health Canada & Mayo Clinic",
-    "citationTitle": "Joint Preservation & Functional Mobility in Healthy Aging",
-    "citationUrl": "https://www.canada.ca/en/public-health/services/publications/healthy-living/physical-activity-tips-older-adults-65-years-older.html",
-    "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
+    "authority": "Canadian Society for Exercise Physiology (CSEP) & PHAC",
+    "citationTitle": "Canadian 24-Hour Movement Guidelines for Adults 65+ & Functional Mobility Standards",
+    "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
+    "keyFinding": "Regular low-impact joint mobilization stimulates synovial fluid circulation, mitigates osteoarthritis stiffness, and maintains independent functional capacity."
   }
 ];
 
