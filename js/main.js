@@ -200,21 +200,141 @@ function initAboutNavTabs() {
   updateAboutNavTabs();
 }
 
-// Top First-Time Medical & Health Disclaimer Popup (Homepage only)
+// Top First-Time Medical & Health Disclaimer Popup & Persistent Floating Bubble
 function initDisclaimerPopup() {
   const popup = document.getElementById("medicalDisclaimerPopup");
-  if (!popup) return;
-
-  try {
-    const isDismissed = localStorage.getItem("evergreen_disclaimer_dismissed") === "true";
-    if (!isDismissed) {
+  if (popup) {
+    try {
+      const isDismissed = localStorage.getItem("evergreen_disclaimer_dismissed") === "true";
+      if (!isDismissed) {
+        popup.style.display = "block";
+      } else {
+        popup.style.display = "none";
+      }
+    } catch (e) {
       popup.style.display = "block";
-    } else {
-      popup.style.display = "none";
     }
-  } catch (e) {
-    popup.style.display = "block";
   }
+
+  // Always initialize persistent floating disclaimer bubble
+  initFloatingDisclaimerBubble();
+}
+
+function initFloatingDisclaimerBubble() {
+  if (document.getElementById("disclaimerFloatingContainer")) return;
+
+  const container = document.createElement("div");
+  container.id = "disclaimerFloatingContainer";
+  container.className = "disclaimer-floating-container";
+  container.setAttribute("role", "region");
+  container.setAttribute("aria-label", "Medical and Health Disclaimer Trigger");
+
+  container.innerHTML = `
+    <!-- Floating Trigger Bubble -->
+    <button id="disclaimerFloatingBtn" class="disclaimer-floating-bubble" type="button" aria-expanded="false" aria-controls="disclaimerFloatingCard" aria-label="Open Medical and Health Disclaimer" title="View Medical & Health Disclaimer">
+      <span class="disclaimer-bubble-icon" aria-hidden="true">⚠️</span>
+      <span class="disclaimer-bubble-text">Medical Disclaimer</span>
+    </button>
+
+    <!-- Floating Disclaimer Popup Card -->
+    <div id="disclaimerFloatingCard" class="disclaimer-floating-card" role="dialog" aria-modal="false" aria-labelledby="floatingDisclaimerHeading">
+      <div class="disclaimer-card-header">
+        <div class="disclaimer-card-title-wrap">
+          <span class="disclaimer-bubble-icon" aria-hidden="true">⚠️</span>
+          <h4 id="floatingDisclaimerHeading" class="disclaimer-card-title">Medical &amp; Health Disclaimer</h4>
+        </div>
+        <button type="button" id="disclaimerFloatingCloseBtn" class="disclaimer-card-close" aria-label="Close medical disclaimer" title="Close disclaimer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="disclaimer-card-body">
+        <p>
+          Evergreen Aging is an independent educational initiative. Content provided on this website and on the Evergreen Aging YouTube channel is for educational and informational purposes only and does not constitute personalized medical advice, diagnosis, or clinical treatment. Always consult with your primary care physician, physical therapist, or qualified healthcare professional before beginning any new exercise routine, dietary adjustment, or lifestyle modification.
+        </p>
+      </div>
+      <div class="disclaimer-card-footer">
+        <button type="button" id="disclaimerFloatingUnderstandBtn" class="disclaimer-card-understand-btn">
+          I Understand
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(container);
+
+  const bubbleBtn = document.getElementById("disclaimerFloatingBtn");
+  const card = document.getElementById("disclaimerFloatingCard");
+  const closeBtn = document.getElementById("disclaimerFloatingCloseBtn");
+  const understandBtn = document.getElementById("disclaimerFloatingUnderstandBtn");
+
+  function openCard() {
+    card.classList.add("open");
+    bubbleBtn.classList.add("active");
+    bubbleBtn.setAttribute("aria-expanded", "true");
+    understandBtn.focus();
+  }
+
+  function closeCard(saveDismissal = false) {
+    card.classList.remove("open");
+    bubbleBtn.classList.remove("active");
+    bubbleBtn.setAttribute("aria-expanded", "false");
+    bubbleBtn.focus();
+
+    if (saveDismissal) {
+      try {
+        localStorage.setItem("evergreen_disclaimer_dismissed", "true");
+      } catch (e) {}
+
+      // If top banner exists on page, hide it too
+      const topBanner = document.getElementById("medicalDisclaimerPopup");
+      if (topBanner && topBanner.style.display !== "none") {
+        topBanner.classList.add("dismissing");
+        setTimeout(() => {
+          topBanner.style.display = "none";
+        }, 220);
+      }
+    }
+  }
+
+  bubbleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (card.classList.contains("open")) {
+      closeCard(false);
+    } else {
+      openCard();
+    }
+  });
+
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeCard(false);
+  });
+
+  understandBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeCard(true);
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (card.classList.contains("open") && !container.contains(e.target)) {
+      closeCard(false);
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && card.classList.contains("open")) {
+      closeCard(false);
+    }
+  });
+
+  // Expose helpers globally
+  window.openDisclaimerFloatingCard = openCard;
+  window.closeDisclaimerFloatingCard = closeCard;
 }
 
 window.dismissDisclaimerPopup = function() {

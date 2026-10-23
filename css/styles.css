@@ -2637,11 +2637,11 @@ body {
 /* Toast Notification */
 .toast-notice {
   position: fixed;
-  bottom: 24px;
+  bottom: 74px;
   right: 24px;
   background: var(--primary);
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.4rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   display: flex;
@@ -3352,6 +3352,226 @@ html.high-contrast .disclaimer-popup-btn {
 }
 html.high-contrast .disclaimer-popup-close {
   background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Floating Medical Disclaimer Bubble & Interactive Popup Card */
+.disclaimer-floating-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+}
+
+.disclaimer-floating-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  color: #92400e;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: inherit;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(180, 83, 9, 0.08);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  text-decoration: none;
+}
+
+.disclaimer-floating-bubble:hover {
+  background: #ffffff;
+  border-color: #d97706;
+  color: #78350f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(180, 83, 9, 0.16);
+}
+
+.disclaimer-floating-bubble:active {
+  transform: translateY(0);
+}
+
+.disclaimer-floating-bubble:focus-visible {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}
+
+.disclaimer-floating-bubble.active {
+  background: #fef3c7;
+  border-color: #d97706;
+  color: #78350f;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.15);
+}
+
+.disclaimer-bubble-icon {
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
+.disclaimer-floating-card {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  width: 390px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-left: 5px solid #d97706;
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(180, 83, 9, 0.08);
+  padding: 1.15rem 1.25rem;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+}
+
+.disclaimer-floating-card.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.disclaimer-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.disclaimer-card-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #92400e;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.disclaimer-card-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.disclaimer-card-close:hover {
+  background: #fde68a;
+  color: #451a03;
+  transform: scale(1.08);
+}
+
+.disclaimer-card-body p {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #451a03;
+  margin: 0 0 0.85rem 0;
+}
+
+.disclaimer-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.disclaimer-card-understand-btn {
+  background: #92400e;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.42rem 1.1rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.disclaimer-card-understand-btn:hover {
+  background: #78350f;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .disclaimer-floating-container {
+    bottom: 16px;
+    right: 16px;
+  }
+  .disclaimer-floating-bubble {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.78rem;
+  }
+  .disclaimer-floating-card {
+    right: 0;
+    width: calc(100vw - 32px);
+    bottom: calc(100% + 10px);
+    padding: 1rem;
+  }
+  .toast-notice {
+    bottom: 68px;
+    right: 16px;
+    left: 16px;
+  }
+}
+
+/* High Contrast mode for Floating Disclaimer */
+html.high-contrast .disclaimer-floating-bubble {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: none !important;
+}
+
+html.high-contrast .disclaimer-floating-bubble.active {
+  background: #ffd700 !important;
+  color: #000000 !important;
+}
+
+html.high-contrast .disclaimer-floating-card {
+  background: #000000 !important;
+  border: 2.5px solid #ffd700 !important;
+  box-shadow: none !important;
+}
+
+html.high-contrast .disclaimer-floating-card .disclaimer-card-title {
+  color: #ffd700 !important;
+}
+
+html.high-contrast .disclaimer-floating-card .disclaimer-card-body p {
+  color: #ffffff !important;
+}
+
+html.high-contrast .disclaimer-card-close {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 1px solid #ffd700 !important;
+}
+
+html.high-contrast .disclaimer-card-understand-btn {
+  background: #ffd700 !important;
   color: #000000 !important;
   border: 2px solid #000000 !important;
 }
