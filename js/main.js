@@ -1993,7 +1993,7 @@ window.openPrintableToolkit = function(toolkitKey) {
   printWindow.document.close();
 };
 
-// 8. Topic Suggestion Handler (Routes to joshuaboushy@gmail.com)
+// 8. Topic Suggestion Handler (Routes to contact@evergreenaging.ca)
 function initTopicSuggestionForm() {
   const form = document.getElementById("topicForm");
   if (!form) return;
@@ -2005,7 +2005,7 @@ function initTopicSuggestionForm() {
 
     if (!topic) return;
 
-    const recipient = "joshuaboushy@gmail.com";
+    const recipient = "contact@evergreenaging.ca";
     const subject = encodeURIComponent("Evergreen Aging: Viewer Question / Topic Suggestion");
     const body = encodeURIComponent(
       `Hello Joshua,\n\nI have a health question / topic suggestion for Evergreen Aging:\n\n"${topic}"\n\n---\nSubmitted via Evergreen Aging Community Form\nWebsite: https://evergreenaging.ca`
@@ -2021,7 +2021,7 @@ function initTopicSuggestionForm() {
   });
 }
 
-// 8b. Community & Senior Center Inquiries Contact Form Handler (Routes to joshuaboushy@gmail.com)
+// 8b. Community & Senior Center Inquiries Contact Form Handler (Routes to contact@evergreenaging.ca)
 function initContactForm() {
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -2040,7 +2040,7 @@ function initContactForm() {
 
     if (!message) return;
 
-    const recipient = "joshuaboushy@gmail.com";
+    const recipient = "contact@evergreenaging.ca";
     const subject = encodeURIComponent(`Evergreen Aging Inquiry from ${name || "Community Member"}`);
     const bodyLines = [
       `Sender Name: ${name || "Not provided"}`,
