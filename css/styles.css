@@ -3420,6 +3420,10 @@ html.high-contrast .disclaimer-morph-label {
   margin: 0;
 }
 
+.disclaimer-popup-text + .disclaimer-popup-text {
+  margin-top: 0.5rem;
+}
+
 .disclaimer-popup-actions {
   display: flex;
   align-items: center;
@@ -3641,7 +3645,11 @@ html.high-contrast .disclaimer-popup-close {
   font-size: 0.88rem;
   line-height: 1.55;
   color: #451a03;
-  margin: 0 0 0.85rem 0;
+  margin: 0 0 0.65rem 0;
+}
+
+.disclaimer-card-body p:last-child {
+  margin-bottom: 0.85rem;
 }
 
 .disclaimer-card-footer {
