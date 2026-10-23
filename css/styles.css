@@ -2733,7 +2733,7 @@ body {
 /* Toast Notification */
 .toast-notice {
   position: fixed;
-  bottom: 74px;
+  bottom: 80px;
   right: 24px;
   background: var(--primary);
   color: white;
@@ -3391,7 +3391,7 @@ html.high-contrast .toast-notice {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
+  font-size: 0.94rem;
   font-weight: 700;
   color: #92400e;
   font-family: inherit;
@@ -3560,9 +3560,9 @@ html.high-contrast .disclaimer-popup-close {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(217, 119, 6, 0.35);
   color: #92400e;
-  padding: 0.45rem 0.95rem;
+  padding: 0.52rem 1.15rem;
   border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+  font-size: 0.94rem;
   font-weight: 700;
   font-family: inherit;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(180, 83, 9, 0.08);
@@ -3712,8 +3712,8 @@ html.high-contrast .disclaimer-popup-close {
     right: 16px;
   }
   .disclaimer-floating-bubble {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.78rem;
+    padding: 0.46rem 0.95rem;
+    font-size: 0.88rem;
   }
   .disclaimer-floating-card {
     right: 0;
@@ -3722,7 +3722,7 @@ html.high-contrast .disclaimer-popup-close {
     padding: 1rem;
   }
   .toast-notice {
-    bottom: 68px;
+    bottom: 74px;
     right: 16px;
     left: 16px;
   }
