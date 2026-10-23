@@ -250,7 +250,7 @@ function initFloatingDisclaimerBubble() {
       </div>
       <div class="disclaimer-card-body">
         <p>
-          Evergreen Aging is an independent educational initiative. Content provided on this website and on the Evergreen Aging YouTube channel is for educational and informational purposes only and does not constitute personalized medical advice, diagnosis, or clinical treatment. Always consult with your primary care physician, physical therapist, or qualified healthcare professional before beginning any new exercise routine, dietary adjustment, or lifestyle modification.
+          Evergreen Aging is an independent educational initiative. Content provided on this website and on the Evergreen Aging YouTube channel does not constitute personalized medical advice, diagnosis, or clinical treatment, and is for educational and informational purposes only. Always consult with your primary care physician, physical therapist, or qualified healthcare professional before beginning any new exercise routine, dietary adjustment, or lifestyle modification.
         </p>
       </div>
       <div class="disclaimer-card-footer">
