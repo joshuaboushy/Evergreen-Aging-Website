@@ -233,7 +233,7 @@ function initFloatingDisclaimerBubble() {
     <!-- Floating Trigger Bubble -->
     <button id="disclaimerFloatingBtn" class="disclaimer-floating-bubble" type="button" aria-expanded="false" aria-controls="disclaimerFloatingCard" aria-label="Open Medical and Health Disclaimer" title="View Medical & Health Disclaimer">
       <span class="disclaimer-bubble-icon" aria-hidden="true">⚠️</span>
-      <span class="disclaimer-bubble-text">Medical Disclaimer</span>
+      <span class="disclaimer-bubble-text">Disclaimer</span>
     </button>
 
     <!-- Floating Disclaimer Popup Card -->
