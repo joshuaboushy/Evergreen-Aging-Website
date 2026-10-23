@@ -424,7 +424,7 @@ window.dismissDisclaimerPopup = function() {
   const bubbleRect = bubble.getBoundingClientRect();
   const cardRect = card.getBoundingClientRect();
 
-  // Create morphing clone element
+  // Create morphing clone element positioned fixed on top of original card
   const clone = document.createElement("div");
   clone.className = "disclaimer-flying-morph";
   clone.style.top = cardRect.top + "px";
@@ -438,7 +438,7 @@ window.dismissDisclaimerPopup = function() {
   contentEl.innerHTML = card.innerHTML;
   clone.appendChild(contentEl);
 
-  // Centered label element that appears as pill shrinks to ~1.3x size
+  // Centered label element that appears as pill forms
   const labelEl = document.createElement("div");
   labelEl.className = "disclaimer-morph-label";
   labelEl.textContent = "Disclaimer";
@@ -449,19 +449,9 @@ window.dismissDisclaimerPopup = function() {
   // Hide original card to prevent visual ghosting
   card.style.opacity = "0";
 
-  // Keep bubble invisible until clone reaches it
+  // Keep bubble hidden until clone arrives
   bubble.style.opacity = "0";
   bubble.style.pointerEvents = "auto";
-
-  // Calculate trajectory and scaling deltas
-  const targetCenterX = bubbleRect.left + bubbleRect.width / 2;
-  const targetCenterY = bubbleRect.top + bubbleRect.height / 2;
-  const sourceCenterX = cardRect.left + cardRect.width / 2;
-  const sourceCenterY = cardRect.top + cardRect.height / 2;
-  const deltaX = targetCenterX - sourceCenterX;
-  const deltaY = targetCenterY - sourceCenterY;
-  const scaleX = bubbleRect.width / cardRect.width;
-  const scaleY = bubbleRect.height / cardRect.height;
 
   // Concurrently collapse the top container space smoothly
   popup.style.maxHeight = popup.offsetHeight + "px";
@@ -469,35 +459,35 @@ window.dismissDisclaimerPopup = function() {
     popup.classList.add("collapsing-up");
   });
 
-  // Dissolve initial content quickly (0-180ms)
+  // 1. Dissolve initial card content quickly (0-130ms)
   contentEl.animate([
     { opacity: 1, transform: "scale(1)" },
     { opacity: 0, transform: "scale(0.96)" }
   ], {
-    duration: 180,
+    duration: 130,
     fill: "forwards",
     easing: "ease-out"
   });
 
-  // Fade in and counter-scale the centered "Disclaimer" label as it reaches ~1.3x size (200-340ms)
-  const labelKeyframes = [
-    { offset: 0, opacity: 0, transform: `scale(1, 1)` },
-    { offset: 0.45, opacity: 0, transform: `scale(${1 / (1 + (scaleX - 1) * 0.72)}, ${1 / (1 + (scaleY - 1) * 0.72)})` },
-    { offset: 0.60, opacity: 1, transform: `scale(${1 / (1 + (scaleX - 1) * 0.88)}, ${1 / (1 + (scaleY - 1) * 0.88)})` },
-    { offset: 0.80, opacity: 1, transform: `scale(${1 / (1 + (scaleX - 1) * 0.96)}, ${1 / (1 + (scaleY - 1) * 0.96)})` },
-    { offset: 1.00, opacity: 1, transform: `scale(${1 / scaleX}, ${1 / scaleY})` }
-  ];
-
-  labelEl.animate(labelKeyframes, {
-    duration: 450,
-    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+  // 2. Fade in the crisp, unscaled "Disclaimer" label as the morph reaches pill dimensions
+  labelEl.animate([
+    { opacity: 0 },
+    { offset: 0.35, opacity: 0 },
+    { offset: 0.65, opacity: 1 },
+    { offset: 1.0, opacity: 1 }
+  ], {
+    duration: 420,
+    easing: "ease-out",
     fill: "forwards"
   });
 
-  // Flight & Pill-Morph Animation
+  // 3. Flight & Dimension-Morph Animation (Exact geometry transition with zero scaling distortion)
   const flight = clone.animate([
     {
-      transform: "translate(0px, 0px) scale(1)",
+      top: cardRect.top + "px",
+      left: cardRect.left + "px",
+      width: cardRect.width + "px",
+      height: cardRect.height + "px",
       borderRadius: "8px",
       borderColor: "#fde68a",
       borderLeftWidth: "5px",
@@ -506,12 +496,15 @@ window.dismissDisclaimerPopup = function() {
     },
     {
       offset: 0.35,
-      borderRadius: "28px",
+      borderRadius: "24px",
       borderLeftWidth: "2px",
       borderColor: "rgba(217, 119, 6, 0.45)"
     },
     {
-      transform: `translate(${deltaX}px, ${deltaY}px) scale(${scaleX}, ${scaleY})`,
+      top: bubbleRect.top + "px",
+      left: bubbleRect.left + "px",
+      width: bubbleRect.width + "px",
+      height: bubbleRect.height + "px",
       borderRadius: "999px",
       borderLeftWidth: "1px",
       borderColor: "rgba(217, 119, 6, 0.35)",
@@ -519,7 +512,7 @@ window.dismissDisclaimerPopup = function() {
       boxShadow: "0 4px 14px rgba(0, 0, 0, 0.08)"
     }
   ], {
-    duration: 450,
+    duration: 420,
     easing: "cubic-bezier(0.16, 1, 0.3, 1)",
     fill: "forwards"
   });
@@ -532,17 +525,22 @@ window.dismissDisclaimerPopup = function() {
     card.style.opacity = "";
     isDisclaimerFlightActive = false;
 
-    // Reveal bubble with spring settle pop
+    // Seamless handoff: reveal bubble in exact landing place with zero scale drops or flash
+    bubble.style.transition = "none";
     bubble.style.opacity = "1";
-    bubble.animate([
-      { transform: "scale(0.85)", opacity: 0.8 },
-      { transform: "scale(1.08)", offset: 0.45 },
-      { transform: "scale(0.98)", offset: 0.75 },
-      { transform: "scale(1)", opacity: 1 }
+
+    const popAnim = bubble.animate([
+      { transform: "scale(1)" },
+      { transform: "scale(1.05)", offset: 0.45 },
+      { transform: "scale(1)" }
     ], {
-      duration: 220,
-      easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+      duration: 180,
+      easing: "ease-out"
     });
+
+    popAnim.onfinish = () => {
+      bubble.style.transition = "";
+    };
   };
 };
 

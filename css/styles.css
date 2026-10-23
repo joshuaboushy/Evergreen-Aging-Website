@@ -3371,8 +3371,7 @@ html.high-contrast .toast-notice {
   border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(180, 83, 9, 0.16);
   overflow: hidden;
-  will-change: transform, border-radius, opacity;
-  transform-origin: center center;
+  will-change: top, left, width, height, border-radius;
   z-index: 99999;
 }
 
