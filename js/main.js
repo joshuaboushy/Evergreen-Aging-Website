@@ -547,8 +547,8 @@ function renderVideos(videosToRender, category = "all", query = "", isToggleActi
           Official video lessons for <strong>${catName}</strong> are currently being scripted and filmed for the Evergreen Aging YouTube channel.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="https://www.youtube.com/@evergreen_aging?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-yt">
-            Subscribe on YouTube for Release Alerts
+          <a href="https://www.youtube.com/@evergreen_aging" target="_blank" rel="noopener noreferrer" class="btn-yt">
+            Visit YouTube Channel
           </a>
           <a href="#topicForm" class="btn-outline">
             Suggest a Topic for This Category &darr;
@@ -726,7 +726,7 @@ window.openVideoModal = function(videoId) {
   if (title) title.textContent = video.title;
   if (desc) desc.textContent = video.description;
   if (ytBtn) {
-    ytBtn.href = video.youtubeUrl || "https://www.youtube.com/@evergreen_aging?sub_confirmation=1";
+    ytBtn.href = video.youtubeUrl || "https://www.youtube.com/@evergreen_aging";
   }
   
   if (citationContent) {
@@ -764,7 +764,7 @@ window.openVideoModal = function(videoId) {
             <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:1rem; line-height:1.3;">${video.title}</h3>
             <p style="font-size:0.95rem; color:#d0dfd4; margin-bottom:1.5rem;">Watch this episode on the official Evergreen Aging channel with full chapter timestamps and exercises.</p>
             <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
-              <a href="${video.youtubeUrl || 'https://www.youtube.com/@evergreen_aging?sub_confirmation=1'}" target="_blank" rel="noopener noreferrer" class="btn-yt" style="font-size:1.05rem; padding:0.8rem 1.6rem;">
+              <a href="${video.youtubeUrl || 'https://www.youtube.com/@evergreen_aging'}" target="_blank" rel="noopener noreferrer" class="btn-yt" style="font-size:1.05rem; padding:0.8rem 1.6rem;">
                 <svg style="width:22px;height:22px;fill:currentColor;" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Watch on YouTube
               </a>
