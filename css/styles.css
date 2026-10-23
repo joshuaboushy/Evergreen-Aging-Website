@@ -3964,10 +3964,7 @@ html.high-contrast .page-hero-banner {
 }
 
 .founder-card-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.25rem;
-  align-items: flex-start;
+  display: flow-root;
   background: var(--bg-surface);
   border: 1.5px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -3976,19 +3973,27 @@ html.high-contrast .page-hero-banner {
 }
 
 .founder-photo-col {
+  float: left;
+  width: 260px;
+  margin: 0 2rem 1.25rem 0;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  box-shadow: 0 4px 14px rgba(27, 67, 50, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .founder-photo-wrap {
   width: 100%;
-  max-width: 260px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.12);
-  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   aspect-ratio: 3 / 4;
   background: #f0f4f1;
 }
@@ -4006,6 +4011,10 @@ html.high-contrast .page-hero-banner {
   flex-direction: column;
   gap: 0.65rem;
   width: 100%;
+}
+
+.founder-content-col {
+  display: block;
 }
 
 .founder-header {
@@ -4051,10 +4060,12 @@ html.high-contrast .page-hero-banner {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--text-muted);
-  display: flex;
-  flex-direction: column;
-  gap: 0.95rem;
-  margin-bottom: 1.5rem;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.founder-bio p {
+  margin-bottom: 0.95rem;
 }
 
 .founder-bio strong {
@@ -4067,8 +4078,10 @@ html.high-contrast .page-hero-banner {
   border-left: 4px solid var(--accent);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 1.15rem 1.35rem;
-  margin: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
   box-shadow: 0 2px 8px rgba(27, 67, 50, 0.04);
+  clear: both;
 }
 
 .founder-quote-tag {
@@ -4104,15 +4117,13 @@ html.high-contrast .page-hero-banner {
 
 @media (max-width: 820px) {
   .founder-card-layout {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
     padding: 1.5rem 1.25rem;
   }
   .founder-photo-col {
-    align-items: center;
-  }
-  .founder-photo-wrap {
-    max-width: 220px;
+    float: none;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto 1.75rem auto;
   }
 }
 
@@ -4120,6 +4131,11 @@ html.high-contrast .page-hero-banner {
 html.high-contrast .founder-card-layout {
   background: #ffffff !important;
   border: 2px solid #000000 !important;
+}
+html.high-contrast .founder-photo-col {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  box-shadow: none !important;
 }
 html.high-contrast .founder-photo-wrap {
   border: 2px solid #000000 !important;
