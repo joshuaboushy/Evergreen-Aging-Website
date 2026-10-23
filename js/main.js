@@ -200,20 +200,58 @@ function initAboutNavTabs() {
   updateAboutNavTabs();
 }
 
-// Top First-Time Medical & Health Disclaimer Popup & Persistent Floating Bubble
+// Top Medical & Health Disclaimer Popup & Persistent Floating Bubble
 function initDisclaimerPopup() {
+  // Clean up legacy permanent dismissal so banner can show in fresh new tabs
+  try {
+    localStorage.removeItem("evergreen_disclaimer_dismissed");
+  } catch (e) {}
+
   const popup = document.getElementById("medicalDisclaimerPopup");
   if (popup) {
+    let isSuppressed = false;
     try {
-      const isDismissed = localStorage.getItem("evergreen_disclaimer_dismissed") === "true";
-      if (!isDismissed) {
-        popup.style.display = "block";
-      } else {
-        popup.style.display = "none";
-      }
-    } catch (e) {
+      isSuppressed = sessionStorage.getItem("evergreen_disclaimer_suppressed") === "true";
+      sessionStorage.setItem("evergreen_home_visited", "true");
+    } catch (e) {}
+
+    if (isSuppressed) {
+      popup.style.display = "none";
+    } else {
       popup.style.display = "block";
     }
+
+    // When navigating away from Home, suppress banner for future visits within this tab session
+    const suppressForSession = () => {
+      try {
+        sessionStorage.setItem("evergreen_disclaimer_suppressed", "true");
+      } catch (e) {}
+    };
+
+    window.addEventListener("beforeunload", suppressForSession);
+    window.addEventListener("pagehide", suppressForSession);
+
+    // Also attach to internal navigation links on homepage for immediate state capture
+    document.querySelectorAll("a[href]").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#") && !href.startsWith("mailto:") && !href.startsWith("tel:") && !href.startsWith("http")) {
+        link.addEventListener("click", suppressForSession);
+      }
+    });
+
+    // Handle bfcache page restoration (e.g. browser Back button returning to Home)
+    window.addEventListener("pageshow", () => {
+      try {
+        if (sessionStorage.getItem("evergreen_disclaimer_suppressed") === "true") {
+          popup.style.display = "none";
+          const bubble = document.getElementById("disclaimerFloatingBtn");
+          if (bubble) {
+            bubble.style.opacity = "1";
+            bubble.style.pointerEvents = "auto";
+          }
+        }
+      } catch (e) {}
+    });
   }
 
   // Always initialize persistent floating disclaimer bubble
@@ -298,7 +336,7 @@ function initFloatingDisclaimerBubble() {
 
     if (saveDismissal) {
       try {
-        localStorage.setItem("evergreen_disclaimer_dismissed", "true");
+        sessionStorage.setItem("evergreen_disclaimer_suppressed", "true");
       } catch (e) {}
 
       // If top banner exists on page, hide it too
@@ -361,9 +399,9 @@ window.dismissDisclaimerPopup = function() {
   const card = popup.querySelector(".disclaimer-popup-card");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Save dismissed state to localStorage
+  // Save dismissed state to sessionStorage for this tab session
   try {
-    localStorage.setItem("evergreen_disclaimer_dismissed", "true");
+    sessionStorage.setItem("evergreen_disclaimer_suppressed", "true");
   } catch (e) {}
 
   // Fallback for reduced motion or missing elements: gentle fade
