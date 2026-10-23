@@ -1243,7 +1243,7 @@ window.openPrintableToolkit = function(toolkitKey) {
           <img src="images/logo.jpg" alt="Evergreen Aging" class="poster-logo">
           <div class="poster-title-area">
             <h1>${toolkit.title}</h1>
-            <div class="poster-tagline">Evergreen Aging &bull; Educational Infographic Poster for Families &amp; Caregivers</div>
+            <div class="poster-tagline">Evergreen Aging &bull; Educational Infographic Guide for Families, Care Partners &amp; Frontline Staff (PSWs, OT/PT)</div>
           </div>
         </div>
 
