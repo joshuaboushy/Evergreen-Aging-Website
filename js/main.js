@@ -5,7 +5,7 @@
 const channelVideos = [
   {
     "id": "EY_q0rRr_7Y",
-    "title": "Why Mild Dehydration Looks Like Dementia in Seniors",
+    "title": "Hydration Physiology in Older Adults: Thirst Cues & Cognitive Vitality",
     "category": "nutrition",
     "categoryLabel": "Nutrition, Protein & Hydration",
     "duration": "Official Guide",
@@ -13,7 +13,7 @@ const channelVideos = [
     "youtubeId": "EY_q0rRr_7Y",
     "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
-    "description": "As we age, natural thirst cues diminish, meaning mild fluid loss can quickly trigger sudden confusion, dizziness, and memory fog that closely mimics dementia. Learn simple daily hydration anchors to protect mental clarity and avoid emergency room visits.",
+    "description": "Explores how natural thirst cues diminish with age and the physiological importance of consistent daily fluid intake for baseline cognitive vitality. (Note: Sudden confusion or rapid cognitive shifts require prompt medical evaluation by a healthcare professional).",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "Health Canada & Mayo Clinic",
     "citationTitle": "Fluid and Electrolyte Balance in Aging Adults & Sarcopenia Defense (Canada's Food Guide)",
