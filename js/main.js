@@ -64,7 +64,7 @@ const channelVideos = [
     "youtubeId": "QDtxZd36Zog",
     "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
-    "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how our follow-along routines, safety checklists, and dignity guides fit into daily life.",
+    "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how these follow-along routines, safety checklists, and dignity guides fit into daily life.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "Canadian Society for Exercise Physiology (CSEP) & PHAC",
     "citationTitle": "Canadian 24-Hour Movement Guidelines for Adults 65+ & Functional Mobility Standards",
@@ -525,7 +525,7 @@ function renderVideos(videosToRender, category = "all", query = "", isToggleActi
           <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🔍</div>
           <h3 style="font-size: 1.4rem; color: var(--primary); margin-bottom: 0.4rem;">No Matching Video Found Yet</h3>
           <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.55;">
-            Only videos published to the official <strong>Evergreen Aging</strong> YouTube channel appear here. Have a topic or question you'd like us to cover?
+            Only videos published to the official <strong>Evergreen Aging</strong> YouTube channel appear here. Have a topic or question you'd like me to cover?
           </p>
           <a href="#topicForm" class="btn-primary" style="display:inline-flex;">
             Suggest This Video Topic &darr;
