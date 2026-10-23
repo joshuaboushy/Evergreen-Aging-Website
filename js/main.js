@@ -2024,6 +2024,8 @@ function initContactForm() {
 }
 
 // 9. Toast Notification System
+let toastTimeoutId = null;
+
 function showToast(message) {
   let toast = document.getElementById("siteToast");
   if (!toast) {
@@ -2033,18 +2035,30 @@ function showToast(message) {
     document.body.appendChild(toast);
   }
 
+  // Clear any existing active timer to prevent premature fade-out on repeated clicks
+  if (toastTimeoutId) {
+    clearTimeout(toastTimeoutId);
+    toastTimeoutId = null;
+  }
+
   toast.innerHTML = `
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
       <polyline points="22 4 12 14.01 9 11.01"></polyline>
     </svg>
     <span>${message}</span>
   `;
 
+  // Trigger smooth fade-in
+  toast.classList.remove("show");
+  void toast.offsetWidth; // trigger reflow
   toast.classList.add("show");
-  setTimeout(() => {
+
+  // Fade out smoothly after 3s (3000ms)
+  toastTimeoutId = setTimeout(() => {
     toast.classList.remove("show");
-  }, 4500);
+    toastTimeoutId = null;
+  }, 3000);
 }
 
 // 10. Email & Share Resource with Family or Caregiver
