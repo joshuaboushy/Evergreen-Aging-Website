@@ -3260,10 +3260,41 @@ body {
   z-index: 99999;
 }
 
+.disclaimer-morph-content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.disclaimer-morph-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #92400e;
+  font-family: inherit;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
 html.high-contrast .disclaimer-flying-morph {
   background: #000000 !important;
   border: 2px solid #ffd700 !important;
   box-shadow: none !important;
+}
+
+html.high-contrast .disclaimer-morph-label {
+  color: #ffd700 !important;
 }
 
 .disclaimer-popup-card {

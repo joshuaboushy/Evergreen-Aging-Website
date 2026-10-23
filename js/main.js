@@ -390,7 +390,19 @@ window.dismissDisclaimerPopup = function() {
   clone.style.left = cardRect.left + "px";
   clone.style.width = cardRect.width + "px";
   clone.style.height = cardRect.height + "px";
-  clone.innerHTML = card.innerHTML;
+
+  // Content wrapper for initial card text
+  const contentEl = document.createElement("div");
+  contentEl.className = "disclaimer-morph-content";
+  contentEl.innerHTML = card.innerHTML;
+  clone.appendChild(contentEl);
+
+  // Centered label element that appears as pill shrinks to ~1.3x size
+  const labelEl = document.createElement("div");
+  labelEl.className = "disclaimer-morph-label";
+  labelEl.textContent = "Disclaimer";
+  clone.appendChild(labelEl);
+
   document.body.appendChild(clone);
 
   // Hide original card to prevent visual ghosting
@@ -416,17 +428,29 @@ window.dismissDisclaimerPopup = function() {
     popup.classList.add("collapsing-up");
   });
 
-  // Fade out internal text quickly as it contracts into a solid pill
-  const innerChildren = clone.querySelectorAll(".disclaimer-popup-body, .disclaimer-popup-actions, .disclaimer-popup-icon-wrap");
-  innerChildren.forEach(el => {
-    el.animate([
-      { opacity: 1 },
-      { opacity: 0 }
-    ], {
-      duration: 160,
-      fill: "forwards",
-      easing: "ease-out"
-    });
+  // Dissolve initial content quickly (0-180ms)
+  contentEl.animate([
+    { opacity: 1, transform: "scale(1)" },
+    { opacity: 0, transform: "scale(0.96)" }
+  ], {
+    duration: 180,
+    fill: "forwards",
+    easing: "ease-out"
+  });
+
+  // Fade in and counter-scale the centered "Disclaimer" label as it reaches ~1.3x size (200-340ms)
+  const labelKeyframes = [
+    { offset: 0, opacity: 0, transform: `scale(1, 1)` },
+    { offset: 0.45, opacity: 0, transform: `scale(${1 / (1 + (scaleX - 1) * 0.72)}, ${1 / (1 + (scaleY - 1) * 0.72)})` },
+    { offset: 0.60, opacity: 1, transform: `scale(${1 / (1 + (scaleX - 1) * 0.88)}, ${1 / (1 + (scaleY - 1) * 0.88)})` },
+    { offset: 0.80, opacity: 1, transform: `scale(${1 / (1 + (scaleX - 1) * 0.96)}, ${1 / (1 + (scaleY - 1) * 0.96)})` },
+    { offset: 1.00, opacity: 1, transform: `scale(${1 / scaleX}, ${1 / scaleY})` }
+  ];
+
+  labelEl.animate(labelKeyframes, {
+    duration: 450,
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    fill: "forwards"
   });
 
   // Flight & Pill-Morph Animation
