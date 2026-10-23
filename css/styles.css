@@ -312,19 +312,93 @@ html.high-contrast .site-footer {
   border-top: 3px solid #ffd700 !important;
   color: #ffffff !important;
 }
-html.high-contrast .footer-col h5,
-html.high-contrast .footer-brand h4 {
+html.high-contrast .site-footer h4,
+html.high-contrast .site-footer h5,
+html.high-contrast .site-footer .footer-col h4,
+html.high-contrast .site-footer .footer-col h5,
+html.high-contrast .site-footer .footer-brand h4 {
   color: #ffd700 !important;
 }
-html.high-contrast .footer-links a {
+html.high-contrast .site-footer p,
+html.high-contrast .site-footer .footer-col p,
+html.high-contrast .site-footer .footer-bottom p,
+html.high-contrast .site-footer span,
+html.high-contrast .site-footer li {
   color: #ffffff !important;
 }
-html.high-contrast .footer-links a:hover {
+html.high-contrast .site-footer .footer-links a {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+html.high-contrast .site-footer .footer-links a:hover,
+html.high-contrast .site-footer .footer-links a:focus {
   color: #ffd700 !important;
 }
-html.high-contrast .footer-bottom {
-  border-top: 1px solid #333333 !important;
-  color: #cccccc !important;
+html.high-contrast .site-footer a[href*="youtube.com"],
+html.high-contrast .site-footer a[style*="ff6b6b"] {
+  color: #ffd700 !important;
+}
+html.high-contrast .site-footer .footer-bottom {
+  border-top: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+html.high-contrast .site-footer .footer-bottom p {
+  color: #ffffff !important;
+}
+html.high-contrast .site-footer .footer-bottom a {
+  color: #ffd700 !important;
+  text-decoration: underline !important;
+  font-weight: 700 !important;
+}
+html.high-contrast .site-footer .disclaimer-box {
+  background: #111111 !important;
+  border-left: 4px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+
+/* Lead Section on Toolkits page in High Contrast */
+html.high-contrast .lead-section {
+  background: #000000 !important;
+  border-top: 3px solid #ffd700 !important;
+  border-bottom: 3px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+html.high-contrast .lead-section h2 {
+  color: #ffd700 !important;
+}
+html.high-contrast .lead-section p {
+  color: #ffffff !important;
+}
+html.high-contrast .lead-section .badge-pill {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #ffd700 !important;
+}
+html.high-contrast .lead-section a.btn {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #ffd700 !important;
+}
+html.high-contrast .lead-section a.btn:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+}
+
+/* Topic Form & Input in High Contrast */
+html.high-contrast .topic-input {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .topic-submit {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #000000 !important;
+}
+html.high-contrast .topic-submit:hover {
+  background: #ffd700 !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
 }
 
 /* Modal dialogs in High Contrast */
