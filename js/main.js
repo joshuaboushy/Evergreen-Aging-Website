@@ -232,7 +232,6 @@ function initFloatingDisclaimerBubble() {
   container.innerHTML = `
     <!-- Floating Trigger Bubble -->
     <button id="disclaimerFloatingBtn" class="disclaimer-floating-bubble" type="button" aria-expanded="false" aria-controls="disclaimerFloatingCard" aria-label="Open Medical and Health Disclaimer" title="View Medical & Health Disclaimer">
-      <span class="disclaimer-bubble-icon" aria-hidden="true">⚠️</span>
       <span class="disclaimer-bubble-text">Disclaimer</span>
     </button>
 
@@ -240,7 +239,6 @@ function initFloatingDisclaimerBubble() {
     <div id="disclaimerFloatingCard" class="disclaimer-floating-card" role="dialog" aria-modal="false" aria-labelledby="floatingDisclaimerHeading">
       <div class="disclaimer-card-header">
         <div class="disclaimer-card-title-wrap">
-          <span class="disclaimer-bubble-icon" aria-hidden="true">⚠️</span>
           <h4 id="floatingDisclaimerHeading" class="disclaimer-card-title">Medical &amp; Health Disclaimer</h4>
         </div>
         <button type="button" id="disclaimerFloatingCloseBtn" class="disclaimer-card-close" aria-label="Close medical disclaimer" title="Close disclaimer">
