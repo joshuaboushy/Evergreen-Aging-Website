@@ -268,6 +268,18 @@ function initFloatingDisclaimerBubble() {
   const closeBtn = document.getElementById("disclaimerFloatingCloseBtn");
   const understandBtn = document.getElementById("disclaimerFloatingUnderstandBtn");
 
+  // If top initial banner is currently visible on homepage, hide bubble until banner is dismissed
+  const popup = document.getElementById("medicalDisclaimerPopup");
+  const isTopBannerVisible = popup && popup.style.display !== "none";
+
+  if (isTopBannerVisible) {
+    bubbleBtn.style.opacity = "0";
+    bubbleBtn.style.pointerEvents = "none";
+  } else {
+    bubbleBtn.style.opacity = "1";
+    bubbleBtn.style.pointerEvents = "auto";
+  }
+
   function openCard() {
     card.classList.add("open");
     bubbleBtn.classList.add("active");
@@ -335,17 +347,138 @@ function initFloatingDisclaimerBubble() {
   window.closeDisclaimerFloatingCard = closeCard;
 }
 
+let isDisclaimerFlightActive = false;
+
 window.dismissDisclaimerPopup = function() {
+  if (isDisclaimerFlightActive) return;
   const popup = document.getElementById("medicalDisclaimerPopup");
-  if (popup) {
-    popup.classList.add("dismissing");
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 220);
-  }
+  if (!popup) return;
+
+  const bubble = document.getElementById("disclaimerFloatingBtn");
+  const card = popup.querySelector(".disclaimer-popup-card");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Save dismissed state to localStorage
   try {
     localStorage.setItem("evergreen_disclaimer_dismissed", "true");
   } catch (e) {}
+
+  // Fallback for reduced motion or missing elements: gentle fade
+  if (!bubble || !card || prefersReducedMotion || typeof card.animate !== "function") {
+    popup.classList.add("dismissing");
+    if (bubble) {
+      bubble.style.opacity = "1";
+      bubble.style.pointerEvents = "auto";
+    }
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 220);
+    return;
+  }
+
+  isDisclaimerFlightActive = true;
+
+  // Make sure bubble is measured at its natural layout position in bottom-right
+  bubble.style.visibility = "visible";
+  const bubbleRect = bubble.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+
+  // Create morphing clone element
+  const clone = document.createElement("div");
+  clone.className = "disclaimer-flying-morph";
+  clone.style.top = cardRect.top + "px";
+  clone.style.left = cardRect.left + "px";
+  clone.style.width = cardRect.width + "px";
+  clone.style.height = cardRect.height + "px";
+  clone.innerHTML = card.innerHTML;
+  document.body.appendChild(clone);
+
+  // Hide original card to prevent visual ghosting
+  card.style.opacity = "0";
+
+  // Keep bubble invisible until clone reaches it
+  bubble.style.opacity = "0";
+  bubble.style.pointerEvents = "auto";
+
+  // Calculate trajectory and scaling deltas
+  const targetCenterX = bubbleRect.left + bubbleRect.width / 2;
+  const targetCenterY = bubbleRect.top + bubbleRect.height / 2;
+  const sourceCenterX = cardRect.left + cardRect.width / 2;
+  const sourceCenterY = cardRect.top + cardRect.height / 2;
+  const deltaX = targetCenterX - sourceCenterX;
+  const deltaY = targetCenterY - sourceCenterY;
+  const scaleX = bubbleRect.width / cardRect.width;
+  const scaleY = bubbleRect.height / cardRect.height;
+
+  // Concurrently collapse the top container space smoothly
+  popup.style.maxHeight = popup.offsetHeight + "px";
+  requestAnimationFrame(() => {
+    popup.classList.add("collapsing-up");
+  });
+
+  // Fade out internal text quickly as it contracts into a solid pill
+  const innerChildren = clone.querySelectorAll(".disclaimer-popup-body, .disclaimer-popup-actions, .disclaimer-popup-icon-wrap");
+  innerChildren.forEach(el => {
+    el.animate([
+      { opacity: 1 },
+      { opacity: 0 }
+    ], {
+      duration: 160,
+      fill: "forwards",
+      easing: "ease-out"
+    });
+  });
+
+  // Flight & Pill-Morph Animation
+  const flight = clone.animate([
+    {
+      transform: "translate(0px, 0px) scale(1)",
+      borderRadius: "8px",
+      borderColor: "#fde68a",
+      borderLeftWidth: "5px",
+      backgroundColor: "#ffffff",
+      boxShadow: "0 8px 24px rgba(180, 83, 9, 0.16)"
+    },
+    {
+      offset: 0.35,
+      borderRadius: "28px",
+      borderLeftWidth: "2px",
+      borderColor: "rgba(217, 119, 6, 0.45)"
+    },
+    {
+      transform: `translate(${deltaX}px, ${deltaY}px) scale(${scaleX}, ${scaleY})`,
+      borderRadius: "999px",
+      borderLeftWidth: "1px",
+      borderColor: "rgba(217, 119, 6, 0.35)",
+      backgroundColor: "rgba(255, 255, 255, 0.95)",
+      boxShadow: "0 4px 14px rgba(0, 0, 0, 0.08)"
+    }
+  ], {
+    duration: 450,
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    fill: "forwards"
+  });
+
+  flight.onfinish = () => {
+    clone.remove();
+    popup.style.display = "none";
+    popup.classList.remove("collapsing-up");
+    popup.style.maxHeight = "";
+    card.style.opacity = "";
+    isDisclaimerFlightActive = false;
+
+    // Reveal bubble with spring settle pop
+    bubble.style.opacity = "1";
+    bubble.animate([
+      { transform: "scale(0.85)", opacity: 0.8 },
+      { transform: "scale(1.08)", offset: 0.45 },
+      { transform: "scale(0.98)", offset: 0.75 },
+      { transform: "scale(1)", opacity: 1 }
+    ], {
+      duration: 220,
+      easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+    });
+  };
 };
 
 // Load any custom videos added via the on-demand modal

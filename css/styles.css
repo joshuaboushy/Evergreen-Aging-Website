@@ -3229,6 +3229,43 @@ body {
   transform: translateY(-8px);
 }
 
+.disclaimer-popup-wrap.collapsing-up {
+  max-height: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  border-bottom-width: 0 !important;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.44s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.44s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.32s ease,
+              border-width 0.44s ease;
+}
+
+/* Flying Morph Clone during Top Disclaimer Dismissal */
+.disclaimer-flying-morph {
+  position: fixed;
+  box-sizing: border-box;
+  pointer-events: none;
+  background: #ffffff;
+  border: 1.5px solid #fde68a;
+  border-left: 5px solid #d97706;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(180, 83, 9, 0.16);
+  overflow: hidden;
+  will-change: transform, border-radius, opacity;
+  transform-origin: center center;
+  z-index: 99999;
+}
+
+html.high-contrast .disclaimer-flying-morph {
+  background: #000000 !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: none !important;
+}
+
 .disclaimer-popup-card {
   display: flex;
   align-items: flex-start;
