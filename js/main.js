@@ -15,9 +15,9 @@ const channelVideos = [
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
     "description": "As we age, natural thirst cues diminish, meaning mild fluid loss can quickly trigger sudden confusion, dizziness, and memory fog that closely mimics dementia. Learn simple daily hydration anchors to protect mental clarity and avoid emergency room visits.",
     "accessibleGuide": "Practical daily hydration anchors and fluid intake cues for home routines.",
-    "authority": "Health Canada",
-    "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
-    "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
+    "authority": "National Institute on Aging (NIA / NIH)",
+    "citationTitle": "National Institute on Aging (NIH): Healthy Eating, Nutrition, and Diet for Older Adults",
+    "citationUrl": "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet",
     "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake preserves cognitive clarity, prevents orthostatic dizziness, and avoids unnecessary hospital visits."
   },
   {
@@ -207,9 +207,9 @@ const healthToolkits = {
   hydration_nutrition: {
     title: "Senior Hydration & Daily Protein Habit Checklist",
     category: "Nutrition & Healthy Aging",
-    authority: "Health Canada & Dietitians of Canada",
-    citationTitle: "Health Canada: Canada's Food Guide — Healthy Eating for Older Adults & Hydration Physiology",
-    citationUrl: "https://food-guide.canada.ca/en/tips-for-healthy-eating/older-adults/",
+    authority: "National Institute on Aging (NIA / NIH)",
+    citationTitle: "National Institute on Aging (NIH): Healthy Eating, Nutrition, and Diet for Older Adults",
+    citationUrl: "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet",
     description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue.",
     items: [
       "High-Contrast Visual Cups: Replace intimidating 1-litre tumblers with smaller (150–200 mL) brightly coloured cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
@@ -1330,7 +1330,7 @@ window.submitNewVideo = async function(e) {
     balance: { label: "Fall Prevention", auth: "Public Health Agency of Canada (PHAC)", cite: "PHAC: Seniors' Falls in Canada Surveillance", url: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html", guide: "Gentle standing and hallway stride cues with chair support." },
     seated: { label: "Chair / Seated Only", auth: "Canadian Society for Exercise Physiology (CSEP)", cite: "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+", url: "https://csepguidelines.ca/guidelines/adults-65/", guide: "Chair-supported mobility routine with zero floor work required." },
     brain: { label: "Brain Health & Neurological Support", auth: "National Institute of Neurological Disorders and Stroke (NINDS / NIH)", cite: "NINDS / NIH: Neurodegenerative Conditions & Brain Health", url: "https://www.ninds.nih.gov/health-information/disorders", guide: "Plain-language caregiver guidance for cognitive and daily care support." },
-    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada", cite: "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)", url: "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/", guide: "Practical daily hydration anchors and fluid intake cues for home routines." },
+    nutrition: { label: "Nutrition, Protein & Hydration", auth: "National Institute on Aging (NIA / NIH)", cite: "National Institute on Aging (NIH): Healthy Eating, Nutrition, and Diet for Older Adults", url: "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet", guide: "Practical daily hydration anchors and fluid intake cues for home routines." },
     mobility: { label: "Mobility & Joints", auth: "Mayo Clinic Health System", cite: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness", url: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971", guide: "Safe seated and standing joint mobilization for every mobility level." }
   }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Health Canada: Physical Activity Guidelines", url: "https://www.canada.ca/", guide: "Safe and adaptable for seated or standing support." };
 

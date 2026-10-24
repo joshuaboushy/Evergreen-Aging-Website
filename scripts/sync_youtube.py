@@ -45,9 +45,9 @@ CATEGORY_DEFAULTS = {
     },
     "nutrition": {
         "categoryLabel": "Nutrition, Protein & Hydration",
-        "authority": "Health Canada",
-        "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
-        "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
+        "authority": "National Institute on Aging (NIA / NIH)",
+        "citationTitle": "National Institute on Aging (NIH): Healthy Eating, Nutrition, and Diet for Older Adults",
+        "citationUrl": "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet",
         "accessibleGuide": "Practical daily hydration anchors and fluid intake cues for home routines.",
         "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake preserves cognitive clarity, prevents orthostatic dizziness, and avoids unnecessary hospital visits."
     },
