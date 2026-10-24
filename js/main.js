@@ -5,7 +5,7 @@
 const channelVideos = [
   {
     "id": "EY_q0rRr_7Y",
-    "title": "Hydration Physiology in Older Adults: Thirst Cues & Cognitive Vitality",
+    "title": "Why Mild Dehydration Looks Like Dementia in Seniors",
     "category": "nutrition",
     "categoryLabel": "Nutrition, Protein & Hydration",
     "duration": "Official Guide",
@@ -13,12 +13,12 @@ const channelVideos = [
     "youtubeId": "EY_q0rRr_7Y",
     "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
-    "description": "Explores how natural thirst cues diminish with age and the physiological importance of consistent daily fluid intake for baseline cognitive vitality. (Note: Sudden confusion or rapid cognitive shifts require prompt medical evaluation by a healthcare professional).",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "Health Canada",
-    "citationTitle": "Health Canada: Canada's Food Guide (Hydration & Healthy Eating for Older Adults)",
+    "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
     "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
-    "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake combined with 1.2–1.6g/kg daily protein preserves cognitive clarity and slows muscle loss."
+    "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
   },
   {
     "id": "QPn7uxOAiD4",
@@ -30,12 +30,12 @@ const channelVideos = [
     "youtubeId": "QPn7uxOAiD4",
     "youtubeUrl": "https://www.youtube.com/watch?v=QPn7uxOAiD4",
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
-    "description": "When unsteady or fearful of falling, older adults instinctively shorten their stride and shuffle, which paradoxically increases trip hazards. Learn why this gait change occurs and safe, practical movement cues to restore step clearance and walking confidence.",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "Public Health Agency of Canada (PHAC)",
     "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
     "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
-    "keyFinding": "Fear of falling induces compensatory shuffling that decreases toe clearance; targeted ankle dorsiflexion and rhythmic step cadence reduce tripping risks by up to 40%."
+    "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
   },
   {
     "id": "HDYnhxxh-Dk",
@@ -47,12 +47,12 @@ const channelVideos = [
     "youtubeId": "HDYnhxxh-Dk",
     "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
-    "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honor the individual's dignity.",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
     "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
     "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
     "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
-    "keyFinding": "Understanding how conditions like Alzheimer's, Parkinson's, ALS, MS, and Huntington's uniquely affect motor control and cognition allows caregivers to proactively adapt home safety and preserve patient dignity."
+    "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
   },
   {
     "id": "QDtxZd36Zog",
@@ -64,12 +64,12 @@ const channelVideos = [
     "youtubeId": "QDtxZd36Zog",
     "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
-    "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how these follow-along routines, safety checklists, and dignity guides fit into daily life.",
+    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Canadian Society for Exercise Physiology (CSEP)",
-    "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
-    "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
-    "keyFinding": "Regular low-impact joint mobilization stimulates synovial fluid circulation, mitigates osteoarthritis stiffness, and maintains independent functional capacity."
+    "authority": "Mayo Clinic Health System",
+    "citationTitle": "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
+    "citationUrl": "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
+    "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
   }
 ];
 
