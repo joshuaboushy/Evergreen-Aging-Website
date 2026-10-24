@@ -157,6 +157,42 @@ const healthToolkits = {
       "Preferred Hospital / Medical Center",
       "Advance Directives / Healthcare Proxy on file (Yes / No, Location of documents)"
     ]
+  },
+  hydration_nutrition: {
+    title: "Senior Hydration & Daily Protein Habit Checklist",
+    category: "Nutrition & Healthy Aging",
+    authority: "Health Canada & Dietitians of Canada",
+    citationTitle: "Health Canada: Canada's Food Guide — Healthy Eating for Older Adults & Hydration Physiology",
+    citationUrl: "https://food-guide.canada.ca/en/tips-for-healthy-eating/older-adults/",
+    description: "An evidence-based daily habit checklist to support declining thirst sensation, maintain vital fluid balance, and distribute dietary protein to preserve lean muscle tissue.",
+    items: [
+      "Visual Hydration Anchor: Fill a dedicated 1.5L to 2L water pitcher each morning and keep it in direct line of sight to bypass naturally blunted thirst sensation.",
+      "Morning Wake-Up Glass: Drink 1 full glass of water upon waking up to replenish fluids lost through overnight respiration.",
+      "Hydrating Whole Foods: Incorporate high-water foods with meals (sliced melon, cucumber, berries, citrus, and warm low-sodium broths).",
+      "Distribute Protein Evenly: Include high-quality protein (eggs, poultry, fish, tofu, beans, lentils, or Greek yogurt) across all 3 meals to steadily stimulate muscle protein synthesis.",
+      "Post-Movement Recovery: Pair gentle strength exercises or walking routines with a protein-rich snack within 1–2 hours to support muscle maintenance.",
+      "Visual Hydration Check: Monitor urine color throughout the day—aim for a pale straw color (dark amber signals that fluid intake needs to increase).",
+      "Evening Taper: Shift fluid consumption primarily to morning and afternoon, gently tapering intake 2 hours before bedtime to reduce nighttime awakenings and fall risks.",
+      "Fiber & Fluid Synergy: Pair adequate fluid intake with dietary fiber (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
+    ]
+  },
+  sleep_hygiene: {
+    title: "Senior Sleep Hygiene & Nighttime Safety Checklist",
+    category: "Brain Health & Restorative Sleep",
+    authority: "National Institute on Aging (NIA / NIH)",
+    citationTitle: "National Institute on Aging (NIH): A Good Night's Sleep & Sleep Changes in Older Adults",
+    citationUrl: "https://www.nia.nih.gov/health/sleep/good-nights-sleep",
+    description: "Evidence-based sleep hygiene and nocturnal mobility habits to support natural sleep architecture, prevent nighttime disorientation, and eliminate bedtime fall risks.",
+    items: [
+      "Consistent Sleep Anchor: Wake up and go to sleep at the exact same time every day, even on weekends, to stabilize your circadian clock.",
+      "Morning Natural Light: Get 20–30 minutes of natural outdoor daylight in the morning or early afternoon to reinforce daytime melatonin suppression.",
+      "60-Minute Screen Buffer: Turn off smartphones, tablets, and bright LED screens 1 hour before bed to allow natural melatonin synthesis.",
+      "Illuminated Bed-to-Bathroom Path: Ensure low-glare, motion-activated nightlights illuminate the walkway from bed to bathroom to prevent nocturnal tripping.",
+      "10-Second Bedside Sit: When waking at night, sit upright on the edge of the bed for 10 seconds before standing to avoid orthostatic dizziness and sudden blood pressure drops.",
+      "Cool, Dark Bedroom Environment: Keep bedroom temperature moderate (around 18–20°C / 65–68°F) with room-darkening shades or curtains.",
+      "Afternoon Caffeine Cutoff: Discontinue caffeine (coffee, black tea, dark chocolate) after 12:00 PM to allow adequate clearance before bedtime.",
+      "20-Minute Stimulus Control: If unable to fall asleep after 20 minutes, move to a dimly lit chair and read or listen to calming music until drowsy before returning to bed."
+    ]
   }
 };
 
