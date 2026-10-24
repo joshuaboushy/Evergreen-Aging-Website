@@ -156,7 +156,8 @@ html.high-contrast .badge-pill,
 html.high-contrast .category-pill,
 html.high-contrast .video-badge,
 html.high-contrast .share-preview-badge,
-html.high-contrast .poster-badge {
+html.high-contrast .poster-badge,
+html.high-contrast .toolkit-badge {
   background: #000000 !important;
   color: #ffd700 !important;
   border: 1.5px solid #000000 !important;
@@ -421,13 +422,16 @@ html.high-contrast .modal-close {
 html.high-contrast .modal-close:hover {
   color: #ffd700 !important;
 }
-html.high-contrast .btn-share {
+html.high-contrast .btn-share,
+html.high-contrast .btn-outline {
   background: #ffffff !important;
   color: #000000 !important;
   border: 2px solid #000000 !important;
 }
-html.high-contrast .btn-share:hover {
+html.high-contrast .btn-share:hover,
+html.high-contrast .btn-outline:hover {
   background: #ffd700 !important;
+  color: #000000 !important;
 }
 html.high-contrast .share-action-btn {
   border: 2px solid #000000 !important;
@@ -1697,6 +1701,8 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   box-shadow: 0 4px 14px rgba(27, 67, 50, 0.04);
+  height: 100%;
+  box-sizing: border-box;
 }
 .toolkit-card:hover {
   border-color: rgba(64, 145, 108, 0.35);
@@ -1706,8 +1712,9 @@ body {
 .toolkit-badges-row {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
+  min-height: 28px;
   margin-bottom: 0.85rem;
   align-self: flex-start;
 }
@@ -1717,13 +1724,16 @@ body {
   align-self: flex-start;
   background: var(--accent-light);
   color: var(--primary);
+  border: 1px solid rgba(27, 67, 50, 0.12);
   font-size: 0.78rem;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: var(--radius-pill);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 .toolkit-badges-row .toolkit-badge {
   margin-bottom: 0;
@@ -1734,76 +1744,103 @@ body {
   border: 1px solid #fde68a;
   letter-spacing: 0.03em;
 }
+.toolkit-title,
+.toolkit-card h3,
 .toolkit-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.22rem;
+  font-weight: 800;
   color: var(--primary);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  line-height: 1.32;
+  min-height: 3.25rem;
 }
+.toolkit-desc,
 .toolkit-card p {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
   line-height: 1.55;
+  margin-bottom: 1.35rem;
+  flex-grow: 1;
 }
+.toolkit-actions,
 .toolkit-action {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.65rem;
   align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-bottom: 1.15rem;
 }
-.btn-print {
+
+.toolkit-actions .btn-primary,
+.toolkit-actions .btn-outline,
+.toolkit-actions .btn-share,
+.toolkit-actions .btn-print,
+.toolkit-action .btn-primary,
+.toolkit-action .btn-outline,
+.toolkit-action .btn-share,
+.toolkit-action .btn-print {
+  height: 42px;
+  min-height: 42px;
+  padding: 0 1.15rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: var(--primary);
-  color: white;
+  justify-content: center;
+  gap: 0.45rem;
   font-size: 0.88rem;
   font-weight: 700;
-  padding: 0.55rem 1rem;
   border-radius: var(--radius-sm);
+  box-sizing: border-box;
+  white-space: nowrap;
   text-decoration: none;
-  border: none;
   cursor: pointer;
   transition: var(--transition);
+  line-height: 1;
 }
-.btn-print:hover {
+
+.toolkit-actions .btn-primary,
+.toolkit-action .btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 2px 6px rgba(27, 67, 50, 0.12);
+}
+.toolkit-actions .btn-primary:hover,
+.toolkit-action .btn-primary:hover {
   background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(27, 67, 50, 0.2);
 }
-.btn-listen {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  background: transparent;
+
+.toolkit-actions .btn-outline,
+.toolkit-action .btn-outline {
+  background: #ffffff;
   color: var(--primary);
-  border: 1px solid var(--border-color);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.55rem 0.85rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: var(--transition);
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 1px 3px rgba(27, 67, 50, 0.05);
 }
-.btn-listen:hover {
-  background: var(--accent-light);
-}
-.btn-share {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  background: transparent;
-  color: var(--primary);
-  border: 1px solid var(--border-color);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.55rem 0.85rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: var(--transition);
-}
-.btn-share:hover {
+.toolkit-actions .btn-outline:hover,
+.toolkit-action .btn-outline:hover {
   background: var(--accent-light);
   border-color: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.toolkit-actions .btn-share,
+.toolkit-action .btn-share {
+  background: #ffffff;
+  color: var(--primary);
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(27, 67, 50, 0.04);
+}
+.toolkit-actions .btn-share:hover,
+.toolkit-action .btn-share:hover {
+  background: var(--accent-light);
+  border-color: var(--secondary);
+  transform: translateY(-1px);
 }
 
 /* Myth vs Fact Awareness Section */
@@ -3617,6 +3654,8 @@ html.high-contrast .toast-notice {
     justify-content: center;
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
+    height: auto;
+    min-height: 44px;
   }
   .cat-btn {
     padding: 0.45rem 0.85rem;

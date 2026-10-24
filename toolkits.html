@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_warmup_max_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_toolkit_uniform_v1">
 </head>
 <body>
 
@@ -105,7 +105,9 @@
         <div class="toolkit-grid">
           <!-- Toolkit 1: Home Fall-Proofing Audit -->
           <article class="toolkit-card">
-            <div class="toolkit-badge">Safety Audit</div>
+            <div class="toolkit-badges-row">
+              <span class="toolkit-badge">Safety Audit</span>
+            </div>
             <h3 class="toolkit-title">12-Point Home Fall-Proofing Environmental Safety Audit</h3>
             <p class="toolkit-desc">
               Over 60% of senior falls occur within the home. This systematic room-by-room audit identifies throw rugs, lighting hazards, and stair issues before an accident occurs.
@@ -126,7 +128,9 @@
 
           <!-- Toolkit 2: Morning Gentle Joint Warm-Up -->
           <article class="toolkit-card">
-            <div class="toolkit-badge">Daily Mobility Routine</div>
+            <div class="toolkit-badges-row">
+              <span class="toolkit-badge">Daily Mobility Routine</span>
+            </div>
             <h3 class="toolkit-title">"Morning Gentle Joint Warm-Up" Printable Routine</h3>
             <p class="toolkit-desc">
               A large-print, 5-minute seated routine seniors can do right beside the bed to circulate synovial fluid before walking: ankle pumps, seated knee extensions, gentle pelvic tilts, and shoulder rolls. Directly combats morning stiffness and fear of movement.
@@ -171,7 +175,9 @@
 
           <!-- Toolkit 4: Senior Hydration & Daily Protein Habit Checklist -->
           <article class="toolkit-card">
-            <div class="toolkit-badge">Nutrition &amp; Healthy Aging</div>
+            <div class="toolkit-badges-row">
+              <span class="toolkit-badge">Nutrition &amp; Healthy Aging</span>
+            </div>
             <h3 class="toolkit-title">Senior Hydration &amp; Daily Protein Habit Checklist</h3>
             <p class="toolkit-desc">
               Thirst cues naturally blunt with age, risking acute confusion (delirium) and orthostatic falls. This daily habit checklist provides creative hydration anchors (high-contrast cups, habit stacking, high-water foods) and mealtime protein habits to defend against sarcopenia.
@@ -186,13 +192,15 @@
             </div>
             <div class="bottom-source-note">
               <span>Public Health Standards: <strong>NIA / NIH &amp; Cleveland Clinic</strong></span>
-              <span><a href="sources.html#ref-4">Ref [4]</a> &bull; <a href="sources.html#ref-13">Ref [13] &rarr;</a></span>
+              <span><a href="sources.html#ref-4">Reference [4]</a> &bull; <a href="sources.html#ref-13">Reference [13] &rarr;</a></span>
             </div>
           </article>
 
           <!-- Toolkit 5: Senior Sleep Hygiene & Nighttime Safety Checklist -->
           <article class="toolkit-card">
-            <div class="toolkit-badge">Brain Health &amp; Sleep</div>
+            <div class="toolkit-badges-row">
+              <span class="toolkit-badge">Brain Health &amp; Sleep</span>
+            </div>
             <h3 class="toolkit-title">Senior Sleep Hygiene &amp; Nighttime Safety Checklist</h3>
             <p class="toolkit-desc">
               Aging shifts circadian architecture, increasing nighttime awakenings and fall risks. Grounded in National Institute on Aging research, this protocol covers daytime light anchors, evening wind-down habits, and nocturnal room safety.
@@ -213,18 +221,20 @@
 
           <!-- Toolkit 6: Caregiver & Family Guide -->
           <article class="toolkit-card">
-            <div class="toolkit-badge">Family &amp; Caregiver Support</div>
+            <div class="toolkit-badges-row">
+              <span class="toolkit-badge">Family &amp; Caregiver Support</span>
+            </div>
             <h3 class="toolkit-title">Caregiver &amp; Family Guide: Preserving Daily Independence</h3>
             <p class="toolkit-desc">
               Practical guidance for adult children: the "10-Second Pause" rule, autonomy-preserving language phrasing, hydration reminders, and caregiver respite strategies.
             </p>
             <div class="toolkit-actions">
-              <a href="caregivers.html" class="btn-primary" style="display:inline-flex; align-items:center; justify-content:center;">
+              <button onclick="openPrintableToolkit('caregiver_guide')" class="btn-primary">
+                🖨️ View &amp; Print Poster
+              </button>
+              <a href="caregivers.html" class="btn-outline">
                 📖 View Full Guide &rarr;
               </a>
-              <button onclick="openPrintableToolkit('caregiver_guide')" class="btn-outline">
-                🖨️ Print Poster
-              </button>
               <button onclick="shareToolkit('caregiver_guide')" class="btn-share" aria-label="Share caregiver guide via email">
                 ✉️ Share
               </button>
@@ -316,6 +326,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261024_warmup_max_v1"></script>
+  <script src="js/main.js?v=20261024_toolkit_uniform_v1"></script>
 </body>
 </html>
