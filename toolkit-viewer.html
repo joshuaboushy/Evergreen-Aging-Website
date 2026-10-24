@@ -6,7 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_toolkit_order_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_toolkit_ems_v1">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -981,7 +981,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_toolkit_order_v1"></script>
+  <script src="js/main.js?v=20261024_toolkit_ems_v1"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 
@@ -1202,7 +1202,6 @@
               <div class="banner-sub">POST ON FRONT OF REFRIGERATOR &bull; FIRST RESPONDERS CHECK HERE FIRST</div>
             </div>
             <div class="banner-right">
-              <img src="images/logo.jpg" alt="Evergreen Aging" class="form-logo">
               <div class="date-updated-box">
                 <label for="vf_dateUpdated">Date Updated:</label>
                 <input type="text" id="vf_dateUpdated" class="form-input-field" placeholder="YYYY-MM-DD">
@@ -1282,17 +1281,21 @@
             </div>
           </div>
 
-          <!-- Section 4: Physician & Preferred Hospital -->
+          <!-- Section 4: Physician, Hospital & Pharmacy -->
           <div class="form-section">
-            <div class="section-title-bar">3. Physician &amp; Preferred Hospital</div>
-            <div class="grid-2col">
+            <div class="section-title-bar">3. Physician, Hospital &amp; Pharmacy</div>
+            <div class="grid-3col">
               <div class="field-group">
-                <label for="vf_doctor">Primary Care Physician &amp; Clinic Phone:</label>
-                <input type="text" id="vf_doctor" class="form-input-field form-line-input" placeholder="e.g. Dr. Eleanor Chen, Midtown Clinic, (416) 555-0188">
+                <label for="vf_doctor">Primary Care Physician &amp; Phone:</label>
+                <input type="text" id="vf_doctor" class="form-input-field form-line-input" placeholder="e.g. Dr. Eleanor Chen, (416) 555-0188">
               </div>
               <div class="field-group">
                 <label for="vf_hospital">Preferred Hospital / Medical Centre:</label>
-                <input type="text" id="vf_hospital" class="form-input-field form-line-input" placeholder="e.g. Toronto General Hospital / Sunnybrook Health Sciences">
+                <input type="text" id="vf_hospital" class="form-input-field form-line-input" placeholder="e.g. Toronto General Hospital">
+              </div>
+              <div class="field-group">
+                <label for="vf_pharmacy">Dispensing Pharmacy &amp; Phone:</label>
+                <input type="text" id="vf_pharmacy" class="form-input-field form-line-input" placeholder="e.g. Shoppers Drug Mart, (416) 555-0149">
               </div>
             </div>
           </div>
