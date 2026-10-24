@@ -15,9 +15,9 @@ The official companion website for the YouTube channel **[Evergreen Aging](https
 ## 🔑 Key Features
 
 ### 1. Radical Accessibility
-- **1-Click Font Resizing (`A`, `A+`, `A++`)**: Instantly expands body text up to 22px with persistent memory.
-- **High-Contrast Black & Gold Mode**: 1-click toggle (`👁️ High Contrast`) designed for low-vision seniors.
-- **Text-to-Speech Engine (`🔊 Listen`)**: Clear, senior-paced spoken summaries using the Web Speech API.
+- **Scalable Typography (`A`, `A+`, `A++`)**: Instantly expands body text up to 22px with persistent memory for older eyes.
+- **Dedicated Low-Vision Viewing Mode**: 1-click high-contrast toggle (`👁️ High Contrast`) optimized for visual clarity.
+- **Full Screen-Reader Compatibility**: Semantic HTML5 landmarks, explicit ARIA dialog roles, and 100% descriptive image alt text.
 - **Print-Ready Styles (`@media print`)**: Ink-friendly, uncluttered printouts for older adults who prefer paper.
 
 ### 2. Video Vault & Episode Lessons
