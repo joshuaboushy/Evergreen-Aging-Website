@@ -876,12 +876,6 @@ function generateVideoCardHtml(v, isOverflow = false, animIndex = 0) {
             🔊 Listen
           </button>
         </div>
-
-        <!-- Supporting clinical source listed cleanly at the bottom -->
-        <div class="bottom-source-note">
-          <span>Supporting source: <strong>${v.authority}</strong></span>
-          <a href="${v.citationUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
-        </div>
       </div>
     </article>
   `;
@@ -943,7 +937,7 @@ function renderVideos(videosToRender, category = "all", query = "") {
           </a>
         </div>
         <div class="bottom-source-note" style="margin-top: 2rem; justify-content: center;">
-          <span>All upcoming lessons are formulated in alignment with clinical geriatric literature &bull; <a href="#references">View Reference Standards &darr;</a></span>
+          <span>All upcoming lessons are formulated in alignment with clinical geriatric literature &bull; <a href="sources.html">View Reference Standards &rarr;</a></span>
         </div>
       </div>
     `;
@@ -1083,18 +1077,7 @@ window.openVideoModal = function(videoId) {
   }
   
   if (citationContent) {
-    citationContent.innerHTML = `
-      <div class="modal-bottom-references">
-        <h5>Sources &amp; Supporting Literature</h5>
-        <p style="font-size:0.88rem; color:var(--text-main); margin-bottom:0.25rem;">
-          <strong>${video.authority}:</strong> ${video.citationTitle}
-        </p>
-        <p style="font-size:0.82rem; color:var(--text-muted); font-style:italic; margin-bottom:0.4rem;">"${video.keyFinding}"</p>
-        <a href="${video.citationUrl}" target="_blank" rel="noopener noreferrer" class="citation-link" style="font-size:0.84rem;">
-          View Public Health Source (${video.authority}) &nearr;
-        </a>
-      </div>
-    `;
+    citationContent.innerHTML = "";
   }
 
   if (playerWrap) {
