@@ -13,8 +13,8 @@ const channelVideos = [
     "youtubeId": "EY_q0rRr_7Y",
     "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
-    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "description": "As we age, natural thirst cues diminish, meaning mild fluid loss can quickly trigger sudden confusion, dizziness, and memory fog that closely mimics dementia. Learn simple daily hydration anchors to protect mental clarity and avoid emergency room visits.",
+    "accessibleGuide": "Practical daily hydration cues and protein benchmarks for home routines.",
     "authority": "Health Canada",
     "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
     "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
@@ -30,8 +30,8 @@ const channelVideos = [
     "youtubeId": "QPn7uxOAiD4",
     "youtubeUrl": "https://www.youtube.com/watch?v=QPn7uxOAiD4",
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
-    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "description": "When unsteady or fearful of falling, older adults instinctively shorten their stride and shuffle, which paradoxically increases trip hazards. Learn why this gait change occurs and safe, practical movement cues to restore step clearance and walking confidence.",
+    "accessibleGuide": "Gentle standing and hallway stride cues with chair support.",
     "authority": "Public Health Agency of Canada (PHAC)",
     "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
     "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
@@ -47,8 +47,8 @@ const channelVideos = [
     "youtubeId": "HDYnhxxh-Dk",
     "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
-    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+    "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honor the individual's dignity.",
+    "accessibleGuide": "Plain-language caregiver guidance for Alzheimer's, Parkinson's, and ALS.",
     "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
     "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
     "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
@@ -64,11 +64,11 @@ const channelVideos = [
     "youtubeId": "QDtxZd36Zog",
     "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
-    "description": "Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
-    "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Mayo Clinic Health System",
-    "citationTitle": "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
-    "citationUrl": "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
+    "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how our follow-along routines, safety checklists, and dignity guides fit into daily life.",
+    "accessibleGuide": "Safe seated and standing joint mobilization for every mobility level.",
+    "authority": "Canadian Society for Exercise Physiology (CSEP)",
+    "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
+    "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
     "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
   }
 ];
@@ -1222,12 +1222,12 @@ window.submitNewVideo = async function(e) {
   } catch (err) {}
 
   const catMeta = {
-    balance: { label: "Fall Prevention", auth: "Public Health Agency of Canada (PHAC)", cite: "PHAC: Seniors' Falls in Canada Surveillance", url: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html" },
-    seated: { label: "Chair / Seated Only", auth: "Canadian Society for Exercise Physiology (CSEP)", cite: "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+", url: "https://csepguidelines.ca/guidelines/adults-65/" },
-    brain: { label: "Brain Health & Neurological Support", auth: "National Institute of Neurological Disorders and Stroke (NINDS / NIH)", cite: "NINDS / NIH: Neurodegenerative Conditions & Brain Health", url: "https://www.ninds.nih.gov/health-information/disorders" },
-    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada", cite: "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)", url: "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/" },
-    mobility: { label: "Mobility & Joints", auth: "Mayo Clinic Health System", cite: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness", url: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971" }
-  }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Health Canada: Physical Activity Guidelines", url: "https://www.canada.ca/" };
+    balance: { label: "Fall Prevention", auth: "Public Health Agency of Canada (PHAC)", cite: "PHAC: Seniors' Falls in Canada Surveillance", url: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html", guide: "Gentle standing and hallway stride cues with chair support." },
+    seated: { label: "Chair / Seated Only", auth: "Canadian Society for Exercise Physiology (CSEP)", cite: "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+", url: "https://csepguidelines.ca/guidelines/adults-65/", guide: "Chair-supported mobility routine with zero floor work required." },
+    brain: { label: "Brain Health & Neurological Support", auth: "National Institute of Neurological Disorders and Stroke (NINDS / NIH)", cite: "NINDS / NIH: Neurodegenerative Conditions & Brain Health", url: "https://www.ninds.nih.gov/health-information/disorders", guide: "Plain-language caregiver guidance for cognitive and daily care support." },
+    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada", cite: "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)", url: "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/", guide: "Practical daily hydration cues and protein benchmarks for home routines." },
+    mobility: { label: "Mobility & Joints", auth: "Mayo Clinic Health System", cite: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness", url: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971", guide: "Safe seated and standing joint mobilization for every mobility level." }
+  }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Health Canada: Physical Activity Guidelines", url: "https://www.canada.ca/", guide: "Safe and adaptable for seated or standing support." };
 
   const newVidObj = {
     id: vid,
@@ -1240,7 +1240,7 @@ window.submitNewVideo = async function(e) {
     youtubeUrl: `https://www.youtube.com/watch?v=${vid}`,
     thumbnail: `https://img.youtube.com/vi/${vid}/hqdefault.jpg`,
     description: `Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.`,
-    accessibleGuide: "Safe and adaptable for seated or standing support.",
+    accessibleGuide: catMeta.guide || "Safe and adaptable for seated or standing support.",
     authority: catMeta.auth,
     citationTitle: catMeta.cite,
     citationUrl: catMeta.url,

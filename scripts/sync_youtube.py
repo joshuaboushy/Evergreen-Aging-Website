@@ -24,6 +24,7 @@ CATEGORY_DEFAULTS = {
         "authority": "Public Health Agency of Canada (PHAC)",
         "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
         "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
+        "accessibleGuide": "Gentle standing and hallway stride cues with chair support.",
         "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
     },
     "seated": {
@@ -31,6 +32,7 @@ CATEGORY_DEFAULTS = {
         "authority": "Canadian Society for Exercise Physiology (CSEP)",
         "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
         "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
+        "accessibleGuide": "Chair-supported mobility routine with zero floor work required.",
         "keyFinding": "Chair-supported routines safely maintain joint range of motion and cardiovascular circulation without fall risk."
     },
     "brain": {
@@ -38,6 +40,7 @@ CATEGORY_DEFAULTS = {
         "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
         "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
         "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
+        "accessibleGuide": "Plain-language caregiver guidance for cognitive and daily care support.",
         "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
     },
     "nutrition": {
@@ -45,6 +48,7 @@ CATEGORY_DEFAULTS = {
         "authority": "Health Canada",
         "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
         "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
+        "accessibleGuide": "Practical daily hydration cues and protein benchmarks for home routines.",
         "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
     },
     "mobility": {
@@ -52,6 +56,7 @@ CATEGORY_DEFAULTS = {
         "authority": "Mayo Clinic Health System",
         "citationTitle": "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
         "citationUrl": "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
+        "accessibleGuide": "Safe seated and standing joint mobilization for every mobility level.",
         "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
     }
 }
@@ -120,7 +125,7 @@ def fetch_channel_videos():
                     "youtubeUrl": f"https://www.youtube.com/watch?v={vid}",
                     "thumbnail": f"https://img.youtube.com/vi/{vid}/hqdefault.jpg",
                     "description": f"Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.",
-                    "accessibleGuide": "Designed for safe home application with zero floor work required.",
+                    "accessibleGuide": cat_info.get("accessibleGuide", "Safe home routine adaptable for seated or standing support."),
                     "authority": cat_info["authority"],
                     "citationTitle": cat_info["citationTitle"],
                     "citationUrl": cat_info["citationUrl"],
