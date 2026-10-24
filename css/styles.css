@@ -2449,7 +2449,7 @@ body {
     border: 1.5px solid #2d6a4f !important;
     border-radius: 8px !important;
     box-shadow: none !important;
-    padding: 0.5rem 0.7rem !important;
+    padding: 0.75rem 0.95rem !important;
     margin: 0 auto !important;
     background: #ffffff !important;
     box-sizing: border-box !important;
@@ -2458,32 +2458,32 @@ body {
   }
   .poster-top-bar {
     border-bottom: 2px solid #1b4332 !important;
-    padding-bottom: 0.35rem !important;
-    margin-bottom: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
+    margin-bottom: 0.65rem !important;
     display: block !important;
   }
   .poster-badge {
-    font-size: 6.8pt !important;
-    padding: 2px 7px !important;
-    margin-bottom: 0.2rem !important;
+    font-size: 8pt !important;
+    padding: 2.5px 8px !important;
+    margin-bottom: 0.25rem !important;
     display: inline-block !important;
     background: #e8f4ed !important;
     color: #1b4332 !important;
     font-weight: 800 !important;
-    border-radius: 3px !important;
+    border-radius: 4px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.04em !important;
   }
   .poster-top-bar h3 {
-    font-size: 13pt !important;
+    font-size: 16pt !important;
     line-height: 1.2 !important;
-    margin: 0 0 0.15rem 0 !important;
+    margin: 0 0 0.2rem 0 !important;
     color: #1b4332 !important;
     font-weight: 800 !important;
   }
   .poster-top-bar p {
-    font-size: 8pt !important;
-    line-height: 1.25 !important;
+    font-size: 9.6pt !important;
+    line-height: 1.3 !important;
     margin: 0 !important;
     color: #3e5647 !important;
   }
@@ -2491,15 +2491,15 @@ body {
     background: #f0f7f3 !important;
     border: 1.5px solid #52b788 !important;
     border-radius: 6px !important;
-    padding: 0.45rem 0.65rem !important;
-    margin-bottom: 0.45rem !important;
+    padding: 0.65rem 0.85rem !important;
+    margin-bottom: 0.65rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
   .poster-core-rule-tag {
-    font-size: 6.5pt !important;
-    padding: 2px 6px !important;
-    margin-bottom: 0.18rem !important;
+    font-size: 7.6pt !important;
+    padding: 2.5px 7px !important;
+    margin-bottom: 0.22rem !important;
     background: #1b4332 !important;
     color: #ffffff !important;
     font-weight: 800 !important;
@@ -2509,36 +2509,36 @@ body {
     letter-spacing: 0.04em !important;
   }
   .poster-core-rule-title {
-    font-size: 10pt !important;
+    font-size: 11.8pt !important;
     font-weight: 800 !important;
     color: #1b4332 !important;
-    margin-bottom: 0.15rem !important;
+    margin-bottom: 0.2rem !important;
     line-height: 1.2 !important;
   }
   .poster-core-rule-desc {
-    font-size: 7.8pt !important;
-    line-height: 1.28 !important;
+    font-size: 9.3pt !important;
+    line-height: 1.35 !important;
     color: #1e3328 !important;
     margin: 0 !important;
   }
   .poster-block-title {
-    font-size: 8.8pt !important;
+    font-size: 10.5pt !important;
     font-weight: 800 !important;
     color: #1b4332 !important;
     letter-spacing: 0.02em !important;
-    margin-bottom: 0.35rem !important;
-    padding-bottom: 0.18rem !important;
+    margin-bottom: 0.45rem !important;
+    padding-bottom: 0.22rem !important;
     border-bottom: 1.5px solid rgba(27, 67, 50, 0.2) !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
     text-transform: uppercase !important;
   }
   .poster-comparison-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0.5rem !important;
-    margin-bottom: 0.45rem !important;
+    gap: 0.65rem !important;
+    margin-bottom: 0.65rem !important;
     width: 100% !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -2546,7 +2546,7 @@ body {
   }
   .poster-comparison-avoid,
   .poster-comparison-empower {
-    padding: 0.45rem 0.55rem !important;
+    padding: 0.55rem 0.65rem !important;
     border-radius: 7px !important;
     display: flex !important;
     flex-direction: column !important;
@@ -2565,16 +2565,16 @@ body {
     border: 1.5px solid #bbf7d0 !important;
   }
   .poster-comparison-head {
-    font-size: 8pt !important;
+    font-size: 9.6pt !important;
     font-weight: 800 !important;
-    line-height: 1.15 !important;
-    padding-bottom: 0.25rem !important;
-    margin-bottom: 0.3rem !important;
+    line-height: 1.2 !important;
+    padding-bottom: 0.3rem !important;
+    margin-bottom: 0.35rem !important;
     min-height: auto !important;
     border-bottom: 1px solid !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
   }
   .poster-comparison-avoid .poster-comparison-head {
     color: #991b1b !important;
@@ -2589,24 +2589,24 @@ body {
   .poster-comparison-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0.28rem !important;
+    gap: 0.35rem !important;
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
     height: auto !important;
   }
   .phrase-item {
-    font-size: 7.4pt !important;
-    line-height: 1.25 !important;
-    padding: 0.25rem 0.45rem !important;
+    font-size: 9pt !important;
+    line-height: 1.32 !important;
+    padding: 0.38rem 0.55rem !important;
     border-radius: 5px !important;
     background: #ffffff !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
     box-shadow: none !important;
     height: auto !important;
-    min-height: 24px !important;
+    min-height: 30px !important;
     box-sizing: border-box !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -2624,7 +2624,7 @@ body {
     font-weight: 600 !important;
   }
   .phrase-icon {
-    font-size: 8pt !important;
+    font-size: 9.5pt !important;
     font-weight: 900 !important;
     flex-shrink: 0 !important;
     line-height: 1 !important;
@@ -2636,8 +2636,8 @@ body {
   .poster-pillars-grid {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0.45rem !important;
-    margin-bottom: 0.45rem !important;
+    gap: 0.6rem !important;
+    margin-bottom: 0.65rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
     box-sizing: border-box !important;
@@ -2646,7 +2646,7 @@ body {
     background: #f8faf8 !important;
     border: 1.5px solid #d8e5dc !important;
     border-radius: 6px !important;
-    padding: 0.45rem 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
     box-sizing: border-box !important;
@@ -2654,12 +2654,12 @@ body {
   .poster-pillar-header {
     display: flex !important;
     align-items: center !important;
-    gap: 0.4rem !important;
-    margin-bottom: 0.25rem !important;
+    gap: 0.45rem !important;
+    margin-bottom: 0.3rem !important;
   }
   .poster-pillar-num {
-    width: 20px !important;
-    height: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
     background: #1b4332 !important;
     color: #ffffff !important;
     border-radius: 50% !important;
@@ -2667,14 +2667,14 @@ body {
     align-items: center !important;
     justify-content: center !important;
     font-weight: 800 !important;
-    font-size: 7pt !important;
+    font-size: 8.2pt !important;
     flex-shrink: 0 !important;
   }
   .poster-pillar-title {
-    font-size: 8.5pt !important;
+    font-size: 10.2pt !important;
     font-weight: 800 !important;
     color: #1b4332 !important;
-    line-height: 1.15 !important;
+    line-height: 1.2 !important;
   }
   .poster-pillar-card ul {
     list-style: none !important;
@@ -2682,11 +2682,11 @@ body {
     margin: 0 !important;
   }
   .poster-pillar-card li {
-    font-size: 7.2pt !important;
-    line-height: 1.25 !important;
+    font-size: 8.6pt !important;
+    line-height: 1.32 !important;
     color: #1a251f !important;
-    margin-bottom: 0.15rem !important;
-    padding-left: 0.8rem !important;
+    margin-bottom: 0.2rem !important;
+    padding-left: 0.85rem !important;
     position: relative !important;
   }
   .poster-pillar-card li:last-child {
@@ -2703,43 +2703,43 @@ body {
     background: #fdf8eb !important;
     border: 1.5px solid #eed69b !important;
     border-radius: 6px !important;
-    padding: 0.4rem 0.65rem !important;
-    margin-bottom: 0.45rem !important;
+    padding: 0.6rem 0.85rem !important;
+    margin-bottom: 0.65rem !important;
     display: flex !important;
     align-items: center !important;
-    gap: 0.65rem !important;
+    gap: 0.75rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
     box-sizing: border-box !important;
   }
   .poster-respite-icon {
-    font-size: 1.35rem !important;
+    font-size: 1.75rem !important;
     flex-shrink: 0 !important;
   }
   .poster-respite-content h4 {
-    font-size: 8.5pt !important;
+    font-size: 10.2pt !important;
     font-weight: 800 !important;
     color: #7c4a1e !important;
-    margin: 0 0 0.12rem 0 !important;
-    line-height: 1.15 !important;
+    margin: 0 0 0.15rem 0 !important;
+    line-height: 1.2 !important;
   }
   .poster-respite-content p {
-    font-size: 7.4pt !important;
-    line-height: 1.25 !important;
+    font-size: 8.8pt !important;
+    line-height: 1.35 !important;
     color: #5c3815 !important;
     margin: 0 !important;
   }
   .poster-bottom-sources {
     border-top: 1.5px solid #d8e5dc !important;
-    padding-top: 0.3rem !important;
-    font-size: 7pt !important;
-    line-height: 1.3 !important;
+    padding-top: 0.45rem !important;
+    font-size: 8.2pt !important;
+    line-height: 1.35 !important;
     color: #4b6354 !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     flex-wrap: wrap !important;
-    gap: 0.35rem !important;
+    gap: 0.45rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
