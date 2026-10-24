@@ -2587,13 +2587,14 @@ body {
   .poster-comparison-avoid ul,
   .poster-comparison-empower ul,
   .poster-comparison-list {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-rows: repeat(4, 1fr) !important;
     gap: 0.3rem !important;
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    height: auto !important;
+    height: 100% !important;
+    flex: 1 !important;
   }
   .phrase-item {
     font-size: 8.8pt !important;
@@ -2605,7 +2606,7 @@ body {
     align-items: center !important;
     gap: 0.4rem !important;
     box-shadow: none !important;
-    height: auto !important;
+    height: 100% !important;
     min-height: 27px !important;
     box-sizing: border-box !important;
     page-break-inside: avoid !important;

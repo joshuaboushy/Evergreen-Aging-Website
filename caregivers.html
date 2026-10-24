@@ -35,6 +35,9 @@
       border-radius: 12px !important;
       box-sizing: border-box !important;
       overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      height: 100% !important;
     }
     .poster-comparison-avoid ul,
     .poster-comparison-empower ul,
@@ -42,15 +45,23 @@
       list-style: none !important;
       list-style-type: none !important;
       padding: 0 !important;
-      padding-left: 0 !important;
-      padding-inline-start: 0 !important;
       margin: 0 !important;
+      display: grid !important;
+      grid-template-rows: repeat(4, 1fr) !important;
+      gap: 0.75rem !important;
+      flex: 1 !important;
+      height: 100% !important;
     }
     .poster-comparison-avoid li,
     .poster-comparison-empower li,
-    .poster-comparison-list li {
+    .poster-comparison-list li,
+    .phrase-item {
       list-style: none !important;
       list-style-type: none !important;
+      height: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
     }
   </style>
 </head>
@@ -176,11 +187,11 @@
                 </li>
                 <li class="phrase-item">
                   <span class="phrase-icon" aria-hidden="true">✕</span>
-                  <span class="phrase-text">"You're too frail to carry that laundry basket."</span>
+                  <span class="phrase-text">"You're too frail to be carrying that laundry basket."</span>
                 </li>
                 <li class="phrase-item">
                   <span class="phrase-icon" aria-hidden="true">✕</span>
-                  <span class="phrase-text">"Hurry up, we have to leave right now."</span>
+                  <span class="phrase-text">"Hurry up and move faster, we have to leave right now."</span>
                 </li>
               </ul>
             </div>
@@ -420,6 +431,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261024_joint_routine_v1"></script>
+  <script src="js/main.js?v=20261024_dignity_align_v1"></script>
 </body>
 </html>
