@@ -2847,6 +2847,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  overflow-y: auto;
 }
 .video-modal.open {
   display: flex;
@@ -2855,8 +2856,11 @@ body {
   background: var(--bg-card);
   width: 100%;
   max-width: 840px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
   border-radius: var(--radius-lg);
-  overflow: hidden;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   position: relative;
 }

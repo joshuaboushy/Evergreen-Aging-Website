@@ -1153,28 +1153,9 @@ window.openVideoModal = function(videoId) {
 
   if (title) title.textContent = video.title;
   if (desc) desc.textContent = video.description;
+  if (citationContent) citationContent.innerHTML = "";
   if (ytBtn) {
     ytBtn.href = video.youtubeUrl || "https://www.youtube.com/@evergreen_aging";
-  }
-  
-  if (citationContent) {
-    if (video.authority && video.citationTitle) {
-      citationContent.innerHTML = `
-        <div style="margin-top: 1rem; padding: 0.95rem 1.15rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-left: 4px solid var(--primary); border-radius: var(--radius-sm); font-size: 0.9rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
-            <span style="font-weight:700; color:var(--primary); text-transform:uppercase; font-size:0.76rem; letter-spacing:0.04em;">🔬 Supporting Clinical Sourcing</span>
-            <span style="font-weight:700; color:var(--text-muted); font-size:0.8rem;">${video.authority}</span>
-          </div>
-          <div style="color:var(--text-main); font-weight:600; margin-bottom:0.35rem; line-height:1.4;">
-            ${video.citationTitle}
-          </div>
-          ${video.keyFinding ? `<p style="margin:0 0 0.45rem 0; font-size:0.85rem; color:var(--text-muted); line-height:1.45;"><strong>Key Clinical Finding:</strong> ${video.keyFinding}</p>` : ''}
-          ${video.citationUrl ? `<a href="${video.citationUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:700; text-decoration:underline; font-size:0.82rem; word-break:break-all;">Public Access Literature &rarr;</a>` : ''}
-        </div>
-      `;
-    } else {
-      citationContent.innerHTML = "";
-    }
   }
 
   if (playerWrap) {
