@@ -193,15 +193,13 @@ const healthToolkits = {
     description: "First responders are trained to look on the front of the refrigerator in a home medical emergency. Keep this card updated and visible.",
     isForm: true,
     items: [
-      "Full Legal Name, Date of Birth, and Preferred Name",
+      "Full Legal Name, Date of Birth, Preferred Name & Home Address / Unit / Buzzer",
+      "Known Allergies, Major Medical Diagnoses & Medical Implants (Pacemaker, Valves, Stents, Home O2)",
       "Primary Emergency Contact (Name, Relationship, Cell Phone Number)",
       "Secondary Emergency Contact (Name, Relationship, Cell Phone Number)",
-      "Primary Care Physician (Name, Clinic Name, Office Phone)",
-      "Current Diagnoses (e.g., Hypertension, Type 2 Diabetes, Osteoarthritis)",
+      "Primary Care Physician, Preferred Hospital & Dispensing Pharmacy Phone",
       "Current Prescription Medications (Name, Exact Dosage, Frequency)",
-      "Known Allergies (Penicillin, Latex, Iodine, etc.)",
-      "Preferred Hospital / Medical Centre",
-      "Advance Directives / Healthcare Proxy on file (Yes / No, Location of documents)"
+      "Advance Directives / DNR Status / Healthcare Proxy & Location of Legal Papers"
     ]
   },
   hydration_nutrition: {
