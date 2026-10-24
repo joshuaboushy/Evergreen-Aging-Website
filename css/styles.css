@@ -3997,6 +3997,21 @@ html.high-contrast .page-hero-banner {
 .about-title-icon {
   font-size: 1.6rem;
 }
+.about-sources-callout {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
 .about-verification-banner {
   margin-top: 1.5rem;
   padding: 1.1rem 1.35rem;
@@ -4236,6 +4251,12 @@ html.high-contrast .about-badge-num {
 html.high-contrast .about-badge-flag {
   background: #ffffff !important;
   border: 1.5px solid #000000 !important;
+}
+html.high-contrast .about-sources-callout {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-left: 6px solid #ffd700 !important;
+  color: #000000 !important;
 }
 html.high-contrast .about-verification-banner {
   background: #ffffff !important;
