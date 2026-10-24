@@ -168,7 +168,7 @@ const healthToolkits = {
     items: [
       "High-Contrast Visual Cups: Replace intimidating 1-liter tumblers with smaller (150–200 mL) brightly colored cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
       "Habit-Stacked Sip Schedule: Anchor sips to daily habits, e.g., 1 cup upon waking; a mug of tea with morning reading or TV; a larger glass alongside lunch.",
-      "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods (>90% water) like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
+      "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
       "Flavor & Gentle Temperature: Add lemon, orange, or cucumber slices to plain water, and offer soothing warm herbal teas (peppermint, chamomile) that are gentle on sensitive teeth and aging stomachs.",
       "Front-Load Fluids (Address Bathroom Fear): Shift fluid intake between breakfast and 4:00 PM, then gently taper liquids 2 hours before bed to ease incontinence anxiety and nighttime fall risks.",
       "Clinical Dehydration Check: Monitor for warning signs—pale straw urine, a parched/coated tongue, rapid heart rate, or sudden lethargy and orthostatic dizziness when standing (preventing delirium and falls).",
