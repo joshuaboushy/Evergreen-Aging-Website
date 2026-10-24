@@ -1703,7 +1703,17 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(27, 67, 50, 0.09);
 }
+.toolkit-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+  align-self: flex-start;
+}
 .toolkit-badge {
+  display: inline-flex;
+  align-items: center;
   align-self: flex-start;
   background: var(--accent-light);
   color: var(--primary);
@@ -1714,6 +1724,15 @@ body {
   margin-bottom: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+.toolkit-badges-row .toolkit-badge {
+  margin-bottom: 0;
+}
+.toolkit-badge-customizable {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  letter-spacing: 0.03em;
 }
 .toolkit-card h4 {
   font-size: 1.2rem;
@@ -4623,4 +4642,9 @@ html.high-contrast .about-verification-banner {
   background: #ffffff !important;
   border: 2px solid #000000 !important;
   color: #000000 !important;
+}
+html.high-contrast .toolkit-badge-customizable {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 1.5px solid #ffd700 !important;
 }

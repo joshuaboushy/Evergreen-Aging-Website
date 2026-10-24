@@ -6,7 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_citations_audit_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_customizable_badge_v1">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -817,6 +817,12 @@
           color: #485c4f;
           line-height: 1.35;
         }
+        .header-nav-badges {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
         .form-badge-pill {
           display: inline-flex;
           align-items: center;
@@ -827,6 +833,11 @@
           color: #1b4332;
           border-radius: 20px;
           border: 1.5px solid #b7dfca;
+        }
+        .form-badge-customizable {
+          background: #fef3c7 !important;
+          color: #92400e !important;
+          border-color: #fde68a !important;
         }
 
         @media print {
@@ -970,7 +981,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_citations_audit_v1"></script>
+  <script src="js/main.js?v=20261024_customizable_badge_v1"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 
@@ -1166,7 +1177,10 @@
         <div class="header-actions">
           <div class="header-nav-row">
             <button class="return-btn" id="returnBtn" onclick="returnToPage()" title="Return to Evergreen Aging without opening new tabs">${returnLabel}</button>
-            <div class="form-badge-pill">📋 Paramedic Medical Alert Form</div>
+            <div class="header-nav-badges">
+              <div class="form-badge-pill">📋 Paramedic Medical Alert Form</div>
+              <div class="form-badge-pill form-badge-customizable">Customizable</div>
+            </div>
           </div>
           <div class="header-tools-row">
             <button class="print-btn" onclick="window.print()">🖨️ Click to Print Medical Sheet</button>
