@@ -1009,20 +1009,28 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  background: transparent;
+  gap: 0.45rem;
+  background: #ffffff;
   color: var(--primary);
-  border: 1px solid var(--border-color);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--border-color);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 1.15rem;
+  min-height: 40px;
   border-radius: var(--radius-sm);
+  box-sizing: border-box;
+  white-space: nowrap;
+  line-height: 1.2;
   cursor: pointer;
   transition: var(--transition);
-  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(27, 67, 50, 0.04);
 }
 .btn-listen:hover {
   background: var(--accent-light);
+  border-color: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(27, 67, 50, 0.08);
 }
 .btn-hero-yt {
   display: inline-flex;
@@ -1508,6 +1516,12 @@ body {
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-color);
   font-size: 0.85rem;
+}
+.video-item-footer .btn-listen {
+  height: 34px;
+  min-height: 34px;
+  padding: 0 0.85rem;
+  font-size: 0.82rem;
 }
 .study-tag {
   color: var(--secondary);
@@ -2023,6 +2037,20 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   margin-bottom: 0.85rem;
+  flex-grow: 1;
+}
+.myth-actions {
+  margin-top: auto;
+  margin-bottom: 1.15rem;
+  padding-top: 0.35rem;
+  display: flex;
+  align-items: center;
+}
+.myth-actions .btn-listen {
+  height: 42px;
+  min-height: 42px;
+  padding: 0 1.25rem;
+  font-size: 0.9rem;
 }
 
 /* Subtle Bottom Citations on Content Cards */
