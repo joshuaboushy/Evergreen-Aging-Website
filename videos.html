@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261023_bubble_v2">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_format_v1">
 </head>
 <body>
 
@@ -132,23 +132,25 @@
           <!-- Populated by js/main.js -->
         </div>
 
-        <!-- Fluid Expand / View More Container -->
-        <div id="vaultExpandWrap" class="vault-expand-wrap" style="display: none;">
-          <button id="vaultExpandBtn" class="btn-vault-expand" aria-expanded="false" onclick="toggleVaultExpansion()">
-            <span id="vaultExpandText">View More Video Lessons</span>
-            <span class="vault-expand-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </span>
-          </button>
-        </div>
+        <!-- Action Buttons: Fluid Expand & YouTube Channel (Side-by-Side) -->
+        <div class="vault-actions-row">
+          <div id="vaultExpandWrap" class="vault-expand-wrap" style="display: none;">
+            <button id="vaultExpandBtn" class="btn-vault-expand" aria-expanded="false" onclick="toggleVaultExpansion()">
+              <span id="vaultExpandText">View More Video Lessons</span>
+              <span class="vault-expand-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </button>
+          </div>
 
-        <div class="library-yt-cta" style="text-align: center; margin-top: 1.15rem;">
-          <a href="https://www.youtube.com/@evergreen_aging" target="_blank" rel="noopener noreferrer" class="btn-yt" style="font-size: 1.05rem; padding: 0.9rem 2rem;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            Watch All Video Lessons on YouTube (@evergreen_aging)
-          </a>
+          <div class="library-yt-cta">
+            <a href="https://www.youtube.com/@evergreen_aging" target="_blank" rel="noopener noreferrer" class="btn-yt">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch All Video Lessons on YouTube (@evergreen_aging)
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -157,13 +159,14 @@
     <section class="community-section" style="padding-top: 1.75rem;">
       <div class="container">
         <div class="community-box">
-          <span class="badge-pill">Community Health Voice</span>
-          <h3>What Health Question Can I Help Answer?</h3>
-          <p>I create Evergreen Aging videos directly from questions submitted by older adults, family caregivers, and community members. Have a question about balance, arthritis, hydration, or sleep?</p>
+          <h3>What Health Question Can I Answer for You?</h3>
           <form id="topicForm" class="topic-form">
-            <input type="text" id="topicInput" class="topic-input" placeholder="e.g. How to get up off the floor safely if you fall..." required>
+            <input type="text" id="topicInput" class="topic-input" placeholder="e.g. How to get up off the floor safely, arthritis routines..." required>
             <button type="submit" class="topic-submit">Submit Question</button>
           </form>
+          <p>
+            Evergreen Aging videos are created directly from questions submitted by older adults, caregivers, and community members. Let me know what mobility challenges, daily routines, or health topics you would like covered in an upcoming lesson.
+          </p>
         </div>
       </div>
     </section>
