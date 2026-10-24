@@ -807,23 +807,91 @@ function initScrollSpy() {
 
 // 3. Render Videos with 3-Video Limit, Fluid View-More Expander & Coming Soon state
 let isVaultExpanded = false;
+let currentFilteredVideos = [];
 const VAULT_INITIAL_LIMIT = 3;
 const VAULT_MAX_LIMIT = 9;
 
 window.toggleVaultExpansion = function() {
-  isVaultExpanded = !isVaultExpanded;
-  filterAndRender(currentCategory, currentSearchQuery, true);
+  const drawer = document.getElementById("vaultOverflowDrawer");
+  const expandBtn = document.getElementById("vaultExpandBtn");
+  const expandText = document.getElementById("vaultExpandText");
+  const actionsRow = document.querySelector(".vault-actions-row");
 
-  if (!isVaultExpanded) {
-    const target = document.getElementById("videos");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  isVaultExpanded = !isVaultExpanded;
+
+  if (drawer) {
+    drawer.classList.toggle("open", isVaultExpanded);
+    drawer.setAttribute("aria-hidden", isVaultExpanded ? "false" : "true");
+  }
+
+  if (expandBtn) {
+    expandBtn.classList.toggle("expanded", isVaultExpanded);
+    expandBtn.setAttribute("aria-expanded", isVaultExpanded ? "true" : "false");
+  }
+
+  if (expandText) {
+    const totalRemaining = Math.max(0, currentFilteredVideos.length - VAULT_INITIAL_LIMIT);
+    expandText.textContent = isVaultExpanded 
+      ? "Show Fewer Lessons" 
+      : `View More Video Lessons (${totalRemaining} more)`;
+  }
+
+  // Natural in-place collapse check: ensure the actions row remains comfortably visible without jumping
+  if (!isVaultExpanded && actionsRow) {
+    setTimeout(() => {
+      const rect = actionsRow.getBoundingClientRect();
+      const inViewport = (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight));
+      if (!inViewport) {
+        actionsRow.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }, 400); // Trigger after the 380ms smooth accordion glide completes
   }
 };
 
-function renderVideos(videosToRender, category = "all", query = "", isToggleAction = false) {
+function generateVideoCardHtml(v, isOverflow = false, animIndex = 0) {
+  const escapedTitle = (v.title || "").replace(/'/g, "\\'");
+  const escapedDesc = (v.description || "").replace(/'/g, "\\'");
+  const delayStyle = isOverflow ? ` style="transition-delay: ${animIndex * 50}ms;"` : "";
+
+  return `
+    <article class="video-item" data-id="${v.id}"${delayStyle}>
+      <div class="video-item-thumb" onclick="openVideoModal('${v.id}')">
+        <img src="${v.thumbnail}" alt="${v.title}" loading="lazy">
+        <div class="mini-play" aria-label="Play video">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="video-badge">${v.badge}</span>
+        <span class="video-duration">${v.duration}</span>
+      </div>
+      <div class="video-item-info">
+        <span class="video-meta-tag">${v.categoryLabel}</span>
+        <h3 class="video-item-title">${v.title}</h3>
+        <p class="video-item-desc">${v.description}</p>
+
+        <div class="video-item-footer" style="margin-top: auto; padding-top: 0.5rem;">
+          <button class="card-link" onclick="openVideoModal('${v.id}')" style="background:none;border:none;cursor:pointer;font-size:0.95rem;font-weight:700;">
+            Watch Lesson &rarr;
+          </button>
+          <button class="btn-listen" onclick="readAloud('${escapedTitle}. ${escapedDesc}')" title="Listen to summary">
+            🔊 Listen
+          </button>
+        </div>
+
+        <!-- Supporting clinical source listed cleanly at the bottom -->
+        <div class="bottom-source-note">
+          <span>Supporting source: <strong>${v.authority}</strong></span>
+          <a href="${v.citationUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderVideos(videosToRender, category = "all", query = "") {
+  currentFilteredVideos = videosToRender;
   const container = document.getElementById("videoGrid");
+  const drawer = document.getElementById("vaultOverflowDrawer");
+  const overflowGrid = document.getElementById("vaultOverflowGrid");
   const expandWrap = document.getElementById("vaultExpandWrap");
   const expandBtn = document.getElementById("vaultExpandBtn");
   const expandText = document.getElementById("vaultExpandText");
@@ -832,6 +900,12 @@ function renderVideos(videosToRender, category = "all", query = "", isToggleActi
 
   if (videosToRender.length === 0) {
     if (expandWrap) expandWrap.style.display = "none";
+    if (drawer) {
+      drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+    }
+    if (overflowGrid) overflowGrid.innerHTML = "";
+    isVaultExpanded = false;
 
     if (query) {
       container.innerHTML = `
@@ -876,73 +950,38 @@ function renderVideos(videosToRender, category = "all", query = "", isToggleActi
     return;
   }
 
-  // Handle the fluid "View More" expander toggle
-  if (videosToRender.length <= VAULT_INITIAL_LIMIT) {
-    if (expandWrap) expandWrap.style.display = "none";
-  } else {
-    if (expandWrap) expandWrap.style.display = "block";
-    const totalAvailable = Math.min(videosToRender.length, VAULT_MAX_LIMIT);
+  const initialCards = videosToRender.slice(0, VAULT_INITIAL_LIMIT);
+  const overflowCards = videosToRender.slice(VAULT_INITIAL_LIMIT, VAULT_MAX_LIMIT);
 
-    if (isVaultExpanded) {
-      if (expandText) expandText.textContent = "Show Fewer Lessons";
-      if (expandBtn) {
-        expandBtn.classList.add("expanded");
-        expandBtn.setAttribute("aria-expanded", "true");
-      }
-    } else {
-      const remainingCount = totalAvailable - VAULT_INITIAL_LIMIT;
-      if (expandText) expandText.textContent = `View More Video Lessons (${remainingCount} more)`;
-      if (expandBtn) {
-        expandBtn.classList.remove("expanded");
-        expandBtn.setAttribute("aria-expanded", "false");
-      }
+  container.innerHTML = initialCards.map(v => generateVideoCardHtml(v, false)).join("");
+
+  if (overflowCards.length === 0) {
+    if (expandWrap) expandWrap.style.display = "none";
+    if (drawer) {
+      drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+    }
+    if (overflowGrid) overflowGrid.innerHTML = "";
+    isVaultExpanded = false;
+  } else {
+    if (expandWrap) expandWrap.style.display = "inline-flex";
+    if (overflowGrid) {
+      overflowGrid.innerHTML = overflowCards.map((v, i) => generateVideoCardHtml(v, true, i)).join("");
+    }
+    if (drawer) {
+      drawer.classList.toggle("open", isVaultExpanded);
+      drawer.setAttribute("aria-hidden", isVaultExpanded ? "false" : "true");
+    }
+    if (expandBtn) {
+      expandBtn.classList.toggle("expanded", isVaultExpanded);
+      expandBtn.setAttribute("aria-expanded", isVaultExpanded ? "true" : "false");
+    }
+    if (expandText) {
+      expandText.textContent = isVaultExpanded 
+        ? "Show Fewer Lessons" 
+        : `View More Video Lessons (${overflowCards.length} more)`;
     }
   }
-
-  const displayedVideos = isVaultExpanded 
-    ? videosToRender.slice(0, VAULT_MAX_LIMIT)
-    : videosToRender.slice(0, VAULT_INITIAL_LIMIT);
-
-  container.innerHTML = displayedVideos.map((v, idx) => {
-    const isRevealed = isVaultExpanded && idx >= VAULT_INITIAL_LIMIT;
-    const revealClass = isRevealed ? " revealing" : "";
-    const revealDelay = isRevealed ? ` style="animation-delay: ${(idx - VAULT_INITIAL_LIMIT) * 80}ms;"` : "";
-    const escapedTitle = (v.title || "").replace(/'/g, "\\'");
-    const escapedDesc = (v.description || "").replace(/'/g, "\\'");
-
-    return `
-      <article class="video-item${revealClass}" data-id="${v.id}"${revealDelay}>
-        <div class="video-item-thumb" onclick="openVideoModal('${v.id}')">
-          <img src="${v.thumbnail}" alt="${v.title}" loading="lazy">
-          <div class="mini-play" aria-label="Play video">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="video-badge">${v.badge}</span>
-          <span class="video-duration">${v.duration}</span>
-        </div>
-        <div class="video-item-info">
-          <span class="video-meta-tag">${v.categoryLabel}</span>
-          <h3 class="video-item-title">${v.title}</h3>
-          <p class="video-item-desc">${v.description}</p>
-
-          <div class="video-item-footer" style="margin-top: auto; padding-top: 0.5rem;">
-            <button class="card-link" onclick="openVideoModal('${v.id}')" style="background:none;border:none;cursor:pointer;font-size:0.95rem;font-weight:700;">
-              Watch Lesson &rarr;
-            </button>
-            <button class="btn-listen" onclick="readAloud('${escapedTitle}. ${escapedDesc}')" title="Listen to summary">
-              🔊 Listen
-            </button>
-          </div>
-
-          <!-- Supporting clinical source listed cleanly at the bottom -->
-          <div class="bottom-source-note">
-            <span>Supporting source: <strong>${v.authority}</strong></span>
-            <a href="${v.citationUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
 }
 
 // 4. Video Category Filters
