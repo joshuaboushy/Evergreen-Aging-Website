@@ -1813,7 +1813,7 @@ window.openPrintableToolkit = function(toolkitKey) {
     <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <title>${toolkit.title} - Evergreen Aging</title>
+      <title>${toolkit.title}</title>
       <link rel="icon" type="image/x-icon" href="favicon.ico">
       <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
       <style>
@@ -1948,11 +1948,6 @@ window.openPrintableToolkit = function(toolkitKey) {
           letter-spacing: 0.05em;
           padding: 3px 8px;
           border-radius: 4px;
-        }
-        .doc-tagline {
-          font-size: 9.5pt;
-          font-weight: 600;
-          color: #3b5042;
         }
         .doc-title-area h1 {
           margin: 0;
@@ -2107,9 +2102,6 @@ window.openPrintableToolkit = function(toolkitKey) {
             font-size: 7.5pt !important;
             padding: 2.5px 8px !important;
           }
-          .doc-tagline {
-            font-size: 8.2pt !important;
-          }
           .doc-desc {
             font-size: 9.8pt !important;
             line-height: 1.35 !important;
@@ -2228,7 +2220,6 @@ window.openPrintableToolkit = function(toolkitKey) {
         <div class="doc-title-area">
           <div class="doc-meta-row">
             <span class="doc-badge-pill">${toolkit.category}</span>
-            <span class="doc-tagline">Evergreen Aging &bull; Free Printable Health Toolkit</span>
           </div>
           <h1>${toolkit.title}</h1>
         </div>
