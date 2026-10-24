@@ -27,11 +27,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_candidate_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_caregiver_print_v1">
   <style>
     body {
       background: var(--bg-main);
       padding: 2rem 1rem;
+    }
+    #disclaimerFloatingContainer,
+    .disclaimer-floating-container {
+      display: none !important;
     }
     .poster-comparison-avoid,
     .poster-comparison-empower {
@@ -91,18 +95,339 @@
         margin-bottom: 1rem;
       }
     }
+    @page {
+      size: letter portrait;
+      margin: 0.3in 0.35in;
+    }
     @media print {
-      body {
-        background: #fff;
-        padding: 0;
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
-      .top-nav-bar {
+      body {
+        background: #ffffff !important;
+        color: #1a251f !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 9pt !important;
+        line-height: 1.3 !important;
+        -webkit-text-size-adjust: 100% !important;
+      }
+      .top-nav-bar,
+      .poster-top-actions,
+      .btn-share,
+      .btn-primary,
+      .btn-listen,
+      #disclaimerFloatingContainer,
+      .disclaimer-floating-container,
+      .disclaimer-popup-wrap,
+      #medicalDisclaimerPopup {
         display: none !important;
+        visibility: hidden !important;
+      }
+      .poster-standalone-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
       .caregiver-poster-card {
-        border: none !important;
+        border: 1.5px solid #2d6a4f !important;
+        border-radius: 8px !important;
         box-shadow: none !important;
-        padding: 0.5rem 1rem !important;
+        padding: 0.5rem 0.7rem !important;
+        margin: 0 auto !important;
+        background: #ffffff !important;
+        box-sizing: border-box !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .poster-top-bar {
+        border-bottom: 2px solid #1b4332 !important;
+        padding-bottom: 0.35rem !important;
+        margin-bottom: 0.45rem !important;
+        display: block !important;
+      }
+      .poster-badge {
+        font-size: 6.8pt !important;
+        padding: 2px 7px !important;
+        margin-bottom: 0.2rem !important;
+        display: inline-block !important;
+        background: #e8f4ed !important;
+        color: #1b4332 !important;
+        font-weight: 800 !important;
+        border-radius: 3px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+      }
+      .poster-top-bar h3 {
+        font-size: 13pt !important;
+        line-height: 1.2 !important;
+        margin: 0 0 0.15rem 0 !important;
+        color: #1b4332 !important;
+        font-weight: 800 !important;
+      }
+      .poster-top-bar p {
+        font-size: 8pt !important;
+        line-height: 1.25 !important;
+        margin: 0 !important;
+        color: #3e5647 !important;
+      }
+      .poster-core-rule {
+        background: #f0f7f3 !important;
+        border: 1.5px solid #52b788 !important;
+        border-radius: 6px !important;
+        padding: 0.45rem 0.65rem !important;
+        margin-bottom: 0.45rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .poster-core-rule-tag {
+        font-size: 6.5pt !important;
+        padding: 2px 6px !important;
+        margin-bottom: 0.18rem !important;
+        background: #1b4332 !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        border-radius: 3px !important;
+        display: inline-block !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+      }
+      .poster-core-rule-title {
+        font-size: 10pt !important;
+        font-weight: 800 !important;
+        color: #1b4332 !important;
+        margin-bottom: 0.15rem !important;
+        line-height: 1.2 !important;
+      }
+      .poster-core-rule-desc {
+        font-size: 7.8pt !important;
+        line-height: 1.28 !important;
+        color: #1e3328 !important;
+        margin: 0 !important;
+      }
+      .poster-block-title {
+        font-size: 8.8pt !important;
+        font-weight: 800 !important;
+        color: #1b4332 !important;
+        letter-spacing: 0.02em !important;
+        margin-bottom: 0.35rem !important;
+        padding-bottom: 0.18rem !important;
+        border-bottom: 1.5px solid rgba(27, 67, 50, 0.2) !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+        text-transform: uppercase !important;
+      }
+      .poster-comparison-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.5rem !important;
+        margin-bottom: 0.45rem !important;
+        width: 100% !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+      .poster-comparison-avoid,
+      .poster-comparison-empower {
+        padding: 0.45rem 0.55rem !important;
+        border-radius: 7px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+      .poster-comparison-avoid {
+        background: #fff5f5 !important;
+        border: 1.5px solid #fecaca !important;
+      }
+      .poster-comparison-empower {
+        background: #f0fdf4 !important;
+        border: 1.5px solid #bbf7d0 !important;
+      }
+      .poster-comparison-head {
+        font-size: 8pt !important;
+        font-weight: 800 !important;
+        line-height: 1.15 !important;
+        padding-bottom: 0.25rem !important;
+        margin-bottom: 0.3rem !important;
+        min-height: auto !important;
+        border-bottom: 1px solid !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+      }
+      .poster-comparison-avoid .poster-comparison-head {
+        color: #991b1b !important;
+        border-bottom-color: #fecaca !important;
+      }
+      .poster-comparison-empower .poster-comparison-head {
+        color: #166534 !important;
+        border-bottom-color: #bbf7d0 !important;
+      }
+      .poster-comparison-avoid ul,
+      .poster-comparison-empower ul,
+      .poster-comparison-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.28rem !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+      }
+      .phrase-item {
+        font-size: 7.4pt !important;
+        line-height: 1.25 !important;
+        padding: 0.25rem 0.45rem !important;
+        border-radius: 5px !important;
+        background: #ffffff !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+        box-shadow: none !important;
+        height: auto !important;
+        min-height: 24px !important;
+        box-sizing: border-box !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .poster-comparison-avoid .phrase-item {
+        border: 1px solid #fecaca !important;
+        border-left: 3.5px solid #dc2626 !important;
+        color: #7f1d1d !important;
+        font-weight: 500 !important;
+      }
+      .poster-comparison-empower .phrase-item {
+        border: 1px solid #bbf7d0 !important;
+        border-left: 3.5px solid #16a34a !important;
+        color: #14532d !important;
+        font-weight: 600 !important;
+      }
+      .phrase-icon {
+        font-size: 8pt !important;
+        font-weight: 900 !important;
+        flex-shrink: 0 !important;
+        line-height: 1 !important;
+      }
+      .phrase-text {
+        flex: 1 !important;
+        min-width: 0 !important;
+      }
+      .poster-pillars-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.45rem !important;
+        margin-bottom: 0.45rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+      .poster-pillar-card {
+        background: #f8faf8 !important;
+        border: 1.5px solid #d8e5dc !important;
+        border-radius: 6px !important;
+        padding: 0.45rem 0.6rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+      .poster-pillar-header {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+      .poster-pillar-num {
+        width: 20px !important;
+        height: 20px !important;
+        background: #1b4332 !important;
+        color: #ffffff !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 800 !important;
+        font-size: 7pt !important;
+        flex-shrink: 0 !important;
+      }
+      .poster-pillar-title {
+        font-size: 8.5pt !important;
+        font-weight: 800 !important;
+        color: #1b4332 !important;
+        line-height: 1.15 !important;
+      }
+      .poster-pillar-card ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .poster-pillar-card li {
+        font-size: 7.2pt !important;
+        line-height: 1.25 !important;
+        color: #1a251f !important;
+        margin-bottom: 0.15rem !important;
+        padding-left: 0.8rem !important;
+        position: relative !important;
+      }
+      .poster-pillar-card li:last-child {
+        margin-bottom: 0 !important;
+      }
+      .poster-pillar-card li::before {
+        content: "•" !important;
+        color: #2d6a4f !important;
+        font-weight: bold !important;
+        position: absolute !important;
+        left: 0 !important;
+      }
+      .poster-respite-box {
+        background: #fdf8eb !important;
+        border: 1.5px solid #eed69b !important;
+        border-radius: 6px !important;
+        padding: 0.4rem 0.65rem !important;
+        margin-bottom: 0.45rem !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.65rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+      .poster-respite-icon {
+        font-size: 1.35rem !important;
+        flex-shrink: 0 !important;
+      }
+      .poster-respite-content h4 {
+        font-size: 8.5pt !important;
+        font-weight: 800 !important;
+        color: #7c4a1e !important;
+        margin: 0 0 0.12rem 0 !important;
+        line-height: 1.15 !important;
+      }
+      .poster-respite-content p {
+        font-size: 7.4pt !important;
+        line-height: 1.25 !important;
+        color: #5c3815 !important;
+        margin: 0 !important;
+      }
+      .poster-bottom-sources {
+        border-top: 1.5px solid #d8e5dc !important;
+        padding-top: 0.3rem !important;
+        font-size: 7pt !important;
+        line-height: 1.3 !important;
+        color: #4b6354 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.35rem !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
       }
     }
   </style>
