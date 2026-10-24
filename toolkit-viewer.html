@@ -6,7 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_paramedic_v2">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_paramedic_v3">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -737,25 +737,22 @@
         }
         .alert-box {
           background: #fffafa;
-          border: 1.5px solid #fecaca;
+          border: 1.5px solid #ef4444;
           border-radius: 4px;
           padding: 5px 8px;
-        }
-        .alert-box.allergies-box {
-          border-color: #ef4444;
-        }
-        .alert-box.implants-box {
-          background: #fffdfa;
-          border-color: #fed7aa;
-        }
-        .alert-box.implants-box label.alert-label {
-          color: #9a3412;
         }
         .alert-box label.alert-label {
           color: #b91c1c;
           font-size: 8pt;
           font-weight: 800;
           letter-spacing: 0.03em;
+        }
+        .alert-box.implants-box {
+          background: #fffdfa;
+          border-color: #f97316;
+        }
+        .alert-box.implants-box label.alert-label {
+          color: #9a3412;
         }
         .alert-box textarea {
           width: 100%;
@@ -947,6 +944,8 @@
           }
           .alert-box {
             padding: 7px 10px !important;
+            border-color: #ef4444 !important;
+            background: #fffafa !important;
           }
           .alert-box.implants-box {
             background: #fffdfa !important;
@@ -1010,7 +1009,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_paramedic_v2"></script>
+  <script src="js/main.js?v=20261024_paramedic_v3"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 
@@ -1282,16 +1281,16 @@
           <!-- Section 2: Critical Alerts (Allergies, Diagnoses & Implants) -->
           <div class="form-section alert-section">
             <div class="grid-3col">
-              <div class="field-group alert-box allergies-box">
-                <label for="vf_allergies" class="alert-label">⚠️ KNOWN ALLERGIES &amp; REACTIONS:</label>
+              <div class="field-group alert-box">
+                <label for="vf_allergies" class="alert-label">KNOWN ALLERGIES &amp; REACTIONS:</label>
                 <textarea id="vf_allergies" class="form-input-field" rows="2" placeholder="e.g. Penicillin (Anaphylaxis), Latex, Sulfa, Aspirin"></textarea>
               </div>
               <div class="field-group alert-box">
-                <label for="vf_conditions" class="alert-label">🏥 MAJOR MEDICAL DIAGNOSES:</label>
+                <label for="vf_conditions" class="alert-label">MAJOR MEDICAL DIAGNOSES:</label>
                 <textarea id="vf_conditions" class="form-input-field" rows="2" placeholder="e.g. Hypertension, Type 2 Diabetes, History of TIA, COPD"></textarea>
               </div>
               <div class="field-group alert-box implants-box">
-                <label for="vf_implants" class="alert-label">⚡ MEDICAL IMPLANTS &amp; DEVICES:</label>
+                <label for="vf_implants" class="alert-label">MEDICAL IMPLANTS &amp; DEVICES:</label>
                 <textarea id="vf_implants" class="form-input-field" rows="2" placeholder="e.g. Pacemaker (2022), Heart Valve, Stents, Joint Replacement, Home O2"></textarea>
               </div>
             </div>
