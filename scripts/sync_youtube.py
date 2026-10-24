@@ -48,8 +48,8 @@ CATEGORY_DEFAULTS = {
         "authority": "Health Canada",
         "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
         "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
-        "accessibleGuide": "Practical daily hydration cues and protein benchmarks for home routines.",
-        "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
+        "accessibleGuide": "Practical daily hydration anchors and fluid intake cues for home routines.",
+        "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake preserves cognitive clarity, prevents orthostatic dizziness, and avoids unnecessary hospital visits."
     },
     "mobility": {
         "categoryLabel": "Mobility & Joints",
