@@ -193,7 +193,7 @@ const healthToolkits = {
     description: "First responders are trained to look on the front of the refrigerator in a home medical emergency. Keep this card updated and visible.",
     isForm: true,
     items: [
-      "Full Legal Name, Date of Birth, Preferred Name & Home Address / Unit / Buzzer",
+      "Full Legal Name, Date of Birth, Preferred Name & Home Address / Unit",
       "Known Allergies, Major Medical Diagnoses & Medical Implants (Pacemaker, Valves, Stents, Home O2)",
       "Primary Emergency Contact (Name, Relationship, Cell Phone Number)",
       "Secondary Emergency Contact (Name, Relationship, Cell Phone Number)",
