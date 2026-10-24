@@ -2001,13 +2001,13 @@ window.openPrintableToolkit = function(toolkitKey) {
           color: #4b6354;
         }
         .box {
-          width: 22px;
-          height: 22px;
-          min-width: 22px;
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
           border: 2px solid #1b4332;
           flex-shrink: 0;
           margin-top: 2px;
-          border-radius: 4px;
+          border-radius: 5px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2023,8 +2023,8 @@ window.openPrintableToolkit = function(toolkitKey) {
         }
         .box svg {
           display: none;
-          width: 14px;
-          height: 14px;
+          width: 15px;
+          height: 15px;
           stroke: #ffffff;
           stroke-width: 3.5;
           fill: none;
@@ -2033,12 +2033,13 @@ window.openPrintableToolkit = function(toolkitKey) {
           display: block;
         }
         .item-text {
-          font-size: 11pt;
-          line-height: 1.45;
+          font-size: 12pt;
+          line-height: 1.5;
           color: #1a251f;
           flex: 1;
         }
         .item-lead {
+          font-size: 12.4pt;
           font-weight: 800;
           color: #143525;
         }
@@ -2103,10 +2104,10 @@ window.openPrintableToolkit = function(toolkitKey) {
             padding: 2.5px 8px !important;
           }
           .doc-desc {
-            font-size: 9.8pt !important;
-            line-height: 1.35 !important;
-            margin-bottom: 0.55rem !important;
-            padding: 0.45rem 0.75rem !important;
+            font-size: 10.8pt !important;
+            line-height: 1.4 !important;
+            margin-bottom: 0.6rem !important;
+            padding: 0.55rem 0.85rem !important;
             border-left: 3.5px solid #1b4332 !important;
             background: #f8faf8 !important;
           }
@@ -2114,39 +2115,39 @@ window.openPrintableToolkit = function(toolkitKey) {
             margin-bottom: 0.55rem !important;
           }
           .checklist-item {
-            padding: 0.62rem 0.5rem !important;
+            padding: 0.65rem 0.5rem !important;
             border-bottom: 1px solid #e0e7e2 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
-            gap: 0.7rem !important;
+            gap: 0.8rem !important;
           }
           .box {
-            width: 22px !important;
-            height: 22px !important;
-            min-width: 22px !important;
+            width: 24px !important;
+            height: 24px !important;
+            min-width: 24px !important;
             margin-top: 1px !important;
             border-width: 1.5px !important;
-            border-radius: 4px !important;
+            border-radius: 5px !important;
           }
           .box svg {
-            width: 14px !important;
-            height: 14px !important;
+            width: 15px !important;
+            height: 15px !important;
             stroke-width: 3.5 !important;
           }
           .item-text {
-            font-size: 10.5pt !important;
-            line-height: 1.35 !important;
+            font-size: 12pt !important;
+            line-height: 1.38 !important;
             color: #1a251f !important;
           }
           .item-lead {
-            font-size: 10.8pt !important;
+            font-size: 12.4pt !important;
             font-weight: 800 !important;
             color: #143525 !important;
           }
           .footer {
             margin-top: 0.55rem !important;
             padding-top: 0.45rem !important;
-            font-size: 8.2pt !important;
+            font-size: 8.5pt !important;
             line-height: 1.35 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
@@ -2154,7 +2155,7 @@ window.openPrintableToolkit = function(toolkitKey) {
           .source-box {
             margin-top: 0.3rem !important;
             padding: 0.45rem 0.75rem !important;
-            font-size: 7.8pt !important;
+            font-size: 8pt !important;
             line-height: 1.32 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
@@ -2162,42 +2163,45 @@ window.openPrintableToolkit = function(toolkitKey) {
 
           /* Density fine-tuning for longer 10–12 item checklists (e.g. 12-Point Fall-Proofing Audit) */
           body.density-compact .doc-title-area h1 {
-            font-size: 15.5pt !important;
+            font-size: 16pt !important;
           }
           body.density-compact .doc-desc {
-            font-size: 9.3pt !important;
-            padding: 0.4rem 0.7rem !important;
+            font-size: 10pt !important;
+            line-height: 1.36 !important;
+            padding: 0.45rem 0.75rem !important;
             margin-bottom: 0.45rem !important;
           }
           body.density-compact .checklist-item {
             padding: 0.48rem 0.45rem !important;
-            gap: 0.65rem !important;
+            gap: 0.75rem !important;
           }
           body.density-compact .box {
-            width: 20px !important;
-            height: 20px !important;
-            min-width: 20px !important;
+            width: 22px !important;
+            height: 22px !important;
+            min-width: 22px !important;
+            border-radius: 4px !important;
           }
           body.density-compact .box svg {
-            width: 13px !important;
-            height: 13px !important;
+            width: 14px !important;
+            height: 14px !important;
+            stroke-width: 3.5 !important;
           }
           body.density-compact .item-text {
-            font-size: 10.2pt !important;
-            line-height: 1.33 !important;
+            font-size: 11.2pt !important;
+            line-height: 1.35 !important;
           }
           body.density-compact .item-lead {
-            font-size: 10.5pt !important;
+            font-size: 11.5pt !important;
           }
           body.density-compact .footer {
             margin-top: 0.45rem !important;
             padding-top: 0.35rem !important;
-            font-size: 8pt !important;
+            font-size: 8.2pt !important;
           }
           body.density-compact .source-box {
             margin-top: 0.25rem !important;
             padding: 0.35rem 0.65rem !important;
-            font-size: 7.4pt !important;
+            font-size: 7.6pt !important;
           }
         }
       </style>
