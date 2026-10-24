@@ -146,6 +146,7 @@ const healthToolkits = {
     citationTitle: "ACEP: EMS & Prehospital Care Protocol & First Responder Guidelines",
     citationUrl: "https://www.acep.org/ems/resources",
     description: "First responders are trained to look on the front of the refrigerator in a home medical emergency. Keep this card updated and visible.",
+    isForm: true,
     items: [
       "Full Legal Name, Date of Birth, and Preferred Name",
       "Primary Emergency Contact (Name, Relationship, Cell Phone Number)",

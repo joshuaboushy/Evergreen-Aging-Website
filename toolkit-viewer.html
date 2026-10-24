@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Printable Health Checklist | Evergreen Aging</title>
+  <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <style>
@@ -395,13 +395,381 @@
           }
         }
       
+
+        /* Emergency Medical Information Sheet (Paramedic Protocol) Specific Styles */
+        .emergency-form-container {
+          background: #ffffff;
+          border: 1.5px solid #d0ddd5;
+          border-radius: 8px;
+          padding: 1.25rem 1.5rem;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .emergency-banner {
+          background: #1b4332;
+          color: #ffffff;
+          border-radius: 6px;
+          padding: 10px 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 8px;
+        }
+        .banner-left {
+          flex: 1;
+        }
+        .banner-badge {
+          display: inline-block;
+          background: #d90429;
+          color: #ffffff;
+          font-size: 8pt;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: 2px 7px;
+          border-radius: 3px;
+          margin-bottom: 2px;
+        }
+        .banner-title {
+          font-size: 15pt;
+          font-weight: 800;
+          color: #ffffff;
+          margin: 1px 0 2px 0;
+          letter-spacing: 0.02em;
+          line-height: 1.2;
+        }
+        .banner-sub {
+          font-size: 8pt;
+          color: #d8f3dc;
+          font-weight: 600;
+          letter-spacing: 0.03em;
+        }
+        .banner-right {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-shrink: 0;
+        }
+        .form-logo {
+          width: 44px;
+          height: 44px;
+          border-radius: 6px;
+          border: 1.5px solid #ffffff;
+          object-fit: cover;
+        }
+        .date-updated-box {
+          background: rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 4px;
+          padding: 4px 8px;
+          text-align: right;
+        }
+        .date-updated-box label {
+          display: block;
+          font-size: 7.5pt;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          color: #d8f3dc;
+          font-weight: 700;
+          margin-bottom: 2px;
+        }
+        .date-updated-box input {
+          width: 95px;
+          background: #ffffff;
+          color: #1b4332;
+          border: 1px solid #ffffff;
+          border-radius: 3px;
+          font-size: 8.5pt;
+          font-weight: 700;
+          padding: 2px 5px;
+          text-align: center;
+        }
+        .form-tip-banner {
+          background: #eef7f2;
+          border: 1px solid #b7dfca;
+          border-radius: 4px;
+          padding: 6px 10px;
+          font-size: 8.5pt;
+          color: #1b4332;
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+        .form-section {
+          margin-bottom: 7px;
+        }
+        .section-title-bar {
+          background: #eef7f2;
+          color: #1b4332;
+          font-size: 8.5pt;
+          font-weight: 800;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          padding: 3px 8px;
+          border-left: 3.5px solid #1b4332;
+          border-radius: 2px;
+          margin-bottom: 5px;
+        }
+        .grid-2col {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+        }
+        .grid-3col {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 8px;
+        }
+        .field-group {
+          display: flex;
+          flex-direction: column;
+        }
+        .field-group label {
+          font-size: 8pt;
+          font-weight: 700;
+          color: #1b4332;
+          margin-bottom: 2px;
+        }
+        .form-line-input {
+          width: 100%;
+          border: none;
+          border-bottom: 1.5px solid #94d2bd;
+          background: #f8faf8;
+          padding: 3px 6px;
+          font-size: 9.5pt;
+          font-family: inherit;
+          color: #1a251f;
+          outline: none;
+          transition: all 0.15s ease;
+        }
+        .form-line-input:focus {
+          border-bottom-color: #1b4332;
+          background: #ffffff;
+        }
+        .alert-section {
+          margin-bottom: 7px;
+        }
+        .alert-box {
+          background: #fffafa;
+          border: 1.5px solid #fecaca;
+          border-radius: 4px;
+          padding: 5px 8px;
+        }
+        .alert-box.allergies-box {
+          border-color: #ef4444;
+        }
+        .alert-box label.alert-label {
+          color: #b91c1c;
+          font-size: 8pt;
+          font-weight: 800;
+          letter-spacing: 0.03em;
+        }
+        .alert-box textarea {
+          width: 100%;
+          border: none;
+          background: transparent;
+          font-size: 9pt;
+          line-height: 1.35;
+          font-family: inherit;
+          color: #1a251f;
+          resize: vertical;
+          outline: none;
+        }
+        .contact-card {
+          border: 1px solid #d0ddd5;
+          border-radius: 4px;
+          padding: 5px 8px;
+          background: #fafdfb;
+        }
+        .contact-card .sub-heading {
+          font-size: 7.5pt;
+          font-weight: 800;
+          color: #2d6a4f;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          margin-bottom: 4px;
+          border-bottom: 1px dashed #b7dfca;
+          padding-bottom: 2px;
+        }
+        .med-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 3px;
+        }
+        .med-table th {
+          background: #f0f7f3;
+          color: #1b4332;
+          font-size: 8pt;
+          font-weight: 700;
+          padding: 3px 6px;
+          border: 1px solid #d0ddd5;
+          text-align: left;
+        }
+        .med-table td {
+          border: 1px solid #d0ddd5;
+          padding: 1px 3px;
+          background: #ffffff;
+        }
+        .table-input {
+          width: 100%;
+          border: none;
+          background: transparent;
+          font-size: 9pt;
+          font-family: inherit;
+          padding: 3px 4px;
+          color: #1a251f;
+          outline: none;
+        }
+        .table-input:focus {
+          background: #eef7f2;
+        }
+        .med-note {
+          font-size: 7.5pt;
+          color: #485c4f;
+          font-style: italic;
+          margin-top: 2px;
+        }
+        .form-footer {
+          margin-top: 8px;
+          padding-top: 5px;
+          border-top: 1px solid #d0ddd5;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+          font-size: 7.5pt;
+          color: #485c4f;
+          line-height: 1.35;
+        }
+        .form-badge-pill {
+          display: inline-flex;
+          align-items: center;
+          font-size: 10.5pt;
+          font-weight: 700;
+          padding: 6px 14px;
+          background: #eef7f2;
+          color: #1b4332;
+          border-radius: 20px;
+          border: 1.5px solid #b7dfca;
+        }
+
+        @media print {
+          body {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 8.5pt !important;
+            line-height: 1.25 !important;
+          }
+          .emergency-form-container {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+          }
+          .emergency-banner {
+            padding: 6px 10px !important;
+            margin-bottom: 5px !important;
+            border-radius: 4px !important;
+          }
+          .banner-title {
+            font-size: 13pt !important;
+            margin: 0 !important;
+          }
+          .banner-sub {
+            font-size: 7.5pt !important;
+          }
+          .banner-badge {
+            font-size: 7pt !important;
+            padding: 1.5px 6px !important;
+          }
+          .form-logo {
+            width: 36px !important;
+            height: 36px !important;
+          }
+          .date-updated-box {
+            padding: 2px 6px !important;
+          }
+          .date-updated-box input {
+            width: 80px !important;
+            font-size: 8pt !important;
+            padding: 1px 3px !important;
+          }
+          .form-tip-banner {
+            display: none !important;
+          }
+          .form-section {
+            margin-bottom: 4px !important;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
+          .section-title-bar {
+            font-size: 7.8pt !important;
+            padding: 2px 6px !important;
+            margin-bottom: 3px !important;
+          }
+          .field-group label {
+            font-size: 7.5pt !important;
+            margin-bottom: 1px !important;
+          }
+          .form-line-input {
+            font-size: 8.8pt !important;
+            padding: 1.5px 3px !important;
+            border-bottom: 1px solid #1a251f !important;
+            background: transparent !important;
+            font-weight: 600 !important;
+          }
+          .alert-box {
+            padding: 4px 6px !important;
+          }
+          .alert-box label.alert-label {
+            font-size: 7.5pt !important;
+          }
+          .alert-box textarea {
+            font-size: 8.5pt !important;
+            line-height: 1.25 !important;
+            font-weight: 600 !important;
+          }
+          .contact-card {
+            padding: 3px 6px !important;
+          }
+          .contact-card .sub-heading {
+            font-size: 7pt !important;
+            margin-bottom: 2px !important;
+          }
+          .med-table th {
+            font-size: 7.5pt !important;
+            padding: 2px 5px !important;
+          }
+          .med-table td {
+            padding: 0 2px !important;
+          }
+          .table-input {
+            font-size: 8.5pt !important;
+            padding: 2px 3px !important;
+            font-weight: 600 !important;
+          }
+          .med-note {
+            font-size: 6.8pt !important;
+          }
+          .form-footer {
+            margin-top: 4px !important;
+            padding-top: 3px !important;
+            font-size: 6.8pt !important;
+          }
+          input::placeholder, textarea::placeholder {
+            color: transparent !important;
+          }
+        }
+
   </style>
 </head>
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_single_tab_v1"></script>
+  <script src="js/main.js?v=20261024_vital_form_v1"></script>
   <script>
+    const FORM_STORAGE_KEY = "evergreen_vital_card_data";
+
     function renderToolkitViewer() {
       const params = new URLSearchParams(window.location.search);
       const toolkitKey = params.get('id');
@@ -419,6 +787,16 @@
 
       document.title = `${toolkit.title} - Evergreen Aging`;
 
+      // Branch to Emergency Form Layout if vital_card
+      if (toolkit.isForm || toolkitKey === 'vital_card') {
+        renderVitalFormView(toolkit);
+        return;
+      }
+
+      renderChecklistView(toolkit);
+    }
+
+    function renderChecklistView(toolkit) {
       const isCompactList = toolkit.items.length >= 10;
       const densityClass = isCompactList ? 'density-compact' : 'density-comfortable';
       document.body.className = densityClass;
@@ -492,6 +870,264 @@
       window.currentToolkitTitle = toolkit.title;
     }
 
+    function renderVitalFormView(toolkit) {
+      document.body.className = "vital-form-mode";
+
+      const referrer = document.referrer || '';
+      let returnLabel = '← Back to Toolkits';
+      if (referrer.includes('caregivers.html')) {
+        returnLabel = '← Back to Caregiver Guide';
+      } else if (referrer.includes('index.html')) {
+        returnLabel = '← Back to Home';
+      }
+
+      const app = document.getElementById('toolkitApp');
+      app.innerHTML = `
+        <div class="header-actions">
+          <div class="header-nav-row">
+            <button class="return-btn" id="returnBtn" onclick="returnToPage()" title="Return to Evergreen Aging without opening new tabs">${returnLabel}</button>
+            <div class="form-badge-pill">📋 Paramedic Medical Alert Form</div>
+          </div>
+          <div class="header-tools-row">
+            <button class="print-btn" onclick="window.print()">🖨️ Click to Print Medical Sheet</button>
+            <button class="reset-btn" onclick="clearVitalForm()">↺ Clear Form</button>
+            <button class="share-btn" onclick="emailChecklist()">✉️ Email to Family</button>
+          </div>
+        </div>
+
+        <div class="interactive-tip" style="margin-bottom: 1rem;">
+          💡 <strong>Interactive Fill-In Form:</strong> Type your medical details directly into the fields below before printing, or print blank to fill out by hand. Typed details auto-save in your browser.
+        </div>
+
+        <div class="emergency-form-container">
+          <!-- Prominent Paramedic Header Banner -->
+          <div class="emergency-banner">
+            <div class="banner-left">
+              <div class="banner-badge">PARAMEDIC / EMS PROTOCOL</div>
+              <h1 class="banner-title">EMERGENCY MEDICAL INFORMATION</h1>
+              <div class="banner-sub">POST ON FRONT OF REFRIGERATOR &bull; FIRST RESPONDERS CHECK HERE FIRST</div>
+            </div>
+            <div class="banner-right">
+              <img src="images/logo.jpg" alt="Evergreen Aging" class="form-logo">
+              <div class="date-updated-box">
+                <label for="vf_dateUpdated">Date Updated:</label>
+                <input type="text" id="vf_dateUpdated" class="form-input-field" placeholder="YYYY-MM-DD">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-tip-banner">
+            🚨 <strong>Notice for Caregivers:</strong> Keep this document posted on the front of the refrigerator door where emergency medical technicians and paramedics are trained to look immediately upon entering a home.
+          </div>
+
+          <!-- Section 1: Patient Demographics -->
+          <div class="form-section">
+            <div class="section-title-bar">1. Patient Demographics</div>
+            <div class="grid-2col">
+              <div class="field-group">
+                <label for="vf_fullName">Full Legal Name:</label>
+                <input type="text" id="vf_fullName" class="form-input-field form-line-input" placeholder="e.g. Margaret Ann Smith">
+              </div>
+              <div class="field-group">
+                <label for="vf_prefName">Preferred Name / Nickname:</label>
+                <input type="text" id="vf_prefName" class="form-input-field form-line-input" placeholder="e.g. Peggy">
+              </div>
+            </div>
+            <div class="grid-2col" style="margin-top: 5px;">
+              <div class="field-group">
+                <label for="vf_dob">Date of Birth (YYYY-MM-DD):</label>
+                <input type="text" id="vf_dob" class="form-input-field form-line-input" placeholder="e.g. 1948-06-14">
+              </div>
+              <div class="field-group">
+                <label for="vf_healthCard">Health Card # / Provincial ID:</label>
+                <input type="text" id="vf_healthCard" class="form-input-field form-line-input" placeholder="e.g. 1234-567-890-AB">
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Critical Alerts (Allergies & Major Conditions) -->
+          <div class="form-section alert-section">
+            <div class="grid-2col">
+              <div class="field-group alert-box allergies-box">
+                <label for="vf_allergies" class="alert-label">⚠️ KNOWN ALLERGIES &amp; REACTIONS:</label>
+                <textarea id="vf_allergies" class="form-input-field" rows="2" placeholder="e.g. Penicillin (Anaphylaxis), Latex, Sulfa, Aspirin"></textarea>
+              </div>
+              <div class="field-group alert-box">
+                <label for="vf_conditions" class="alert-label">🏥 MAJOR MEDICAL DIAGNOSES / CONDITIONS:</label>
+                <textarea id="vf_conditions" class="form-input-field" rows="2" placeholder="e.g. Hypertension, Type 2 Diabetes, Pacemaker (2022), History of TIA"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Emergency Contacts -->
+          <div class="form-section">
+            <div class="section-title-bar">2. Emergency Contacts</div>
+            <div class="grid-2col">
+              <div class="contact-card">
+                <div class="sub-heading">Primary Emergency Contact</div>
+                <div class="field-group">
+                  <label for="vf_c1Name">Name &amp; Relationship:</label>
+                  <input type="text" id="vf_c1Name" class="form-input-field form-line-input" placeholder="e.g. Robert Smith (Son)">
+                </div>
+                <div class="field-group" style="margin-top: 3px;">
+                  <label for="vf_c1Phone">Phone (Primary / Cell):</label>
+                  <input type="text" id="vf_c1Phone" class="form-input-field form-line-input" placeholder="e.g. (416) 555-0192">
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="sub-heading">Secondary Emergency Contact</div>
+                <div class="field-group">
+                  <label for="vf_c2Name">Name &amp; Relationship:</label>
+                  <input type="text" id="vf_c2Name" class="form-input-field form-line-input" placeholder="e.g. Sarah Miller (Daughter)">
+                </div>
+                <div class="field-group" style="margin-top: 3px;">
+                  <label for="vf_c2Phone">Phone (Primary / Cell):</label>
+                  <input type="text" id="vf_c2Phone" class="form-input-field form-line-input" placeholder="e.g. (905) 555-0144">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Physician & Preferred Hospital -->
+          <div class="form-section">
+            <div class="section-title-bar">3. Physician &amp; Preferred Hospital</div>
+            <div class="grid-2col">
+              <div class="field-group">
+                <label for="vf_doctor">Primary Care Physician &amp; Clinic Phone:</label>
+                <input type="text" id="vf_doctor" class="form-input-field form-line-input" placeholder="e.g. Dr. Eleanor Chen, Midtown Clinic, (416) 555-0188">
+              </div>
+              <div class="field-group">
+                <label for="vf_hospital">Preferred Hospital / Medical Centre:</label>
+                <input type="text" id="vf_hospital" class="form-input-field form-line-input" placeholder="e.g. Toronto General Hospital / Sunnybrook Health Sciences">
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5: Current Prescriptions (5 Rows) -->
+          <div class="form-section">
+            <div class="section-title-bar">4. Current Prescription Medications</div>
+            <table class="med-table">
+              <thead>
+                <tr>
+                  <th style="width: 46%;">Medication Name</th>
+                  <th style="width: 25%;">Exact Dosage</th>
+                  <th style="width: 29%;">Frequency / Timing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" id="vf_med1_name" class="form-input-field table-input" placeholder="1. e.g. Metformin"></td>
+                  <td><input type="text" id="vf_med1_dose" class="form-input-field table-input" placeholder="e.g. 500 mg"></td>
+                  <td><input type="text" id="vf_med1_freq" class="form-input-field table-input" placeholder="e.g. Twice daily with meals"></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="vf_med2_name" class="form-input-field table-input" placeholder="2. e.g. Amlodipine"></td>
+                  <td><input type="text" id="vf_med2_dose" class="form-input-field table-input" placeholder="e.g. 5 mg"></td>
+                  <td><input type="text" id="vf_med2_freq" class="form-input-field table-input" placeholder="e.g. Once daily morning"></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="vf_med3_name" class="form-input-field table-input" placeholder="3. e.g. Atorvastatin"></td>
+                  <td><input type="text" id="vf_med3_dose" class="form-input-field table-input" placeholder="e.g. 20 mg"></td>
+                  <td><input type="text" id="vf_med3_freq" class="form-input-field table-input" placeholder="e.g. Once daily bedtime"></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="vf_med4_name" class="form-input-field table-input" placeholder="4."></td>
+                  <td><input type="text" id="vf_med4_dose" class="form-input-field table-input"></td>
+                  <td><input type="text" id="vf_med4_freq" class="form-input-field table-input"></td>
+                </tr>
+                <tr>
+                  <td><input type="text" id="vf_med5_name" class="form-input-field table-input" placeholder="5."></td>
+                  <td><input type="text" id="vf_med5_dose" class="form-input-field table-input"></td>
+                  <td><input type="text" id="vf_med5_freq" class="form-input-field table-input"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="med-note">* If taking &gt;5 prescriptions, staple complete pharmacy printout directly behind this sheet.</div>
+          </div>
+
+          <!-- Section 6: Advance Directives & Healthcare Proxy -->
+          <div class="form-section">
+            <div class="section-title-bar">5. Advance Directives &amp; Legal Status</div>
+            <div class="grid-3col">
+              <div class="field-group">
+                <label for="vf_dnr">DNR Order on File?</label>
+                <input type="text" id="vf_dnr" class="form-input-field form-line-input" placeholder="Yes / No (Specify if DNR)">
+              </div>
+              <div class="field-group">
+                <label for="vf_poa">Healthcare Proxy / POA:</label>
+                <input type="text" id="vf_poa" class="form-input-field form-line-input" placeholder="Name &amp; Phone Number">
+              </div>
+              <div class="field-group">
+                <label for="vf_docLocation">Location of Legal Papers:</label>
+                <input type="text" id="vf_docLocation" class="form-input-field form-line-input" placeholder="e.g. Refrigerator pocket / Desk">
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer & Sources -->
+          <div class="form-footer">
+            <div class="footer-left">
+              <strong>Evergreen Aging:</strong> Independent Healthy Aging &amp; Senior Mobility Education &bull; https://evergreenaging.ca
+            </div>
+            <div class="footer-right">
+              <strong>Protocol Citation:</strong> Formulated in consultation with American College of Emergency Physicians (ACEP) Prehospital Care Guidelines.
+            </div>
+          </div>
+        </div>
+      `;
+
+      initVitalFormStorage();
+      window.currentToolkitTitle = toolkit.title;
+    }
+
+    function initVitalFormStorage() {
+      const inputs = document.querySelectorAll(".form-input-field");
+      // Load saved values
+      try {
+        const raw = localStorage.getItem(FORM_STORAGE_KEY);
+        if (raw) {
+          const data = JSON.parse(raw);
+          inputs.forEach(input => {
+            if (data[input.id] !== undefined) {
+              input.value = data[input.id];
+            }
+          });
+        }
+      } catch (err) {
+        console.warn("Storage load error:", err);
+      }
+
+      // Auto-save on input
+      inputs.forEach(input => {
+        input.addEventListener("input", () => {
+          saveVitalFormData();
+        });
+      });
+    }
+
+    function saveVitalFormData() {
+      try {
+        const inputs = document.querySelectorAll(".form-input-field");
+        const data = {};
+        inputs.forEach(input => {
+          data[input.id] = input.value;
+        });
+        localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
+      } catch (err) {
+        console.warn("Storage save error:", err);
+      }
+    }
+
+    function clearVitalForm() {
+      if (confirm("Are you sure you want to clear all entered medical information on this form?")) {
+        try {
+          localStorage.removeItem(FORM_STORAGE_KEY);
+        } catch (e) {}
+        const inputs = document.querySelectorAll(".form-input-field");
+        inputs.forEach(input => input.value = "");
+      }
+    }
+
     function returnToPage() {
       const referrer = document.referrer || '';
       let fallback = 'toolkits.html';
@@ -549,9 +1185,9 @@
     }
 
     function emailChecklist() {
-      const title = window.currentToolkitTitle || 'Health Checklist';
+      const title = window.currentToolkitTitle || 'Health Resource';
       const subject = encodeURIComponent(title + ' - Evergreen Aging');
-      const body = encodeURIComponent('Hi,\n\nHere is the free printable health checklist from Evergreen Aging: \"' + title + '\"\n\n' + window.location.href);
+      const body = encodeURIComponent('Hi,\n\nHere is the free health resource from Evergreen Aging: \"' + title + '\"\n\n' + window.location.href);
       window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
     }
 
