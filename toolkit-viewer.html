@@ -6,6 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_disclaimer_fix_v1">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -263,7 +264,9 @@
             print-color-adjust: exact !important;
           }
           .header-actions,
-          .interactive-tip {
+          .interactive-tip,
+          #disclaimerFloatingContainer,
+          .disclaimer-floating-container {
             display: none !important;
             visibility: hidden !important;
           }
@@ -927,7 +930,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_nia_nutrition_v1"></script>
+  <script src="js/main.js?v=20261024_disclaimer_fix_v1"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 
