@@ -6,7 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_disclaimer_fix_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_vital_enlarge_v1">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -481,6 +481,18 @@
         }
 
         @media print {
+          #disclaimerFloatingContainer,
+          .disclaimer-floating-container,
+          .disclaimer-floating-card,
+          .disclaimer-floating-bubble {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+          }
           body.routine-mode {
             font-size: 9pt !important;
             line-height: 1.3 !important;
@@ -818,11 +830,23 @@
         }
 
         @media print {
+          #disclaimerFloatingContainer,
+          .disclaimer-floating-container,
+          .disclaimer-floating-card,
+          .disclaimer-floating-bubble {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
+            pointer-events: none !important;
+          }
           body {
             padding: 0 !important;
             margin: 0 !important;
-            font-size: 8.5pt !important;
-            line-height: 1.25 !important;
+            font-size: 9.8pt !important;
+            line-height: 1.32 !important;
           }
           .emergency-form-container {
             border: none !important;
@@ -831,94 +855,110 @@
             box-shadow: none !important;
           }
           .emergency-banner {
-            padding: 6px 10px !important;
-            margin-bottom: 5px !important;
+            padding: 10px 14px !important;
+            margin-bottom: 8px !important;
             border-radius: 4px !important;
           }
           .banner-title {
-            font-size: 13pt !important;
+            font-size: 16pt !important;
             margin: 0 !important;
+            letter-spacing: 0.02em !important;
           }
           .banner-sub {
-            font-size: 7.5pt !important;
+            font-size: 9pt !important;
+            margin-top: 2.5px !important;
           }
           .banner-badge {
-            font-size: 7pt !important;
-            padding: 1.5px 6px !important;
+            font-size: 8.2pt !important;
+            padding: 2.5px 8px !important;
           }
           .form-logo {
-            width: 36px !important;
-            height: 36px !important;
+            width: 44px !important;
+            height: 44px !important;
           }
           .date-updated-box {
-            padding: 2px 6px !important;
+            padding: 3px 8px !important;
+          }
+          .date-updated-box label {
+            font-size: 8pt !important;
           }
           .date-updated-box input {
-            width: 80px !important;
-            font-size: 8pt !important;
-            padding: 1px 3px !important;
+            width: 95px !important;
+            font-size: 9.8pt !important;
+            padding: 2px 4px !important;
           }
           .form-tip-banner {
             display: none !important;
           }
           .form-section {
-            margin-bottom: 4px !important;
+            margin-bottom: 8px !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
           }
           .section-title-bar {
-            font-size: 7.8pt !important;
-            padding: 2px 6px !important;
-            margin-bottom: 3px !important;
+            font-size: 9.5pt !important;
+            font-weight: 800 !important;
+            padding: 3.5px 8px !important;
+            margin-bottom: 5px !important;
+            border-left-width: 4px !important;
           }
           .field-group label {
-            font-size: 7.5pt !important;
-            margin-bottom: 1px !important;
+            font-size: 8.6pt !important;
+            font-weight: 700 !important;
+            margin-bottom: 2px !important;
           }
           .form-line-input {
-            font-size: 8.8pt !important;
-            padding: 1.5px 3px !important;
-            border-bottom: 1px solid #1a251f !important;
+            font-size: 10.5pt !important;
+            padding: 2.5px 4px !important;
+            border-bottom: 1.5px solid #1a251f !important;
             background: transparent !important;
             font-weight: 600 !important;
           }
+          .alert-section {
+            margin-bottom: 8px !important;
+          }
           .alert-box {
-            padding: 4px 6px !important;
+            padding: 7px 10px !important;
           }
           .alert-box label.alert-label {
-            font-size: 7.5pt !important;
+            font-size: 8.8pt !important;
+            font-weight: 800 !important;
           }
           .alert-box textarea {
-            font-size: 8.5pt !important;
-            line-height: 1.25 !important;
+            font-size: 10pt !important;
+            line-height: 1.35 !important;
             font-weight: 600 !important;
+            min-height: 64px !important;
           }
           .contact-card {
-            padding: 3px 6px !important;
+            padding: 6px 9px !important;
           }
           .contact-card .sub-heading {
-            font-size: 7pt !important;
-            margin-bottom: 2px !important;
+            font-size: 8.2pt !important;
+            font-weight: 800 !important;
+            margin-bottom: 3px !important;
           }
           .med-table th {
-            font-size: 7.5pt !important;
-            padding: 2px 5px !important;
+            font-size: 9pt !important;
+            font-weight: 700 !important;
+            padding: 4px 6px !important;
           }
           .med-table td {
-            padding: 0 2px !important;
+            padding: 1.5px 3px !important;
           }
           .table-input {
-            font-size: 8.5pt !important;
-            padding: 2px 3px !important;
+            font-size: 10.2pt !important;
+            padding: 4px 4px !important;
             font-weight: 600 !important;
           }
           .med-note {
-            font-size: 6.8pt !important;
+            font-size: 7.8pt !important;
+            margin-top: 3px !important;
           }
           .form-footer {
-            margin-top: 4px !important;
-            padding-top: 3px !important;
-            font-size: 6.8pt !important;
+            margin-top: 7px !important;
+            padding-top: 5px !important;
+            font-size: 7.6pt !important;
           }
           input::placeholder, textarea::placeholder {
             color: transparent !important;
@@ -930,7 +970,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_disclaimer_fix_v1"></script>
+  <script src="js/main.js?v=20261024_vital_enlarge_v1"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 

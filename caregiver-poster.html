@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_disclaimer_fix_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_vital_enlarge_v1">
   <style>
     body {
       background: var(--bg-main);
@@ -127,10 +127,16 @@
       .btn-listen,
       #disclaimerFloatingContainer,
       .disclaimer-floating-container,
+      .disclaimer-floating-card,
+      .disclaimer-floating-bubble,
       .disclaimer-popup-wrap,
       #medicalDisclaimerPopup {
         display: none !important;
         visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
       }
       .poster-standalone-wrapper {
         max-width: 100% !important;
@@ -652,6 +658,6 @@
       initReturnButton();
     }
   </script>
-  <script src="js/main.js?v=20261024_disclaimer_fix_v1"></script>
+  <script src="js/main.js?v=20261024_vital_enlarge_v1"></script>
 </body>
 </html>

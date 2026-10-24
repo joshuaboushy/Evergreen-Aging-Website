@@ -2426,9 +2426,14 @@ body {
   .access-bar, .site-header, .btn-yt, .hero-actions, .library-controls, .video-modal, .toast-notice, .site-footer, .topic-form, .btn-listen,
   .poster-top-actions, .btn-share, .btn-primary, .top-nav-bar,
   .disclaimer-floating-container, #disclaimerFloatingContainer,
+  .disclaimer-floating-card, .disclaimer-floating-bubble,
   .disclaimer-popup-wrap, #medicalDisclaimerPopup {
     display: none !important;
     visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
   }
   body {
     background: #fff !important;
