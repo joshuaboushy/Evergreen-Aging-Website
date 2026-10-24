@@ -164,16 +164,16 @@ const healthToolkits = {
     authority: "Health Canada & Dietitians of Canada",
     citationTitle: "Health Canada: Canada's Food Guide — Healthy Eating for Older Adults & Hydration Physiology",
     citationUrl: "https://food-guide.canada.ca/en/tips-for-healthy-eating/older-adults/",
-    description: "An evidence-based daily habit checklist to support declining thirst sensation, maintain vital fluid balance, and distribute dietary protein to preserve lean muscle tissue.",
+    description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue.",
     items: [
-      "Visual Hydration Anchor: Fill a dedicated 1.5L to 2L water pitcher each morning and keep it in direct line of sight to bypass naturally blunted thirst sensation.",
-      "Morning Wake-Up Glass: Drink 1 full glass of water upon waking up to replenish fluids lost through overnight respiration.",
-      "Hydrating Whole Foods: Incorporate high-water foods with meals (sliced melon, cucumber, berries, citrus, and warm low-sodium broths).",
-      "Distribute Protein Evenly: Include high-quality protein (eggs, poultry, fish, tofu, beans, lentils, or Greek yogurt) across all 3 meals to steadily stimulate muscle protein synthesis.",
-      "Post-Movement Recovery: Pair gentle strength exercises or walking routines with a protein-rich snack within 1–2 hours to support muscle maintenance.",
-      "Visual Hydration Check: Monitor urine color throughout the day—aim for a pale straw color (dark amber signals that fluid intake needs to increase).",
-      "Evening Taper: Shift fluid consumption primarily to morning and afternoon, gently tapering intake 2 hours before bedtime to reduce nighttime awakenings and fall risks.",
-      "Fiber & Fluid Synergy: Pair adequate fluid intake with dietary fiber (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
+      "High-Contrast Visual Cups: Replace intimidating 1-liter tumblers with smaller (150–200 mL) brightly colored cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
+      "Habit-Stacked Sip Schedule: Bypass blunted hypothalamic thirst cues by anchoring sips to daily habits: 1 cup upon waking, warm herbal tea with morning reading or TV, and a glass alongside lunch.",
+      "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods (>90% water) like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
+      "Flavor & Gentle Temperature: Add lemon, orange, or cucumber slices to plain water, and offer soothing warm herbal teas (peppermint, chamomile) that are gentle on sensitive teeth and aging stomachs.",
+      "Front-Load Fluids (Address Bathroom Fear): Shift fluid intake between breakfast and 4:00 PM, then gently taper liquids 2 hours before bed to ease incontinence anxiety and nighttime fall risks.",
+      "Clinical Dehydration Check: Monitor for warning signs—pale straw urine, a parched/coated tongue, rapid heart rate, or sudden lethargy and orthostatic dizziness when standing (preventing delirium and falls).",
+      "Distribute Protein Evenly: Include 25–30g of high-quality dietary protein (eggs, poultry, fish, tofu, beans, or Greek yogurt) across all meals to steadily defend against sarcopenia.",
+      "Fiber & Fluid Synergy: Pair adequate daily fluid intake with dietary fiber (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
     ]
   },
   sleep_hygiene: {
@@ -1787,10 +1787,13 @@ window.openPrintableToolkit = function(toolkitKey) {
   }
 
   // Standard Checklist layout for other toolkits (fall_proofing, joint_warmup, vital_card, hydration, sleep)
+  const isCompactList = toolkit.items.length >= 10;
+  const densityClass = isCompactList ? "density-compact" : "density-comfortable";
+
   const formattedItemsHtml = toolkit.items.map((item, idx) => {
     let content = item;
     const colonIdx = item.indexOf(":");
-    if (colonIdx !== -1 && colonIdx < 40) {
+    if (colonIdx !== -1 && colonIdx < 55) {
       const lead = item.substring(0, colonIdx + 1);
       const rest = item.substring(colonIdx + 1);
       content = `<strong class="item-lead">${lead}</strong>${rest}`;
@@ -1827,15 +1830,29 @@ window.openPrintableToolkit = function(toolkitKey) {
         }
         .header-actions {
           display: flex;
-          align-items: center;
+          flex-direction: column;
           gap: 12px;
-          flex-wrap: wrap;
           margin-bottom: 1.75rem;
+        }
+        .header-nav-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #e1e8e3;
+        }
+        .header-tools-row {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
         }
         .return-btn {
           font-size: 11pt;
           font-weight: 700;
-          padding: 9px 18px;
+          padding: 8px 16px;
           background: #ffffff;
           color: #1b4332;
           border: 1.5px solid #1b4332;
@@ -1851,7 +1868,7 @@ window.openPrintableToolkit = function(toolkitKey) {
           border-color: #166534;
         }
         .print-btn {
-          font-size: 12.5pt;
+          font-size: 12pt;
           font-weight: 700;
           padding: 9px 20px;
           background: #1b4332;
@@ -1886,14 +1903,14 @@ window.openPrintableToolkit = function(toolkitKey) {
         }
         .share-btn:hover { background: #d8f3dc; }
         .progress-pill {
-          font-size: 11pt;
+          font-size: 10.5pt;
           font-weight: 700;
           color: #1b4332;
           background: #eef7f2;
           border: 1px solid #b7dfca;
           padding: 6px 14px;
           border-radius: 9999px;
-          margin-left: auto;
+          white-space: nowrap;
         }
         .doc-header {
           display: flex;
@@ -2068,97 +2085,142 @@ window.openPrintableToolkit = function(toolkitKey) {
             padding: 0 !important;
             margin: 0 !important;
             max-width: 100% !important;
-            font-size: 9.5pt !important;
-            line-height: 1.35 !important;
+            font-size: 10.5pt !important;
+            line-height: 1.36 !important;
             color: #1a251f !important;
           }
           .doc-header {
-            margin-bottom: 0.4rem !important;
-            padding-bottom: 0.4rem !important;
+            margin-bottom: 0.45rem !important;
+            padding-bottom: 0.45rem !important;
             border-bottom: 2px solid #1b4332 !important;
           }
           .doc-logo {
-            width: 44px !important;
-            height: 44px !important;
+            width: 48px !important;
+            height: 48px !important;
           }
           .doc-title-area h1 {
-            font-size: 14pt !important;
+            font-size: 16pt !important;
             line-height: 1.2 !important;
             margin-bottom: 2px !important;
           }
           .doc-badge-pill {
-            font-size: 6.8pt !important;
-            padding: 2px 7px !important;
+            font-size: 7.5pt !important;
+            padding: 2.5px 8px !important;
           }
           .doc-tagline {
-            font-size: 7.5pt !important;
+            font-size: 8.2pt !important;
           }
           .doc-desc {
-            font-size: 8.5pt !important;
-            line-height: 1.3 !important;
-            margin-bottom: 0.45rem !important;
-            padding: 0.4rem 0.65rem !important;
-            border-left: 3px solid #1b4332 !important;
+            font-size: 9.8pt !important;
+            line-height: 1.35 !important;
+            margin-bottom: 0.55rem !important;
+            padding: 0.45rem 0.75rem !important;
+            border-left: 3.5px solid #1b4332 !important;
             background: #f8faf8 !important;
           }
           ul.checklist-list {
-            margin-bottom: 0.5rem !important;
+            margin-bottom: 0.55rem !important;
           }
           .checklist-item {
-            padding: 0.28rem 0.35rem !important;
+            padding: 0.62rem 0.5rem !important;
             border-bottom: 1px solid #e0e7e2 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
-            gap: 0.6rem !important;
+            gap: 0.7rem !important;
           }
           .box {
-            width: 18px !important;
-            height: 18px !important;
-            min-width: 18px !important;
+            width: 22px !important;
+            height: 22px !important;
+            min-width: 22px !important;
             margin-top: 1px !important;
             border-width: 1.5px !important;
-            border-radius: 3px !important;
+            border-radius: 4px !important;
           }
           .box svg {
-            width: 12px !important;
-            height: 12px !important;
+            width: 14px !important;
+            height: 14px !important;
             stroke-width: 3.5 !important;
           }
           .item-text {
-            font-size: 8.5pt !important;
-            line-height: 1.3 !important;
+            font-size: 10.5pt !important;
+            line-height: 1.35 !important;
             color: #1a251f !important;
           }
           .item-lead {
-            font-size: 8.8pt !important;
+            font-size: 10.8pt !important;
+            font-weight: 800 !important;
             color: #143525 !important;
           }
           .footer {
-            margin-top: 0.5rem !important;
-            padding-top: 0.35rem !important;
-            font-size: 7.2pt !important;
-            line-height: 1.3 !important;
+            margin-top: 0.55rem !important;
+            padding-top: 0.45rem !important;
+            font-size: 8.2pt !important;
+            line-height: 1.35 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
           }
           .source-box {
-            margin-top: 0.25rem !important;
-            padding: 0.35rem 0.6rem !important;
-            font-size: 7pt !important;
-            line-height: 1.3 !important;
+            margin-top: 0.3rem !important;
+            padding: 0.45rem 0.75rem !important;
+            font-size: 7.8pt !important;
+            line-height: 1.32 !important;
             page-break-inside: avoid !important;
             break-inside: avoid !important;
+          }
+
+          /* Density fine-tuning for longer 10–12 item checklists (e.g. 12-Point Fall-Proofing Audit) */
+          body.density-compact .doc-title-area h1 {
+            font-size: 15.5pt !important;
+          }
+          body.density-compact .doc-desc {
+            font-size: 9.3pt !important;
+            padding: 0.4rem 0.7rem !important;
+            margin-bottom: 0.45rem !important;
+          }
+          body.density-compact .checklist-item {
+            padding: 0.48rem 0.45rem !important;
+            gap: 0.65rem !important;
+          }
+          body.density-compact .box {
+            width: 20px !important;
+            height: 20px !important;
+            min-width: 20px !important;
+          }
+          body.density-compact .box svg {
+            width: 13px !important;
+            height: 13px !important;
+          }
+          body.density-compact .item-text {
+            font-size: 10.2pt !important;
+            line-height: 1.33 !important;
+          }
+          body.density-compact .item-lead {
+            font-size: 10.5pt !important;
+          }
+          body.density-compact .footer {
+            margin-top: 0.45rem !important;
+            padding-top: 0.35rem !important;
+            font-size: 8pt !important;
+          }
+          body.density-compact .source-box {
+            margin-top: 0.25rem !important;
+            padding: 0.35rem 0.65rem !important;
+            font-size: 7.4pt !important;
           }
         }
       </style>
     </head>
-    <body>
+    <body class="${densityClass}">
       <div class="header-actions">
-        <button class="return-btn" onclick="returnToPage()" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
-        <button class="print-btn" onclick="window.print()">🖨️ Click to Print Checklist</button>
-        <button class="reset-btn" onclick="resetChecklist()">↺ Clear Checks</button>
-        <button class="share-btn" onclick="emailChecklist()">✉️ Email to Family</button>
-        <div class="progress-pill" id="progressPill">0 of ${toolkit.items.length} completed</div>
+        <div class="header-nav-row">
+          <button class="return-btn" onclick="returnToPage()" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
+          <div class="progress-pill" id="progressPill">0 of ${toolkit.items.length} completed</div>
+        </div>
+        <div class="header-tools-row">
+          <button class="print-btn" onclick="window.print()">🖨️ Click to Print Checklist</button>
+          <button class="reset-btn" onclick="resetChecklist()">↺ Clear Checks</button>
+          <button class="share-btn" onclick="emailChecklist()">✉️ Email to Family</button>
+        </div>
       </div>
       
       <div class="doc-header">
