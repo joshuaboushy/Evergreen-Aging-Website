@@ -11,9 +11,9 @@
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
     "description": "As we age, natural thirst cues diminish, meaning mild fluid loss can quickly trigger sudden confusion, dizziness, and memory fog that closely mimics dementia. Learn simple daily hydration anchors to protect mental clarity and avoid emergency room visits.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Health Canada & Mayo Clinic",
-    "citationTitle": "Fluid and Electrolyte Balance in Aging Adults & Sarcopenia Defense (Canada's Food Guide)",
-    "citationUrl": "https://food-guide.canada.ca/en/",
+    "authority": "Health Canada",
+    "citationTitle": "Health Canada: Canada's Food Guide (Hydration & Healthy Eating for Older Adults)",
+    "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
     "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake combined with 1.2–1.6g/kg daily protein preserves cognitive clarity and slows muscle loss."
   },
   {
@@ -28,8 +28,8 @@
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
     "description": "When unsteady or fearful of falling, older adults instinctively shorten their stride and shuffle, which paradoxically increases trip hazards. Learn why this gait change occurs and safe, practical movement cues to restore step clearance and walking confidence.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "CDC STEADI & Public Health Agency of Canada",
-    "citationTitle": "Gait Abnormalities, Step Clearance & Fall-Risk Mitigation (PHAC Seniors' Falls Surveillance)",
+    "authority": "Public Health Agency of Canada (PHAC)",
+    "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
     "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
     "keyFinding": "Fear of falling induces compensatory shuffling that decreases toe clearance; targeted ankle dorsiflexion and rhythmic step cadence reduce tripping risks by up to 40%."
   },
@@ -45,8 +45,8 @@
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
     "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honor the individual's dignity.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "NINDS / NIH & Canadian Neurological Coalition",
-    "citationTitle": "Neurodegenerative Disease Distinctions & Caregiver Support Guidelines",
+    "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
+    "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
     "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
     "keyFinding": "Understanding how conditions like Alzheimer's, Parkinson's, ALS, MS, and Huntington's uniquely affect motor control and cognition allows caregivers to proactively adapt home safety and preserve patient dignity."
   },
@@ -62,8 +62,8 @@
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
     "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how our follow-along routines, safety checklists, and dignity guides fit into daily life.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Canadian Society for Exercise Physiology (CSEP) & PHAC",
-    "citationTitle": "Canadian 24-Hour Movement Guidelines for Adults 65+ & Functional Mobility Standards",
+    "authority": "Canadian Society for Exercise Physiology (CSEP)",
+    "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
     "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
     "keyFinding": "Regular low-impact joint mobilization stimulates synovial fluid circulation, mitigates osteoarthritis stiffness, and maintains independent functional capacity."
   }

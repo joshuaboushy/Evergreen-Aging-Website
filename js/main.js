@@ -15,9 +15,9 @@ const channelVideos = [
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
     "description": "Explores how natural thirst cues diminish with age and the physiological importance of consistent daily fluid intake for baseline cognitive vitality. (Note: Sudden confusion or rapid cognitive shifts require prompt medical evaluation by a healthcare professional).",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Health Canada & Mayo Clinic",
-    "citationTitle": "Fluid and Electrolyte Balance in Aging Adults & Sarcopenia Defense (Canada's Food Guide)",
-    "citationUrl": "https://food-guide.canada.ca/en/",
+    "authority": "Health Canada",
+    "citationTitle": "Health Canada: Canada's Food Guide (Hydration & Healthy Eating for Older Adults)",
+    "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
     "keyFinding": "Diminished thirst sensation in older adults accelerates hypovolemia; routine fluid intake combined with 1.2–1.6g/kg daily protein preserves cognitive clarity and slows muscle loss."
   },
   {
@@ -32,8 +32,8 @@ const channelVideos = [
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
     "description": "When unsteady or fearful of falling, older adults instinctively shorten their stride and shuffle, which paradoxically increases trip hazards. Learn why this gait change occurs and safe, practical movement cues to restore step clearance and walking confidence.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "CDC STEADI & Public Health Agency of Canada",
-    "citationTitle": "Gait Abnormalities, Step Clearance & Fall-Risk Mitigation (PHAC Seniors' Falls Surveillance)",
+    "authority": "Public Health Agency of Canada (PHAC)",
+    "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
     "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
     "keyFinding": "Fear of falling induces compensatory shuffling that decreases toe clearance; targeted ankle dorsiflexion and rhythmic step cadence reduce tripping risks by up to 40%."
   },
@@ -49,8 +49,8 @@ const channelVideos = [
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
     "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honor the individual's dignity.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "NINDS / NIH & Canadian Neurological Coalition",
-    "citationTitle": "Neurodegenerative Disease Distinctions & Caregiver Support Guidelines",
+    "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
+    "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
     "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
     "keyFinding": "Understanding how conditions like Alzheimer's, Parkinson's, ALS, MS, and Huntington's uniquely affect motor control and cognition allows caregivers to proactively adapt home safety and preserve patient dignity."
   },
@@ -66,8 +66,8 @@ const channelVideos = [
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
     "description": "An orientation to Evergreen Aging's public health mission—translating complex geriatric and human kinetics research into actionable, barrier-free habits. Learn how these follow-along routines, safety checklists, and dignity guides fit into daily life.",
     "accessibleGuide": "Designed for safe home application with zero floor work required.",
-    "authority": "Canadian Society for Exercise Physiology (CSEP) & PHAC",
-    "citationTitle": "Canadian 24-Hour Movement Guidelines for Adults 65+ & Functional Mobility Standards",
+    "authority": "Canadian Society for Exercise Physiology (CSEP)",
+    "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
     "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
     "keyFinding": "Regular low-impact joint mobilization stimulates synovial fluid circulation, mitigates osteoarthritis stiffness, and maintains independent functional capacity."
   }
@@ -87,13 +87,13 @@ const healthToolkits = {
   fall_proofing: {
     title: "12-Point Home Fall-Proofing Environmental Safety Audit",
     category: "Safety & Fall Prevention",
-    authority: "CDC STEADI & Public Health Agency of Canada (PHAC)",
-    citationTitle: "CDC STEADI Home Fall Prevention Checklist & PHAC Seniors' Falls in Canada",
-    citationUrl: "https://www.cdc.gov/steadi/",
+    authority: "Public Health Agency of Canada (PHAC)",
+    citationTitle: "PHAC: Seniors' Falls in Canada: Second Report (Surveillance & Environmental Risk Factors)",
+    citationUrl: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
     description: "A room-by-room safety checklist to identify and eliminate the hidden hazards responsible for 60% of all in-home falls.",
     items: [
       "Stairways: Install secure handrails on both sides that extend the full length of stairs (PHAC standard).",
-      "Lighting: Install motion-activated 300+ lumen nightlights between the bed and the bathroom (CDC STEADI recommendation).",
+      "Lighting: Install motion-activated 300+ lumen nightlights between the bed and the bathroom (clinical fall-prevention standard).",
       "Flooring: Remove all loose throw rugs or secure them firmly with double-sided rug tape.",
       "Bathroom: Install non-slip rubber mats inside the tub and professional grab bars anchored into studs (avoid suction cups).",
       "Pathways: Clear floor walkways of electrical cords, pet toys, and clutter.",
@@ -109,9 +109,9 @@ const healthToolkits = {
   joint_warmup: {
     title: "\"Morning Gentle Joint Warm-Up\" Printable Routine",
     category: "Daily Mobility Routine",
-    authority: "Arthritis Foundation & Mayo Clinic Joint Preservation",
-    citationTitle: "Arthritis Foundation & Mayo Clinic: Joint Preservation & Synovial Fluid Circulation Protocol",
-    citationUrl: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20046440",
+    authority: "Mayo Clinic Health System",
+    citationTitle: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
+    citationUrl: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
     description: "A large-print, 5-minute seated routine seniors can do right beside the bed to circulate synovial fluid before walking. Directly combats morning stiffness, eases osteoarthritis discomfort, and builds movement confidence.",
     items: [
       "1. Seated Ankle Pumps & Circles: While seated on the edge of the bed or a sturdy chair, pump your feet up and down 10 times, then draw gentle circles with your toes (5 in each direction) to stimulate venous return and lubricate the ankle joints.",
@@ -126,8 +126,8 @@ const healthToolkits = {
     title: "Caregiver & Family Guide: Preserving Daily Independence",
     category: "Family & Caregiver Support",
     isPoster: true,
-    authority: "National Institute on Aging (NIA / NIH) & Health Canada",
-    citationTitle: "NIA / NIH: Caregiving Resources & Health Canada Functional Aging Framework",
+    authority: "National Institute on Aging (NIA / NIH)",
+    citationTitle: "NIA / NIH: Caregiver Health, Stress Physiology & Daily Living Guides",
     citationUrl: "https://www.nia.nih.gov/health/caregiving",
     description: "An evidence-based educational infographic poster for adult children, spouses, and caregivers. Focuses on autonomy preservation, positive language reframing, and safe daily mobility support.",
     items: [
@@ -142,7 +142,7 @@ const healthToolkits = {
   vital_card: {
     title: "Emergency Refrigerator Medical Information Sheet (Paramedic Protocol)",
     category: "Emergency Preparedness",
-    authority: "American College of Emergency Physicians & Canadian Red Cross",
+    authority: "American College of Emergency Physicians (ACEP)",
     citationTitle: "ACEP: Emergency Medical Information Protocol & First Responder Guidelines",
     citationUrl: "https://www.acep.org/",
     description: "First responders are trained to look on the front of the refrigerator in a home medical emergency. Keep this card updated and visible.",
@@ -1222,12 +1222,12 @@ window.submitNewVideo = async function(e) {
   } catch (err) {}
 
   const catMeta = {
-    balance: { label: "Fall Prevention", auth: "CDC STEADI & PHAC", cite: "CDC STEADI Fall Prevention Guidelines", url: "https://www.cdc.gov/steadi/" },
-    seated: { label: "Chair / Seated Only", auth: "Health Canada & Mayo Clinic", cite: "Seated Physical Activity Standards", url: "https://www.canada.ca/" },
-    brain: { label: "Brain Health & Neurological Support", auth: "NIA / NIH & Health Canada", cite: "NIA / NIH: Cognitive Vitality Guidelines", url: "https://www.nia.nih.gov/" },
-    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada & Mayo Clinic", cite: "Canada Food Guide: Senior Nutrition, Protein & Hydration Guidelines", url: "https://food-guide.canada.ca/" },
-    mobility: { label: "Mobility & Joints", auth: "Health Canada & Mayo Clinic", cite: "Joint Preservation & Mobility Guidelines", url: "https://www.canada.ca/" }
-  }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Physical Activity Guidelines", url: "https://www.canada.ca/" };
+    balance: { label: "Fall Prevention", auth: "Public Health Agency of Canada (PHAC)", cite: "PHAC: Seniors' Falls in Canada Surveillance", url: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html" },
+    seated: { label: "Chair / Seated Only", auth: "Canadian Society for Exercise Physiology (CSEP)", cite: "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+", url: "https://csepguidelines.ca/guidelines/adults-65/" },
+    brain: { label: "Brain Health & Neurological Support", auth: "National Institute of Neurological Disorders and Stroke (NINDS / NIH)", cite: "NINDS / NIH: Neurodegenerative Conditions & Brain Health", url: "https://www.ninds.nih.gov/health-information/disorders" },
+    nutrition: { label: "Nutrition, Protein & Hydration", auth: "Health Canada", cite: "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)", url: "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/" },
+    mobility: { label: "Mobility & Joints", auth: "Mayo Clinic Health System", cite: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness", url: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971" }
+  }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Health Canada: Physical Activity Guidelines", url: "https://www.canada.ca/" };
 
   const newVidObj = {
     id: vid,

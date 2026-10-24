@@ -54,7 +54,7 @@ Or click the **"🔄 Check for New Uploads"** button directly in the website's V
   - *Mayo Clinic Health System*
   - *Centers for Disease Control and Prevention (CDC STEADI)*
   - *National Institute on Aging (NIA / NIH)*
-  - *World Health Organization (WHO) & The Lancet*
+  - *World Health Organization (WHO)*
   - *Osteoporosis Canada*
 
 ---

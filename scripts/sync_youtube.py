@@ -21,37 +21,37 @@ MAIN_JS = os.path.join(PROJECT_ROOT, "js", "main.js")
 CATEGORY_DEFAULTS = {
     "balance": {
         "categoryLabel": "Fall Prevention",
-        "authority": "CDC STEADI & Public Health Agency of Canada",
-        "citationTitle": "CDC STEADI Clinical Guidelines & Seniors' Falls in Canada",
-        "citationUrl": "https://www.cdc.gov/steadi/",
+        "authority": "Public Health Agency of Canada (PHAC)",
+        "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
+        "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
         "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
     },
     "seated": {
         "categoryLabel": "Chair / Seated Only",
-        "authority": "Health Canada & Mayo Clinic",
-        "citationTitle": "Accessible Seated Mobility Standards for Older Adults",
-        "citationUrl": "https://www.canada.ca/en/public-health/services/publications/healthy-living/physical-activity-tips-older-adults-65-years-older.html",
+        "authority": "Canadian Society for Exercise Physiology (CSEP)",
+        "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
+        "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
         "keyFinding": "Chair-supported routines safely maintain joint range of motion and cardiovascular circulation without fall risk."
     },
     "brain": {
         "categoryLabel": "Brain Health & Neurological Support",
-        "authority": "National Institute on Aging (NIA / NIH) & Health Canada",
-        "citationTitle": "NIA / NIH: Neurodegenerative Diseases & Alzheimer's Caregiving Guidelines",
-        "citationUrl": "https://www.nia.nih.gov/health/alzheimers-and-dementia",
+        "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
+        "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
+        "citationUrl": "https://www.ninds.nih.gov/health-information/disorders",
         "keyFinding": "Early understanding of neurological conditions and compassionate caregiver strategies preserve patient dignity and reduce home stress."
     },
     "nutrition": {
         "categoryLabel": "Nutrition, Protein & Hydration",
-        "authority": "Health Canada & Mayo Clinic",
-        "citationTitle": "Canada's Food Guide: Dietary Protein, Hydration & Sarcopenia Prevention in Older Adults",
-        "citationUrl": "https://food-guide.canada.ca/en/",
+        "authority": "Health Canada",
+        "citationTitle": "Health Canada: Canada's Food Guide (Nutrition & Fluid Intake for Older Adults)",
+        "citationUrl": "https://food-guide.canada.ca/en/tips-for-healthy-eating/seniors/",
         "keyFinding": "Adequate daily hydration prevents orthostatic dizziness, while consuming 1.2–1.6g of protein per kg of body weight daily stimulates muscle protein synthesis and counteracts sarcopenia."
     },
     "mobility": {
         "categoryLabel": "Mobility & Joints",
-        "authority": "Health Canada & Mayo Clinic",
-        "citationTitle": "Joint Preservation & Functional Mobility in Healthy Aging",
-        "citationUrl": "https://www.canada.ca/en/public-health/services/publications/healthy-living/physical-activity-tips-older-adults-65-years-older.html",
+        "authority": "Mayo Clinic Health System",
+        "citationTitle": "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
+        "citationUrl": "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
         "keyFinding": "Gentle daily multi-joint mobility routines preserve synovial fluid circulation and maintain functional independence."
     }
 }
