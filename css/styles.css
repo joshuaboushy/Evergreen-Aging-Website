@@ -4306,19 +4306,50 @@ html.high-contrast .page-hero-banner {
   font-size: 1.6rem;
 }
 .about-sources-callout {
-  margin: 0;
-  padding: 1rem 1.25rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--primary);
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
-  color: var(--text-main);
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  padding: 1.1rem 1.4rem;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-light);
+  border-radius: var(--radius-md);
+  font-size: 0.96rem;
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+.about-sources-callout-text {
+  color: var(--primary);
+  line-height: 1.45;
+  font-weight: 500;
+}
+.about-sources-callout-text strong {
+  font-weight: 700;
+  color: var(--primary);
+}
+.about-sources-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--primary);
+  color: #ffffff !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.about-sources-pill-btn:hover,
+.about-sources-pill-btn:focus-visible {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  color: #ffffff !important;
 }
 .about-verification-banner {
   margin-top: 1.5rem;
@@ -4564,8 +4595,21 @@ html.high-contrast .about-badge-flag {
 html.high-contrast .about-sources-callout {
   background: #ffffff !important;
   border: 2px solid #000000 !important;
-  border-left: 6px solid #ffd700 !important;
   color: #000000 !important;
+}
+html.high-contrast .about-sources-callout-text,
+html.high-contrast .about-sources-callout-text strong {
+  color: #000000 !important;
+}
+html.high-contrast .about-sources-pill-btn {
+  background: #000000 !important;
+  color: #ffd700 !important;
+  border: 2px solid #ffd700 !important;
+}
+html.high-contrast .about-sources-pill-btn:hover,
+html.high-contrast .about-sources-pill-btn:focus-visible {
+  background: #1a1a1a !important;
+  color: #ffffff !important;
 }
 html.high-contrast .about-verification-banner {
   background: #ffffff !important;
