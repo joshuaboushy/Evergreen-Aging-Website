@@ -171,7 +171,7 @@ const healthToolkits = {
       "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
       "Improve Flavour and Drinkability: Add lemon, orange, or cucumber slices to plain water, and offer soothing warm herbal teas (peppermint, chamomile) that are gentle on sensitive teeth and aging stomachs.",
       "Front-Load Fluids (Address Bathroom Fear): Shift fluid intake between breakfast and 4:00 PM, then gently taper liquids 2 hours before bed to ease incontinence anxiety and nighttime fall risks.",
-      "Clinical Dehydration Check: Monitor for warning signs—pale straw urine, a parched/coated tongue, rapid heart rate, or sudden lethargy and orthostatic dizziness when standing (preventing delirium and falls).",
+      "Dehydration Check: Monitor for warning signs—dark, concentrated urine (aiming for pale straw colour), a parched/coated tongue, rapid heart rate, or sudden lethargy and dizziness when standing. Contact a healthcare provider promptly if worried about symptoms or acute confusion.",
       "Distribute Protein Evenly: Include 25–30g of high-quality dietary protein (eggs, poultry, fish, tofu, beans, or Greek yogurt) across all meals to steadily defend against sarcopenia.",
       "Fibre & Fluid Synergy: Pair adequate daily fluid intake with dietary fibre (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
     ]
