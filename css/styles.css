@@ -4115,12 +4115,13 @@ html.high-contrast .page-hero-banner {
   align-items: center;
   font-size: 0.8rem;
   font-weight: 700;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem 0.8rem;
   background: #ffffff;
   color: var(--primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  line-height: 1.4;
 }
 
 .founder-bio {
