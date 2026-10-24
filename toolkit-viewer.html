@@ -6,7 +6,7 @@
   <title>Printable Health Toolkit | Evergreen Aging</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_toolkit_ems_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_hydration_src_v1">
   <style>
         * { box-sizing: border-box; }
         body {
@@ -251,6 +251,11 @@
           font-size: 8.5pt;
           color: #2d4536;
           line-height: 1.4;
+        }
+        .source-box a, .footer-source-link {
+          color: #1b4332;
+          text-decoration: underline;
+          word-break: break-all;
         }
 
         /* 1-Page Letter Print Optimization */
@@ -981,7 +986,7 @@
 <body>
   <div id="toolkitApp"></div>
 
-  <script src="js/main.js?v=20261024_toolkit_ems_v1"></script>
+  <script src="js/main.js?v=20261024_hydration_src_v1"></script>
   <script>
     const FORM_STORAGE_KEY = "evergreen_vital_card_data";
 
@@ -1079,12 +1084,20 @@
         <div class="footer">
           <p><strong>Evergreen Aging:</strong> Independent Healthy Aging &amp; Senior Mobility Education &bull; https://www.youtube.com/@evergreen_aging</p>
           <div class="source-box">
-            <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access URL: ${toolkit.citationUrl}
+            <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access: ${formatUrls(toolkit.citationUrl)}
           </div>
         </div>
       `;
 
       window.currentToolkitTitle = toolkit.title;
+    }
+
+    function formatUrls(urlStr) {
+      if (!urlStr) return '';
+      if (urlStr.includes(' & ')) {
+        return urlStr.split(' & ').map(u => `<a href="${u.trim()}" target="_blank" rel="noopener noreferrer" class="footer-source-link">${u.trim()}</a>`).join(' &bull; ');
+      }
+      return `<a href="${urlStr}" target="_blank" rel="noopener noreferrer" class="footer-source-link">${urlStr}</a>`;
     }
 
     function renderChecklistView(toolkit) {
@@ -1152,7 +1165,7 @@
         <div class="footer">
           <p><strong>Evergreen Aging:</strong> Independent Healthy Aging &amp; Senior Mobility Education &bull; https://www.youtube.com/@evergreen_aging</p>
           <div class="source-box">
-            <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access URL: ${toolkit.citationUrl}
+            <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access: ${formatUrls(toolkit.citationUrl)}
           </div>
         </div>
       `;
