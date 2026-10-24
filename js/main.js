@@ -1786,7 +1786,25 @@ window.openPrintableToolkit = function(toolkitKey) {
     return;
   }
 
-  // Standard Checklist layout for other toolkits (fall_proofing, joint_warmup, vital_card)
+  // Standard Checklist layout for other toolkits (fall_proofing, joint_warmup, vital_card, hydration, sleep)
+  const formattedItemsHtml = toolkit.items.map((item, idx) => {
+    let content = item;
+    const colonIdx = item.indexOf(":");
+    if (colonIdx !== -1 && colonIdx < 40) {
+      const lead = item.substring(0, colonIdx + 1);
+      const rest = item.substring(colonIdx + 1);
+      content = `<strong class="item-lead">${lead}</strong>${rest}`;
+    }
+    return `
+      <li class="checklist-item" id="item-${idx}" onclick="toggleCheck(${idx})" role="checkbox" aria-checked="false" tabindex="0" onkeydown="handleKey(event, ${idx})">
+        <div class="box">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div class="item-text">${content}</div>
+      </li>
+    `;
+  }).join("");
+
   printWindow.document.write(`
     <!DOCTYPE html>
     <html lang="en">
@@ -1799,11 +1817,11 @@ window.openPrintableToolkit = function(toolkitKey) {
         * { box-sizing: border-box; }
         body {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-          font-size: 14pt;
-          line-height: 1.55;
-          color: #111;
-          padding: 2.5rem 2rem;
-          max-width: 840px;
+          font-size: 13.5pt;
+          line-height: 1.5;
+          color: #1a251f;
+          padding: 2.25rem 2rem;
+          max-width: 860px;
           margin: 0 auto;
           background: #ffffff;
         }
@@ -1812,7 +1830,7 @@ window.openPrintableToolkit = function(toolkitKey) {
           align-items: center;
           gap: 12px;
           flex-wrap: wrap;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.75rem;
         }
         .return-btn {
           font-size: 11pt;
@@ -1833,9 +1851,9 @@ window.openPrintableToolkit = function(toolkitKey) {
           border-color: #166534;
         }
         .print-btn {
-          font-size: 13pt;
+          font-size: 12.5pt;
           font-weight: 700;
-          padding: 10px 22px;
+          padding: 9px 20px;
           background: #1b4332;
           color: white;
           border: none;
@@ -1877,67 +1895,87 @@ window.openPrintableToolkit = function(toolkitKey) {
           border-radius: 9999px;
           margin-left: auto;
         }
-        @media print {
-          .header-actions { display: none !important; }
-          body { padding: 0.5rem 1rem; max-width: 100%; }
-          .checklist-item { page-break-inside: avoid; }
-        }
         .doc-header {
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 16px;
           margin-bottom: 12px;
           border-bottom: 2.5px solid #1b4332;
-          padding-bottom: 10px;
+          padding-bottom: 12px;
         }
         .doc-logo {
           width: 52px;
           height: 52px;
           object-fit: cover;
-          border-radius: 6px;
-          border: 1px solid #ccc;
+          border-radius: 8px;
+          border: 1.5px solid #c8d9ce;
           flex-shrink: 0;
+        }
+        .doc-title-area {
+          flex: 1;
+        }
+        .doc-meta-row {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin-bottom: 4px;
+        }
+        .doc-badge-pill {
+          display: inline-block;
+          background: #e8f4ed;
+          color: #1b4332;
+          font-size: 8pt;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: 3px 8px;
+          border-radius: 4px;
+        }
+        .doc-tagline {
+          font-size: 9.5pt;
+          font-weight: 600;
+          color: #3b5042;
         }
         .doc-title-area h1 {
           margin: 0;
-          font-size: 19pt;
+          font-size: 18pt;
           color: #1b4332;
           line-height: 1.25;
-        }
-        .doc-category {
-          font-size: 11pt;
-          color: #334e3e;
-          font-weight: 700;
-          margin-top: 2px;
+          font-weight: 800;
         }
         .doc-desc {
-          font-size: 12pt;
-          margin-bottom: 1.25rem;
-          color: #222;
+          font-size: 11pt;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+          color: #24352b;
           background: #f8faf8;
-          border-left: 3px solid #1b4332;
-          padding: 0.75rem 1rem;
-          border-radius: 0 4px 4px 0;
+          border-left: 3.5px solid #1b4332;
+          padding: 0.65rem 0.95rem;
+          border-radius: 0 6px 6px 0;
         }
         .interactive-tip {
-          font-size: 10pt;
+          font-size: 9.5pt;
           color: #485c4f;
-          margin-bottom: 0.85rem;
-          font-style: italic;
+          margin-bottom: 1rem;
+          background: #f4f8f5;
+          padding: 6px 12px;
+          border-radius: 6px;
+          border: 1px solid #dbe8df;
         }
         ul.checklist-list {
           list-style: none;
           padding-left: 0;
-          margin-bottom: 2rem;
+          margin: 0 0 1.5rem 0;
         }
         .checklist-item {
-          padding: 0.75rem 0.65rem;
-          border-bottom: 1px solid #d5ded7;
+          padding: 0.65rem 0.6rem;
+          border-bottom: 1px solid #e1e8e3;
           display: flex;
-          gap: 0.85rem;
+          gap: 0.75rem;
           align-items: flex-start;
           cursor: pointer;
-          border-radius: 4px;
+          border-radius: 6px;
           transition: background 0.12s ease-in-out;
           user-select: none;
         }
@@ -1945,14 +1983,15 @@ window.openPrintableToolkit = function(toolkitKey) {
           background: #f4f8f5;
         }
         .checklist-item.checked {
-          background: #fbfdfc;
+          background: #f9fcf9;
         }
         .checklist-item.checked .item-text {
-          color: #3b5042;
+          color: #4b6354;
         }
         .box {
-          width: 24px;
-          height: 24px;
+          width: 22px;
+          height: 22px;
+          min-width: 22px;
           border: 2px solid #1b4332;
           flex-shrink: 0;
           margin-top: 2px;
@@ -1972,8 +2011,8 @@ window.openPrintableToolkit = function(toolkitKey) {
         }
         .box svg {
           display: none;
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
           stroke: #ffffff;
           stroke-width: 3.5;
           fill: none;
@@ -1982,26 +2021,134 @@ window.openPrintableToolkit = function(toolkitKey) {
           display: block;
         }
         .item-text {
-          font-size: 12.5pt;
-          line-height: 1.5;
+          font-size: 11pt;
+          line-height: 1.45;
           color: #1a251f;
+          flex: 1;
+        }
+        .item-lead {
+          font-weight: 800;
+          color: #143525;
         }
         .footer {
-          margin-top: 2.5rem;
-          font-size: 9.5pt;
+          margin-top: 2rem;
+          font-size: 9pt;
           color: #485c4f;
-          border-top: 1.5px solid #ccc;
-          padding-top: 1rem;
-          line-height: 1.45;
+          border-top: 1.5px solid #d5ded7;
+          padding-top: 0.85rem;
+          line-height: 1.4;
         }
         .source-box {
           background: #f4f8f5;
           border: 1px solid #d0dfd4;
-          padding: 0.75rem 1rem;
-          border-radius: 4px;
-          margin-top: 0.75rem;
-          font-size: 9pt;
+          padding: 0.65rem 0.95rem;
+          border-radius: 6px;
+          margin-top: 0.5rem;
+          font-size: 8.5pt;
           color: #2d4536;
+          line-height: 1.4;
+        }
+
+        /* 1-Page Letter Print Optimization */
+        @page {
+          size: letter portrait;
+          margin: 0.35in 0.4in;
+        }
+        @media print {
+          *, *::before, *::after {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+          .header-actions,
+          .interactive-tip {
+            display: none !important;
+            visibility: hidden !important;
+          }
+          body {
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            font-size: 9.5pt !important;
+            line-height: 1.35 !important;
+            color: #1a251f !important;
+          }
+          .doc-header {
+            margin-bottom: 0.4rem !important;
+            padding-bottom: 0.4rem !important;
+            border-bottom: 2px solid #1b4332 !important;
+          }
+          .doc-logo {
+            width: 44px !important;
+            height: 44px !important;
+          }
+          .doc-title-area h1 {
+            font-size: 14pt !important;
+            line-height: 1.2 !important;
+            margin-bottom: 2px !important;
+          }
+          .doc-badge-pill {
+            font-size: 6.8pt !important;
+            padding: 2px 7px !important;
+          }
+          .doc-tagline {
+            font-size: 7.5pt !important;
+          }
+          .doc-desc {
+            font-size: 8.5pt !important;
+            line-height: 1.3 !important;
+            margin-bottom: 0.45rem !important;
+            padding: 0.4rem 0.65rem !important;
+            border-left: 3px solid #1b4332 !important;
+            background: #f8faf8 !important;
+          }
+          ul.checklist-list {
+            margin-bottom: 0.5rem !important;
+          }
+          .checklist-item {
+            padding: 0.28rem 0.35rem !important;
+            border-bottom: 1px solid #e0e7e2 !important;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+            gap: 0.6rem !important;
+          }
+          .box {
+            width: 18px !important;
+            height: 18px !important;
+            min-width: 18px !important;
+            margin-top: 1px !important;
+            border-width: 1.5px !important;
+            border-radius: 3px !important;
+          }
+          .box svg {
+            width: 12px !important;
+            height: 12px !important;
+            stroke-width: 3.5 !important;
+          }
+          .item-text {
+            font-size: 8.5pt !important;
+            line-height: 1.3 !important;
+            color: #1a251f !important;
+          }
+          .item-lead {
+            font-size: 8.8pt !important;
+            color: #143525 !important;
+          }
+          .footer {
+            margin-top: 0.5rem !important;
+            padding-top: 0.35rem !important;
+            font-size: 7.2pt !important;
+            line-height: 1.3 !important;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
+          .source-box {
+            margin-top: 0.25rem !important;
+            padding: 0.35rem 0.6rem !important;
+            font-size: 7pt !important;
+            line-height: 1.3 !important;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
         }
       </style>
     </head>
@@ -2017,30 +2164,26 @@ window.openPrintableToolkit = function(toolkitKey) {
       <div class="doc-header">
         <img src="images/logo.jpg" alt="Evergreen Aging" class="doc-logo">
         <div class="doc-title-area">
+          <div class="doc-meta-row">
+            <span class="doc-badge-pill">${toolkit.category}</span>
+            <span class="doc-tagline">Evergreen Aging &bull; Free Printable Health Toolkit</span>
+          </div>
           <h1>${toolkit.title}</h1>
-          <div class="doc-category">Presented by Evergreen Aging &bull; ${toolkit.category}</div>
         </div>
       </div>
 
-      <p class="doc-desc">${toolkit.description}</p>
+      <div class="doc-desc">${toolkit.description}</div>
       <div class="interactive-tip">💡 Tip: Click any box or row on your screen to mark an item complete. Checked items will print as completed.</div>
       
       <ul class="checklist-list" id="checklistList">
-        ${toolkit.items.map((item, idx) => `
-          <li class="checklist-item" id="item-${idx}" onclick="toggleCheck(${idx})" role="checkbox" aria-checked="false" tabindex="0" onkeydown="handleKey(event, ${idx})">
-            <div class="box">
-              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-            <div class="item-text">${item}</div>
-          </li>
-        `).join("")}
+        ${formattedItemsHtml}
       </ul>
 
       <!-- Sources and clinical citations cleanly placed at the bottom -->
       <div class="footer">
-        <p><strong>Evergreen Aging:</strong> Independent healthy aging &amp; senior mobility education &bull; https://www.youtube.com/@evergreen_aging</p>
+        <p><strong>Evergreen Aging:</strong> Independent Healthy Aging &amp; Senior Mobility Education &bull; https://www.youtube.com/@evergreen_aging</p>
         <div class="source-box">
-          <strong>Supporting Public Health Literature:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Access URL: ${toolkit.citationUrl}
+          <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access URL: ${toolkit.citationUrl}
         </div>
       </div>
 
