@@ -7,7 +7,7 @@ The official companion website for the YouTube channel **[Evergreen Aging](https
 **Evergreen Aging** is an independent, non-commercial educational channel and website created to empower older adults (ages 50+, 60+, 70+) and family caregivers. We present our own practical movement routines, fall-prevention frameworks, and longevity concepts in our own warm, accessible voice.
 
 ### Editorial & Sourcing Hierarchy:
-1. **Evergreen Aging First**: The channel's original lessons, chair exercises, morning mobility flows, and caregiver toolkits are front and center.
+1. **Evergreen Aging First**: The channel's original lessons, chair exercises, morning mobility flows, and caregiver toolkits are front and centre.
 2. **Sources at the Bottom**: Upon accessing any lesson, myth breakdown, or toolkit, the supporting medical literature and clinical guidelines (Health Canada, Mayo Clinic, CDC STEADI, NIA/NIH, etc.) are cleanly listed at the bottom as footnotes and references for viewers, caregivers, and physicians to explore further.
 
 ---

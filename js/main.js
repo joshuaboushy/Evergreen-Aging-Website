@@ -47,7 +47,7 @@ const channelVideos = [
     "youtubeId": "HDYnhxxh-Dk",
     "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
-    "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honor the individual's dignity.",
+    "description": "A plain-language guide comparing Alzheimer's, Parkinson's, ALS, MS, and Huntington's disease. Focuses on recognizing distinctive motor and cognitive symptoms early, while adopting communication and caregiving strategies that honour the individual's dignity.",
     "accessibleGuide": "Plain-language caregiver guidance for Alzheimer's, Parkinson's, and ALS.",
     "authority": "National Institute of Neurological Disorders and Stroke (NINDS / NIH)",
     "citationTitle": "NINDS / NIH: Neurodegenerative Conditions & Caregiver Support Guidelines",
@@ -102,7 +102,7 @@ const healthToolkits = {
       "Bedside Phone: Keep a charged phone or emergency alert pendant within arm's reach of bed.",
       "Contrast Edges: Mark top and bottom stair steps with high-contrast reflective tape.",
       "Spill Response: Keep dry mop pads accessible in kitchen and bath to wipe wet tiles immediately.",
-      "Chair Height: Ensure favorite living room chairs are at least 18-20 inches high with sturdy armrests.",
+      "Chair Height: Ensure favourite living room chairs are at least 18-20 inches high with sturdy armrests.",
       "Medication Review: Ask doctor if any current prescription causes orthostatic dizziness when standing."
     ]
   },
@@ -154,7 +154,7 @@ const healthToolkits = {
       "Current Diagnoses (e.g., Hypertension, Type 2 Diabetes, Osteoarthritis)",
       "Current Prescription Medications (Name, Exact Dosage, Frequency)",
       "Known Allergies (Penicillin, Latex, Iodine, etc.)",
-      "Preferred Hospital / Medical Center",
+      "Preferred Hospital / Medical Centre",
       "Advance Directives / Healthcare Proxy on file (Yes / No, Location of documents)"
     ]
   },
@@ -166,14 +166,14 @@ const healthToolkits = {
     citationUrl: "https://food-guide.canada.ca/en/tips-for-healthy-eating/older-adults/",
     description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue.",
     items: [
-      "High-Contrast Visual Cups: Replace intimidating 1-liter tumblers with smaller (150–200 mL) brightly colored cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
+      "High-Contrast Visual Cups: Replace intimidating 1-litre tumblers with smaller (150–200 mL) brightly coloured cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
       "Habit-Stacked Sip Schedule: Anchor sips to daily habits, e.g., 1 cup upon waking; a mug of tea with morning reading or TV; a larger glass alongside lunch.",
       "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
       "Improve Flavour and Drinkability: Add lemon, orange, or cucumber slices to plain water, and offer soothing warm herbal teas (peppermint, chamomile) that are gentle on sensitive teeth and aging stomachs.",
       "Front-Load Fluids (Address Bathroom Fear): Shift fluid intake between breakfast and 4:00 PM, then gently taper liquids 2 hours before bed to ease incontinence anxiety and nighttime fall risks.",
       "Clinical Dehydration Check: Monitor for warning signs—pale straw urine, a parched/coated tongue, rapid heart rate, or sudden lethargy and orthostatic dizziness when standing (preventing delirium and falls).",
       "Distribute Protein Evenly: Include 25–30g of high-quality dietary protein (eggs, poultry, fish, tofu, beans, or Greek yogurt) across all meals to steadily defend against sarcopenia.",
-      "Fiber & Fluid Synergy: Pair adequate daily fluid intake with dietary fiber (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
+      "Fibre & Fluid Synergy: Pair adequate daily fluid intake with dietary fibre (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
     ]
   },
   sleep_hygiene: {
@@ -474,7 +474,7 @@ window.dismissDisclaimerPopup = function() {
   contentEl.innerHTML = card.innerHTML;
   clone.appendChild(contentEl);
 
-  // Centered label element that appears as pill forms
+  // Centred label element that appears as pill forms
   const labelEl = document.createElement("div");
   labelEl.className = "disclaimer-morph-label";
   labelEl.textContent = "Disclaimer";
@@ -696,7 +696,7 @@ window.readAloud = function(text) {
   window.speechSynthesis.speak(utterance);
 };
 
-// 2. Mobile Menu & Nav Link Behavior
+// 2. Mobile Menu & Nav Link Behaviour
 function initMobileMenu() {
   const toggle = document.querySelector(".mobile-toggle");
   const nav = document.querySelector(".nav-container") || document.querySelector(".main-nav");
@@ -1720,7 +1720,7 @@ window.openPrintableToolkit = function(toolkitKey) {
               <div class="pillar-name">Micro-Environment Setup</div>
             </div>
             <ul>
-              <li>Ensure favorite chairs are firm, 18–20 inches high, and have armrests.</li>
+              <li>Ensure favourite chairs are firm, 18–20 inches high, and have armrests.</li>
               <li>Keep walkways clear without rearranging their familiar personal items.</li>
               <li>Install high-lumen nightlights along the bed-to-bathroom nocturnal pathway.</li>
             </ul>
@@ -2335,7 +2335,7 @@ function initTopicSuggestionForm() {
   });
 }
 
-// 8b. Community & Senior Center Inquiries Contact Form Handler (Routes to contact@evergreenaging.ca)
+// 8b. Community & Senior Centre Inquiries Contact Form Handler (Routes to contact@evergreenaging.ca)
 function initContactForm() {
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -2473,7 +2473,7 @@ YouTube Channel: https://www.youtube.com/@evergreen_aging`
 
   shareModal.innerHTML = `
     <div class="modal-card share-modal-card">
-      <button class="modal-close" onclick="closeShareModal()" aria-label="Close share dialog">&times;</button>
+      <button class="modal-close" onclick="closeShareModal()" aria-label="Close share dialogue">&times;</button>
       
       <div class="share-modal-header">
         <span class="share-modal-icon">✉️</span>
