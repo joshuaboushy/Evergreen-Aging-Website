@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261024_card6_oneline_v1">
+  <link rel="stylesheet" href="css/styles.css?v=20261024_btnshare_fix_v1">
   <style>
     body {
       background: var(--bg-main);
@@ -86,10 +86,15 @@
       font-weight: 700;
       color: var(--primary);
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0 1.15rem;
+      height: 44px;
+      min-height: 44px;
       background: white;
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-color);
+      box-sizing: border-box;
+      transition: var(--transition);
+      cursor: pointer;
     }
     .back-home:hover {
       background: var(--accent-light);
@@ -451,10 +456,10 @@
   <div class="poster-standalone-wrapper">
     <div class="top-nav-bar">
       <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        <button id="returnBtn" onclick="returnToPage()" class="back-home" style="cursor:pointer; border:1px solid var(--border-color); background:white; font-family:inherit; font-size:inherit;" title="Return to Evergreen Aging without opening new tabs">&larr; Back to Caregiver Guide</button>
+        <button id="returnBtn" onclick="returnToPage()" class="back-home" title="Return to Evergreen Aging without opening new tabs">&larr; Back to Caregiver Guide</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
-        <button onclick="shareToolkit('caregiver_guide')" class="btn-share" style="background:white;">✉️ Share with Family</button>
+        <button onclick="shareToolkit('caregiver_guide')" class="btn-share">✉️ Share with Family</button>
         <button onclick="window.print()" class="btn-primary">🖨️ Print Poster</button>
       </div>
     </div>
@@ -658,6 +663,6 @@
       initReturnButton();
     }
   </script>
-  <script src="js/main.js?v=20261024_card6_oneline_v1"></script>
+  <script src="js/main.js?v=20261024_btnshare_fix_v1"></script>
 </body>
 </html>
