@@ -437,7 +437,7 @@
   <div class="poster-standalone-wrapper">
     <div class="top-nav-bar">
       <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        <button onclick="returnToPage()" class="back-home" style="cursor:pointer; border:1px solid var(--border-color); background:white; font-family:inherit; font-size:inherit;" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
+        <button id="returnBtn" onclick="returnToPage()" class="back-home" style="cursor:pointer; border:1px solid var(--border-color); background:white; font-family:inherit; font-size:inherit;" title="Return to Evergreen Aging without opening new tabs">&larr; Back to Caregiver Guide</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button onclick="shareToolkit('caregiver_guide')" class="btn-share" style="background:white;">✉️ Share with Family</button>
@@ -602,15 +602,48 @@
   </div>
 
   <script>
+    function initReturnButton() {
+      const returnBtn = document.getElementById("returnBtn") || document.querySelector(".back-home");
+      const referrer = document.referrer || "";
+      let label = "← Back to Caregiver Guide";
+      let fallback = "caregivers.html";
+
+      if (referrer.includes("toolkits.html")) {
+        label = "← Back to Toolkits";
+        fallback = "toolkits.html";
+      } else if (referrer.includes("index.html")) {
+        label = "← Back to Home";
+        fallback = "index.html";
+      }
+
+      if (returnBtn) {
+        returnBtn.textContent = label;
+        returnBtn.title = "Return to Evergreen Aging without opening new tabs";
+      }
+    }
+
     function returnToPage() {
-      window.close();
-      setTimeout(function() {
-        if (!window.closed) {
-          window.location.href = document.referrer || "caregivers.html";
-        }
-      }, 150);
+      const referrer = document.referrer || "";
+      let fallback = "caregivers.html";
+      if (referrer.includes("toolkits.html")) {
+        fallback = "toolkits.html";
+      } else if (referrer.includes("index.html")) {
+        fallback = "index.html";
+      }
+
+      if (window.history.length > 1 && referrer && referrer.includes(window.location.host)) {
+        window.history.back();
+      } else {
+        window.location.href = fallback;
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initReturnButton);
+    } else {
+      initReturnButton();
     }
   </script>
-  <script src="js/main.js?v=20261024_dehydration_check_v1"></script>
+  <script src="js/main.js?v=20261024_single_tab_v1"></script>
 </body>
 </html>

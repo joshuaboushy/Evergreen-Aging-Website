@@ -50,7 +50,13 @@
   </url>
   <url>
     <loc>https://evergreenaging.ca/caregiver-poster.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://evergreenaging.ca/toolkit-viewer.html</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
