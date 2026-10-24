@@ -8,7 +8,7 @@ The official companion website for the YouTube channel **[Evergreen Aging](https
 
 ### Editorial & Sourcing Hierarchy:
 1. **Evergreen Aging First**: The channel's original lessons, chair exercises, morning mobility flows, and caregiver toolkits are front and centre.
-2. **Sources at the Bottom**: Upon accessing any lesson, myth breakdown, or toolkit, the supporting medical literature and clinical guidelines (Health Canada, Mayo Clinic, CDC STEADI, NIA/NIH, etc.) are cleanly listed at the bottom as footnotes and references for viewers, caregivers, and physicians to explore further.
+2. **Sources at the Bottom**: Upon accessing any lesson, myth breakdown, or toolkit, the supporting medical literature and clinical guidelines (PHAC, Mayo Clinic, Osteoporosis Canada, NIA/NIH, etc.) are cleanly listed at the bottom as footnotes and references for viewers, caregivers, and physicians to explore further.
 
 ---
 
@@ -49,13 +49,16 @@ Or click the **"🔄 Check for New Uploads"** button directly in the website's V
 *(All toolkits feature the Evergreen Aging checklist up top, with supporting public health standards cited at the bottom).*
 
 ### 4. Sources & Supporting Literature Directory
-- Clean, numbered reference directory (`[1]`, `[2]`, `[3]`, etc.) located at the bottom of the homepage linking directly to:
+- Clean, numbered reference directory (`[1]`, `[2]`, `[3]`, etc.) located on the Sources page (`sources.html`) linking directly to:
   - *Public Health Agency of Canada (PHAC)*
-  - *Mayo Clinic Health System*
-  - *Centers for Disease Control and Prevention (CDC STEADI)*
-  - *National Institute on Aging (NIA / NIH)*
-  - *World Health Organization (WHO)*
+  - *Canadian Society for Exercise Physiology (CSEP)*
   - *Osteoporosis Canada*
+  - *National Institute on Aging (NIA / NIH)*
+  - *McMaster Optimal Aging Portal*
+  - *Mayo Clinic Health System*
+  - *National Institute of Neurological Disorders and Stroke (NINDS / NIH)*
+  - *World Health Organization (WHO)*
+  - *Ontario Caregiver Organization (OCO)*
   - *American College of Emergency Physicians (ACEP)*
 
 ---

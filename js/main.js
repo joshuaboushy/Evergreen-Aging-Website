@@ -1160,7 +1160,23 @@ window.openVideoModal = function(videoId) {
   }
   
   if (citationContent) {
-    citationContent.innerHTML = "";
+    if (video.authority && video.citationTitle) {
+      citationContent.innerHTML = `
+        <div style="margin-top: 1rem; padding: 0.95rem 1.15rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-left: 4px solid var(--primary); border-radius: var(--radius-sm); font-size: 0.9rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.35rem;">
+            <span style="font-weight:700; color:var(--primary); text-transform:uppercase; font-size:0.76rem; letter-spacing:0.04em;">🔬 Supporting Clinical Sourcing</span>
+            <span style="font-weight:700; color:var(--text-muted); font-size:0.8rem;">${video.authority}</span>
+          </div>
+          <div style="color:var(--text-main); font-weight:600; margin-bottom:0.35rem; line-height:1.4;">
+            ${video.citationTitle}
+          </div>
+          ${video.keyFinding ? `<p style="margin:0 0 0.45rem 0; font-size:0.85rem; color:var(--text-muted); line-height:1.45;"><strong>Key Clinical Finding:</strong> ${video.keyFinding}</p>` : ''}
+          ${video.citationUrl ? `<a href="${video.citationUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:700; text-decoration:underline; font-size:0.82rem; word-break:break-all;">Public Access Literature &rarr;</a>` : ''}
+        </div>
+      `;
+    } else {
+      citationContent.innerHTML = "";
+    }
   }
 
   if (playerWrap) {
@@ -1332,7 +1348,7 @@ window.submitNewVideo = async function(e) {
     brain: { label: "Brain Health & Neurological Support", auth: "National Institute of Neurological Disorders and Stroke (NINDS / NIH)", cite: "NINDS / NIH: Neurodegenerative Conditions & Brain Health", url: "https://www.ninds.nih.gov/health-information/disorders", guide: "Plain-language caregiver guidance for cognitive and daily care support." },
     nutrition: { label: "Nutrition, Protein & Hydration", auth: "National Institute on Aging (NIA / NIH)", cite: "National Institute on Aging (NIH): Healthy Eating, Nutrition, and Diet for Older Adults", url: "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet", guide: "Practical daily hydration anchors and fluid intake cues for home routines." },
     mobility: { label: "Mobility & Joints", auth: "Mayo Clinic Health System", cite: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness", url: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971", guide: "Safe seated and standing joint mobilization for every mobility level." }
-  }[cat] || { label: "Mobility & Joints", auth: "Health Canada", cite: "Health Canada: Physical Activity Guidelines", url: "https://www.canada.ca/", guide: "Safe and adaptable for seated or standing support." };
+  }[cat] || { label: "Mobility & Joints", auth: "Public Health Agency of Canada (PHAC)", cite: "PHAC: Physical Activity and Healthy Aging Guidelines", url: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors.html", guide: "Safe and adaptable for seated or standing support." };
 
   const newVidObj = {
     id: vid,
