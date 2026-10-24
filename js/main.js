@@ -1318,6 +1318,23 @@ window.openPrintableToolkit = function(toolkitKey) {
             margin: 0 auto;
             line-height: 1.5;
           }
+          .return-btn {
+            display: inline-block;
+            font-size: 12pt;
+            font-weight: 700;
+            padding: 10px 18px;
+            background: #ffffff;
+            color: #1b4332;
+            border: 1.5px solid #1b4332;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            text-decoration: none;
+            margin-right: 10px;
+          }
+          .return-btn:hover {
+            background: #eef7f2;
+          }
           .print-btn {
             display: inline-block;
             font-size: 13pt;
@@ -1331,7 +1348,7 @@ window.openPrintableToolkit = function(toolkitKey) {
             margin-bottom: 2rem;
           }
           @media print {
-            .print-btn { display: none !important; }
+            .return-btn, .print-btn { display: none !important; }
             body { padding: 0.5rem 1rem; max-width: 100%; }
           }
           
@@ -1573,7 +1590,10 @@ window.openPrintableToolkit = function(toolkitKey) {
         </style>
       </head>
       <body>
-        <button class="print-btn" onclick="window.print()">🖨️ Click to Print This Poster (Ink-Friendly Format)</button>
+        <div style="display: flex; gap: 10px; margin-bottom: 2rem; align-items: center; flex-wrap: wrap;">
+          <button class="return-btn" onclick="returnToPage()" style="margin-right: 0;" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
+          <button class="print-btn" onclick="window.print()" style="margin-bottom: 0;">🖨️ Click to Print This Poster (Ink-Friendly Format)</button>
+        </div>
         
         <div class="poster-header">
           <img src="images/logo.jpg" alt="Evergreen Aging" class="poster-logo">
@@ -1713,6 +1733,16 @@ window.openPrintableToolkit = function(toolkitKey) {
             <strong>Supporting Public Health Guidelines:</strong> Formulated in consultation with guidelines published by ${toolkit.authority} (<em>${toolkit.citationTitle}</em>). Public access URL: ${toolkit.citationUrl}
           </div>
         </div>
+        <script>
+          function returnToPage() {
+            window.close();
+            setTimeout(function() {
+              if (!window.closed) {
+                window.location.href = document.referrer || "caregivers.html";
+              }
+            }, 150);
+          }
+        </script>
       </body>
       </html>
     `);
@@ -1747,6 +1777,24 @@ window.openPrintableToolkit = function(toolkitKey) {
           gap: 12px;
           flex-wrap: wrap;
           margin-bottom: 1.5rem;
+        }
+        .return-btn {
+          font-size: 11pt;
+          font-weight: 700;
+          padding: 9px 18px;
+          background: #ffffff;
+          color: #1b4332;
+          border: 1.5px solid #1b4332;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.15s ease-in-out;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .return-btn:hover {
+          background: #eef7f2;
+          border-color: #166534;
         }
         .print-btn {
           font-size: 13pt;
@@ -1923,6 +1971,7 @@ window.openPrintableToolkit = function(toolkitKey) {
     </head>
     <body>
       <div class="header-actions">
+        <button class="return-btn" onclick="returnToPage()" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
         <button class="print-btn" onclick="window.print()">🖨️ Click to Print Checklist</button>
         <button class="reset-btn" onclick="resetChecklist()">↺ Clear Checks</button>
         <button class="share-btn" onclick="emailChecklist()">✉️ Email to Family</button>
@@ -2005,6 +2054,15 @@ window.openPrintableToolkit = function(toolkitKey) {
           const subject = encodeURIComponent("${toolkit.title} - Evergreen Aging");
           const body = encodeURIComponent("Hi,\\n\\nHere is the free printable health checklist from Evergreen Aging: \\"${toolkit.title}\\"\\n\\n" + window.location.href);
           window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+        }
+
+        function returnToPage() {
+          window.close();
+          setTimeout(function() {
+            if (!window.closed) {
+              window.location.href = document.referrer || "toolkits.html";
+            }
+          }, 150);
         }
       <\/script>
     </body>

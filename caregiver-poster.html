@@ -437,8 +437,7 @@
   <div class="poster-standalone-wrapper">
     <div class="top-nav-bar">
       <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-        <a href="index.html" class="back-home">&larr; Home</a>
-        <a href="caregivers.html" class="back-home">&larr; Caregiver Guide</a>
+        <button onclick="returnToPage()" class="back-home" style="cursor:pointer; border:1px solid var(--border-color); background:white; font-family:inherit; font-size:inherit;" title="Close this tab and return to Evergreen Aging">&larr; Return to Page</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button onclick="shareToolkit('caregiver_guide')" class="btn-share" style="background:white;">✉️ Share with Family</button>
@@ -602,6 +601,16 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20261024_nosources_v1"></script>
+  <script>
+    function returnToPage() {
+      window.close();
+      setTimeout(function() {
+        if (!window.closed) {
+          window.location.href = document.referrer || "caregivers.html";
+        }
+      }, 150);
+    }
+  </script>
+  <script src="js/main.js?v=20261024_returntab_v1"></script>
 </body>
 </html>
