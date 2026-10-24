@@ -113,6 +113,51 @@ const healthToolkits = {
     citationTitle: "Mayo Clinic Health System: Exercise Helps Ease Arthritis Pain and Stiffness",
     citationUrl: "https://www.mayoclinic.org/diseases-conditions/arthritis/in-depth/arthritis/art-20047971",
     description: "A large-print, 5-minute seated routine seniors can do right beside the bed to circulate synovial fluid before walking. Directly combats morning stiffness, eases osteoarthritis discomfort, and builds movement confidence.",
+    isRoutine: true,
+    steps: [
+      {
+        num: 1,
+        title: "Seated Ankle Pumps & Circles",
+        reps: "10 pumps • 5 circles each way",
+        instructions: "While seated on the edge of the bed or a sturdy chair, pump your feet up and down 10 times, then draw gentle circles with your toes (5 in each direction).",
+        purpose: "Stimulates venous blood flow, lubricates the ankle joints, and prepares feet for stable floor contact."
+      },
+      {
+        num: 2,
+        title: "Seated Knee Extensions",
+        reps: "8–10 repetitions per leg",
+        instructions: "Slowly straighten one leg out in front of you, holding for 3 seconds, then lower gently. Alternate legs smoothly.",
+        purpose: "Circulates synovial fluid across the knee joints and awakens quadriceps for safe standing."
+      },
+      {
+        num: 3,
+        title: "Gentle Seated Pelvic Tilts",
+        reps: "6–8 repetitions",
+        instructions: "Place your hands on your thighs. Gently rock your pelvis backward to round your lower back slightly, then rock forward to sit tall with a gentle arch.",
+        purpose: "Relieves morning spinal stiffness and restores lumbar mobility before weight-bearing."
+      },
+      {
+        num: 4,
+        title: "Slow Shoulder & Neck Rolls",
+        reps: "5 shoulder rolls • 3s neck pauses",
+        instructions: "Roll your shoulders backward in smooth, relaxed circles 5 times. Gently turn your head to look over your right shoulder, hold 3 seconds, then turn to the left.",
+        purpose: "Eases cervical neck tightness and opens upper-body posture for balanced walking."
+      },
+      {
+        num: 5,
+        title: "Overhead Reaching & Deep Breathing",
+        reps: "4 deep breath cycles",
+        instructions: "Inhale slowly through your nose as you raise both arms gently toward the ceiling (or to shoulder height). Exhale slowly as you lower your arms.",
+        purpose: "Expands the ribcage, oxygenates circulating blood, and activates postural spinal extensors."
+      },
+      {
+        num: 6,
+        title: "Safe Stand & 5-Second Pause",
+        reps: "1 mindful transition",
+        instructions: "Plant both feet flat on the floor directly beneath your knees. Take one calm grounding breath, use sturdy armrests to stand tall, pause for 5 seconds to ensure steadiness, and take your first step with confidence.",
+        purpose: "Prevents orthostatic dizziness, establishes vestibular equilibrium, and prevents morning stumbles."
+      }
+    ],
     items: [
       "1. Seated Ankle Pumps & Circles: While seated on the edge of the bed or a sturdy chair, pump your feet up and down 10 times, then draw gentle circles with your toes (5 in each direction) to stimulate venous return and lubricate the ankle joints.",
       "2. Seated Knee Extensions: Slowly straighten one leg out in front of you, holding for 3 seconds, then lower gently. Alternate legs for 8–10 repetitions per side to wake up the quadriceps and circulate synovial fluid across the knee joint.",
