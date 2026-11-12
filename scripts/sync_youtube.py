@@ -63,7 +63,7 @@ CATEGORY_DEFAULTS = {
 
 def infer_category(title, desc=""):
     text = (title + " " + desc).lower()
-    if any(k in text for k in ["dehydration", "hydration", "protein", "nutrition", "diet", "meal", "water", "fluid", "electrolytes", "vitamin"]):
+    if any(k in text for k in ["dehydration", "hydration", "protein", "nutrition", "diet", "meal", "water", "fluid", "electrolytes", "vitamin", "muscle", "sarcopenia", "anabolic", "leucine"]):
         return "nutrition"
     if any(k in text for k in ["shuffle", "shuffling", "fall", "balance", "gait", "trip", "stumble", "steady"]):
         return "balance"
@@ -72,6 +72,17 @@ def infer_category(title, desc=""):
     if any(k in text for k in ["neuro", "brain", "dementia", "alzheimer", "memory", "cognitive", "parkinson"]):
         return "brain"
     return "mobility"
+
+def load_existing_videos():
+    if os.path.exists(OUTPUT_JSON):
+        try:
+            with open(OUTPUT_JSON, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return {v["id"]: v for v in data if isinstance(v, dict) and v.get("id")}
+        except Exception:
+            pass
+    return {}
 
 def fetch_channel_videos():
     headers = {
@@ -95,8 +106,13 @@ def fetch_channel_videos():
 
     print(f"[*] Discovered {len(unique_vids)} video IDs on channel page: {unique_vids}")
     
+    existing_by_id = load_existing_videos()
     videos = []
     for vid in unique_vids:
+        if vid in existing_by_id:
+            videos.append(existing_by_id[vid])
+            print(f"[=] Preserved curated entry: [{vid}] {existing_by_id[vid].get('title')}")
+            continue
         try:
             oembed_url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json"
             oreq = urllib.request.Request(oembed_url, headers=headers)
