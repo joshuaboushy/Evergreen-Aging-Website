@@ -225,8 +225,9 @@ const healthToolkits = {
     authority: "National Institute on Aging (NIA / NIH) & Cleveland Clinic",
     citationTitle: "NIA Healthy Eating & Protein Protocols &bull; Cleveland Clinic Dehydration in Older Adults",
     citationUrl: "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet & https://health.clevelandclinic.org/dehydration-in-older-adults",
-    description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue.",
+    description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue—with clinical caveats for renal and fluid-restricted conditions.",
     items: [
+      "Clinical Restrictions Check: Consult a physician or nephrologist before adjusting intake—individuals with chronic kidney disease (CKD), congestive heart failure, or prescribed fluid restrictions must follow individualized medical limits rather than general senior guidelines.",
       "High-Contrast Visual Cups: Replace intimidating 1-litre tumblers with smaller (150–200 mL) brightly coloured cups (blue, red, or green) placed in direct line of sight so fluids remain visible against light countertops.",
       "Habit-Stacked Sip Schedule: Anchor sips to daily habits, e.g., 1 cup upon waking; a mug of tea with morning reading or TV; a larger glass alongside lunch.",
       "Eat Your Hydration (20–30% of Fluids): Incorporate high-water foods like watermelon, cantaloupe, berries, cucumbers, tomatoes, warm broths, applesauce, and yogurt into daily meals.",
