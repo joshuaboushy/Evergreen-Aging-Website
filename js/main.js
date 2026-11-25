@@ -8,8 +8,8 @@ const channelVideos = [
     "title": "Why Do Aging Adults Lose Muscle So Fast?",
     "category": "nutrition",
     "categoryLabel": "Nutrition, Protein & Hydration",
-    "duration": "Official Guide",
-    "badge": "Official Video",
+    "duration": "▶ Watch",
+    "badge": "Video Lesson",
     "youtubeId": "97kGccdSdts",
     "youtubeUrl": "https://www.youtube.com/watch?v=97kGccdSdts",
     "thumbnail": "https://img.youtube.com/vi/97kGccdSdts/hqdefault.jpg",
@@ -25,8 +25,8 @@ const channelVideos = [
     "title": "Why Mild Dehydration Looks Like Dementia in Seniors",
     "category": "nutrition",
     "categoryLabel": "Nutrition, Protein & Hydration",
-    "duration": "Official Guide",
-    "badge": "Official Video",
+    "duration": "▶ Watch",
+    "badge": "Video Lesson",
     "youtubeId": "EY_q0rRr_7Y",
     "youtubeUrl": "https://www.youtube.com/watch?v=EY_q0rRr_7Y",
     "thumbnail": "https://img.youtube.com/vi/EY_q0rRr_7Y/hqdefault.jpg",
@@ -42,8 +42,8 @@ const channelVideos = [
     "title": "Why Older Adults Shuffle When Walking (And How To Help)",
     "category": "balance",
     "categoryLabel": "Fall Prevention",
-    "duration": "Official Guide",
-    "badge": "Official Video",
+    "duration": "▶ Watch",
+    "badge": "Video Lesson",
     "youtubeId": "QPn7uxOAiD4",
     "youtubeUrl": "https://www.youtube.com/watch?v=QPn7uxOAiD4",
     "thumbnail": "https://img.youtube.com/vi/QPn7uxOAiD4/hqdefault.jpg",
@@ -59,8 +59,8 @@ const channelVideos = [
     "title": "5 Neurodegenerative Diseases Explained: A Guide for Caregivers",
     "category": "brain",
     "categoryLabel": "Brain Health & Neurological Support",
-    "duration": "Official Guide",
-    "badge": "Official Video",
+    "duration": "▶ Watch",
+    "badge": "Video Lesson",
     "youtubeId": "HDYnhxxh-Dk",
     "youtubeUrl": "https://www.youtube.com/watch?v=HDYnhxxh-Dk",
     "thumbnail": "https://img.youtube.com/vi/HDYnhxxh-Dk/hqdefault.jpg",
@@ -76,8 +76,8 @@ const channelVideos = [
     "title": "Introduction to Evergreen Aging",
     "category": "mobility",
     "categoryLabel": "Mobility & Joints",
-    "duration": "Official Guide",
-    "badge": "Official Video",
+    "duration": "▶ Watch",
+    "badge": "Video Lesson",
     "youtubeId": "QDtxZd36Zog",
     "youtubeUrl": "https://www.youtube.com/watch?v=QDtxZd36Zog",
     "thumbnail": "https://img.youtube.com/vi/QDtxZd36Zog/hqdefault.jpg",
@@ -223,7 +223,7 @@ const healthToolkits = {
     title: "Senior Hydration & Daily Protein Habit Checklist",
     category: "Nutrition & Healthy Aging",
     authority: "National Institute on Aging (NIA / NIH) & Cleveland Clinic",
-    citationTitle: "NIA Healthy Eating & Protein Protocols &bull; Cleveland Clinic Dehydration in Older Adults",
+    citationTitle: "NIA Healthy Eating & Nutrition Guide &bull; Cleveland Clinic Dehydration in Older Adults",
     citationUrl: "https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet & https://health.clevelandclinic.org/dehydration-in-older-adults",
     description: "An evidence-based daily habit checklist to bypass blunted thirst sensation, defend against dehydration-induced confusion (delirium) and orthostatic falls, and distribute dietary protein to preserve lean muscle tissue—with clinical caveats for renal and fluid-restricted conditions.",
     items: [
@@ -1025,7 +1025,7 @@ function renderVideos(videosToRender, category = "all", query = "") {
         <span class="badge-pill" style="margin-bottom: 0.75rem;">Category in Production</span>
         <h3 style="font-size: 1.65rem; color: var(--primary); margin-bottom: 0.5rem;">Coming Soon</h3>
         <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.75rem; line-height: 1.6;">
-          Official video lessons for <strong>${catName}</strong> are currently being scripted and filmed for the Evergreen Aging YouTube channel.
+          Video lessons for <strong>${catName}</strong> are currently being scripted and filmed for the Evergreen Aging YouTube channel.
         </p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="https://www.youtube.com/@evergreen_aging" target="_blank" rel="noopener noreferrer" class="btn-yt">
@@ -1250,7 +1250,7 @@ window.syncChannelVideos = async function() {
       if (added > 0) {
         showToast(`Sync complete! ${added} new video(s) added from @evergreen_aging.`);
       } else {
-        showToast(`Video Vault is up to date (${channelVideos.length} official videos live).`);
+        showToast(`Video Vault is up to date (${channelVideos.length} videos live).`);
       }
       return;
     }
@@ -1259,7 +1259,7 @@ window.syncChannelVideos = async function() {
   setTimeout(() => {
     renderVideos(channelVideos, currentCategory, currentSearchQuery);
     updateVaultStatusBadge();
-    showToast(`Video Vault is up to date (${channelVideos.length} official videos live).`);
+    showToast(`Video Vault is up to date (${channelVideos.length} videos live).`);
   }, 600);
 };
 
@@ -1352,12 +1352,12 @@ window.submitNewVideo = async function(e) {
     title: title,
     category: cat,
     categoryLabel: catMeta.label,
-    duration: "Official Guide",
-    badge: "Official Video",
+    duration: "▶ Watch",
+    badge: "Video Lesson",
     youtubeId: vid,
     youtubeUrl: `https://www.youtube.com/watch?v=${vid}`,
     thumbnail: `https://img.youtube.com/vi/${vid}/hqdefault.jpg`,
-    description: `Official video lesson from Evergreen Aging focusing on evidence-based strategies to support older adults and family caregivers.`,
+    description: `Educational video lesson from Evergreen Aging focusing on evidence-informed strategies to support older adults and family caregivers.`,
     accessibleGuide: catMeta.guide || "Safe and adaptable for seated or standing support.",
     authority: catMeta.auth,
     citationTitle: catMeta.cite,
