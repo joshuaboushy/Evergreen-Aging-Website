@@ -25,7 +25,7 @@ CATEGORY_DEFAULTS = {
         "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
         "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
         "accessibleGuide": "Gentle standing and hallway stride cues with chair support.",
-        "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
+        "keyFinding": "Targeted balance habits, stride training, and home safety modifications meaningfully reduce fall risk among older adults."
     },
     "seated": {
         "categoryLabel": "Chair / Seated Only",
@@ -33,7 +33,7 @@ CATEGORY_DEFAULTS = {
         "citationTitle": "CSEP: Canadian 24-Hour Movement Guidelines for Adults 65+",
         "citationUrl": "https://csepguidelines.ca/guidelines/adults-65/",
         "accessibleGuide": "Chair-supported mobility routine with zero floor work required.",
-        "keyFinding": "Chair-supported routines safely maintain joint range of motion and cardiovascular circulation without fall risk."
+        "keyFinding": "Chair-supported routines help maintain joint range of motion and cardiovascular circulation while minimizing fall risk."
     },
     "brain": {
         "categoryLabel": "Brain Health & Neurological Support",

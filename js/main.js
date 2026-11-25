@@ -52,7 +52,7 @@ const channelVideos = [
     "authority": "Public Health Agency of Canada (PHAC)",
     "citationTitle": "PHAC: Seniors' Falls in Canada (Surveillance & Gait Safety)",
     "citationUrl": "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
-    "keyFinding": "Targeted balance habits, stride training, and environmental modifications reduce home fall risk by over 40%."
+    "keyFinding": "Targeted balance habits, stride training, and home safety modifications meaningfully reduce fall risk among older adults."
   },
   {
     "id": "HDYnhxxh-Dk",
@@ -107,10 +107,10 @@ const healthToolkits = {
     authority: "Public Health Agency of Canada (PHAC)",
     citationTitle: "PHAC: Seniors' Falls in Canada: Second Report (Surveillance & Environmental Risk Factors)",
     citationUrl: "https://www.canada.ca/en/public-health/services/health-promotion/aging-seniors/publications/publications-general-public/seniors-falls-canada-second-report.html",
-    description: "A room-by-room safety checklist to identify and eliminate the hidden hazards responsible for 60% of all in-home falls.",
+    description: "A room-by-room safety checklist to identify and address common hazards behind roughly half of fall-related hospitalizations among older Canadians.",
     items: [
-      "Stairways: Install secure handrails on both sides that extend the full length of stairs (PHAC standard).",
-      "Lighting: Install motion-activated 300+ lumen nightlights between the bed and the bathroom (clinical fall-prevention standard).",
+      "Stairways: Install secure handrails on both sides that extend the full length of stairs (PHAC home safety recommendation).",
+      "Lighting: Install motion-activated, low-glare nightlights along the path between the bed and the bathroom.",
       "Flooring: Remove all loose throw rugs or secure them firmly with double-sided rug tape.",
       "Bathroom: Install non-slip rubber mats inside the tub and professional grab bars anchored into studs (avoid suction cups).",
       "Pathways: Clear floor walkways of electrical cords, pet toys, and clutter.",
@@ -119,7 +119,7 @@ const healthToolkits = {
       "Bedside Phone: Keep a charged phone or emergency alert pendant within arm's reach of bed.",
       "Contrast Edges: Mark top and bottom stair steps with high-contrast reflective tape.",
       "Spill Response: Keep dry mop pads accessible in kitchen and bath to wipe wet tiles immediately.",
-      "Chair Height: Ensure favourite living room chairs are at least 18-20 inches high with sturdy armrests.",
+      "Chair Height: Ensure favourite living room chairs are around 45–50 cm (18–20 in) high with sturdy armrests.",
       "Medication Review: Ask doctor if any current prescription causes orthostatic dizziness when standing."
     ]
   },
@@ -193,12 +193,12 @@ const healthToolkits = {
     citationUrl: "https://www.nia.nih.gov/health/caregiving",
     description: "An evidence-based educational infographic poster for adult children, spouses, and caregivers. Focuses on autonomy preservation, positive language reframing, and safe daily mobility support.",
     items: [
-      "The 10-Second Pause Rule: Before stepping in to assist with rising, shoes, or reaching, pause for 10 seconds to allow their motor cortex time to initiate movement.",
+      "Wait Time (The 10-Second Pause): Before stepping in to assist with rising, shoes, or reaching, pause for 10 seconds to allow time to initiate movement independently.",
       "Language of Dignity: Reframe from \"You shouldn't do that\" to \"Take all the time you need, I am right beside you if you'd like a hand.\"",
       "Safe Ambulatory Support: Stand 45° behind to their weaker side. Never pull on arms or wrists (protects rotator cuff).",
-      "Micro-Environment: Ensure primary chairs are firm and 18–20\" high with armrests; keep pathways clear without moving their personal items.",
-      "Passive Hydration: Place a visible 32oz pitcher in plain sight to counter naturally blunted thirst sensation.",
-      "Caregiver Respite: Taking 20 minutes daily for personal quiet or a walk is clinically necessary to prevent caregiver fatigue."
+      "Micro-Environment: Ensure primary chairs are firm and 45–50 cm (18–20 in) high with armrests; keep pathways clear without moving their personal items.",
+      "Passive Hydration: Keep a visible, smaller (150–200 mL) brightly coloured cup within reach (unless fluid-restricted) to counter blunted thirst sensation.",
+      "Caregiver Respite: Taking 20 minutes daily for personal quiet or a walk helps prevent caregiver fatigue and burnout."
     ]
   },
   vital_card: {
@@ -234,7 +234,7 @@ const healthToolkits = {
       "Improve Flavour and Drinkability: Add lemon, orange, or cucumber slices to plain water, and offer soothing warm herbal teas (peppermint, chamomile) that are gentle on sensitive teeth and aging stomachs.",
       "Front-Load Fluids (Address Bathroom Fear): Shift fluid intake between breakfast and 4:00 PM, then gently taper liquids 2 hours before bed to ease incontinence anxiety and nighttime fall risks.",
       "Dehydration Check: Monitor for warning signs—dark, concentrated urine (aiming for pale straw colour), a parched/coated tongue, rapid heart rate, or sudden lethargy and dizziness when standing. Contact a healthcare provider promptly if worried about symptoms or acute confusion.",
-      "Distribute Protein Evenly: Include 25–30g of high-quality dietary protein (eggs, poultry, fish, tofu, beans, or Greek yogurt) across all meals to steadily defend against sarcopenia.",
+      "Distribute Protein Evenly: Include 25–30 g of high-quality dietary protein (eggs, poultry, fish, tofu, beans, or Greek yogurt) across all meals to steadily defend against sarcopenia.",
       "Fibre & Fluid Synergy: Pair adequate daily fluid intake with dietary fibre (oats, vegetables, seeds) to support smooth digestion and prevent constipation."
     ]
   },
@@ -251,7 +251,7 @@ const healthToolkits = {
       "60-Minute Screen Buffer: Turn off smartphones, tablets, and bright LED screens 1 hour before bed to allow natural melatonin synthesis.",
       "Illuminated Bed-to-Bathroom Path: Ensure low-glare, motion-activated nightlights illuminate the walkway from bed to bathroom to prevent nocturnal tripping.",
       "10-Second Bedside Sit: When waking at night, sit upright on the edge of the bed for 10 seconds before standing to avoid orthostatic dizziness and sudden blood pressure drops.",
-      "Cool, Dark Bedroom Environment: Keep bedroom temperature moderate (around 18–20°C / 65–68°F) with room-darkening shades or curtains.",
+      "Cool, Dark Bedroom Environment: Keep bedroom temperature moderate (around 18–20°C) with room-darkening shades or curtains.",
       "Afternoon Caffeine Cutoff: Discontinue caffeine (coffee, black tea, dark chocolate) after 12:00 PM to allow adequate clearance before bedtime.",
       "20-Minute Stimulus Control: If unable to fall asleep after 20 minutes, move to a dimly lit chair and read or listen to calming music until drowsy before returning to bed."
     ]
