@@ -1502,7 +1502,7 @@ function initContactForm() {
     const bodyLines = [
       `Sender Name: ${name || "Not provided"}`,
       `Sender Email: ${email || "Not provided"}`,
-      `Organization / Role: ${org || "None specified"}`,
+      `Organisation / Role: ${org || "None specified"}`,
       ``,
       `Message / Inquiry:`,
       `${message}`,
