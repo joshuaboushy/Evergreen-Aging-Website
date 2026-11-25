@@ -1392,7 +1392,74 @@ window.openPrintableToolkit = function(toolkitKey) {
   window.location.href = 'toolkit-viewer.html?id=' + encodeURIComponent(toolkitKey);
 };
 
-// 8. Topic Suggestion Handler (Routes to contact@evergreenaging.ca)
+// 8. Reusable Inline Email Draft Helper (No auto-mailto surprise; works for webmail & locked-down machines)
+function renderEmailDraftPanel(form, { recipient, subject, body, label }) {
+  const existing = form.parentNode.querySelector(".email-draft-panel");
+  if (existing) existing.remove();
+
+  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(recipient)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const clipboardText = `To: ${recipient}\nSubject: ${subject}\n\n${body}`;
+
+  const panel = document.createElement("div");
+  panel.className = "email-draft-panel";
+  panel.setAttribute("role", "region");
+  panel.setAttribute("aria-live", "polite");
+  panel.setAttribute("aria-label", "Email sending options");
+
+  panel.innerHTML = `
+    <div class="email-draft-header">
+      <h4 class="email-draft-title">✉️ Your ${label} draft is ready for ${recipient}</h4>
+      <button type="button" class="email-draft-close" aria-label="Close email options" title="Close">&times;</button>
+    </div>
+    <p class="email-draft-sub">Choose how you would like to send it (your text remains in the form above if you need to edit it):</p>
+    <div class="email-draft-actions">
+      <a class="email-draft-btn email-draft-btn-primary" href="${mailtoUrl}">📧 Open Email App</a>
+      <a class="email-draft-btn" href="${gmailUrl}" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+      <a class="email-draft-btn" href="${outlookUrl}" target="_blank" rel="noopener noreferrer">Open in Outlook Web</a>
+      <button type="button" class="email-draft-btn email-draft-copy-btn">📋 Copy Message &amp; Address</button>
+    </div>
+  `;
+
+  const closeBtn = panel.querySelector(".email-draft-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => panel.remove());
+  }
+
+  const copyBtn = panel.querySelector(".email-draft-copy-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(clipboardText);
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = clipboardText;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        copyBtn.textContent = "✓ Copied!";
+        showToast(`Copied message and ${recipient} to your clipboard.`);
+        setTimeout(() => {
+          copyBtn.textContent = "📋 Copy Message & Address";
+        }, 2500);
+      } catch (err) {
+        showToast(`Unable to copy automatically — please email ${recipient} directly.`);
+      }
+    });
+  }
+
+  form.insertAdjacentElement("afterend", panel);
+  panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  showToast(`Email draft ready — choose an option below to send to ${recipient}.`);
+}
+
+// 8a. Topic Suggestion Handler (Routes to contact@evergreenaging.ca)
 function initTopicSuggestionForm() {
   const form = document.getElementById("topicForm");
   if (!form) return;
@@ -1404,19 +1471,12 @@ function initTopicSuggestionForm() {
 
     if (!topic) return;
 
-    const recipient = "contact@evergreenaging.ca";
-    const subject = encodeURIComponent("Evergreen Aging: Viewer Question / Topic Suggestion");
-    const body = encodeURIComponent(
-      `Hello Joshua,\n\nI have a health question / topic suggestion for Evergreen Aging:\n\n"${topic}"\n\n---\nSubmitted via Evergreen Aging Community Form\nWebsite: https://evergreenaging.ca`
-    );
-
-    showToast(`Opening your email client to send your question to ${recipient}...`);
-
-    setTimeout(() => {
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    }, 350);
-
-    input.value = "";
+    renderEmailDraftPanel(form, {
+      recipient: "contact@evergreenaging.ca",
+      subject: "Evergreen Aging: Viewer Question / Topic Suggestion",
+      body: `Hello Joshua,\n\nI have a health question / topic suggestion for Evergreen Aging:\n\n"${topic}"\n\n---\nDrafted via Evergreen Aging (evergreenaging.ca)`,
+      label: "question"
+    });
   });
 }
 
@@ -1439,8 +1499,6 @@ function initContactForm() {
 
     if (!message) return;
 
-    const recipient = "contact@evergreenaging.ca";
-    const subject = encodeURIComponent(`Evergreen Aging Inquiry from ${name || "Community Member"}`);
     const bodyLines = [
       `Sender Name: ${name || "Not provided"}`,
       `Sender Email: ${email || "Not provided"}`,
@@ -1450,16 +1508,15 @@ function initContactForm() {
       `${message}`,
       ``,
       `---`,
-      `Sent via Evergreen Aging (About & Community Inquiries Form)`
+      `Drafted via Evergreen Aging (evergreenaging.ca)`
     ];
 
-    showToast(`Opening your email client to send your inquiry to ${recipient}...`);
-
-    setTimeout(() => {
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-    }, 350);
-
-    form.reset();
+    renderEmailDraftPanel(form, {
+      recipient: "contact@evergreenaging.ca",
+      subject: `Evergreen Aging Inquiry from ${name || "Community Member"}`,
+      body: bodyLines.join("\n"),
+      label: "inquiry"
+    });
   });
 }
 
