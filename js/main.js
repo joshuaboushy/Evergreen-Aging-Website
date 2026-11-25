@@ -202,11 +202,11 @@ const healthToolkits = {
     ]
   },
   vital_card: {
-    title: "Emergency Refrigerator Medical Information Sheet (Paramedic Protocol)",
+    title: "Emergency Refrigerator Medical Information Sheet",
     category: "Emergency Preparedness",
-    authority: "American College of Emergency Physicians (ACEP)",
-    citationTitle: "ACEP: EMS & Prehospital Care Protocol & First Responder Guidelines",
-    citationUrl: "https://www.acep.org/ems/resources",
+    authority: "Ontario Ministry of Health (MOH) & Paramedic Association of Canada (PAC)",
+    citationTitle: "Ontario Ministry of Health (MOH): Emergency Health Services &bull; Basic Life Support Patient Care Standards &amp; Do Not Resuscitate Confirmation (DNR-C) Standard",
+    citationUrl: "https://www.health.gov.on.ca/en/pro/programs/emergencyhealth/",
     description: "First responders are trained to look on the front of the refrigerator in a home medical emergency. Keep this card updated and visible.",
     isForm: true,
     items: [
@@ -216,7 +216,7 @@ const healthToolkits = {
       "Secondary Emergency Contact (Name, Relationship, Cell Phone Number)",
       "Primary Care Physician, Preferred Hospital & Dispensing Pharmacy Phone",
       "Current Prescription Medications (Name, Exact Dosage, Frequency)",
-      "Advance Directives / DNR Status / Healthcare Proxy & Location of Legal Papers"
+      "Advance Directives / Ontario MOH DNR-C Form Status / Healthcare Proxy & Location of Legal Papers"
     ]
   },
   hydration_nutrition: {

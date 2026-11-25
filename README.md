@@ -45,7 +45,7 @@ Or click the **"🔄 Check for New Uploads"** button directly in the website's V
 - **12-Point Home Fall-Proofing Environmental Safety Audit**
 - **"Questions to Ask Your Doctor" Clinical Advocacy Sheet**
 - **Caregiver & Family Support Guide**
-- **Emergency Refrigerator Medical Sheet (Paramedic Protocol)**
+- **Emergency Refrigerator Medical Sheet**
 *(All toolkits feature the Evergreen Aging checklist up top, with supporting public health standards cited at the bottom).*
 
 ### 4. Sources & Supporting Literature Directory
@@ -59,7 +59,7 @@ Or click the **"🔄 Check for New Uploads"** button directly in the website's V
   - *National Institute of Neurological Disorders and Stroke (NINDS / NIH)*
   - *World Health Organization (WHO)*
   - *Ontario Caregiver Organization (OCO)*
-  - *American College of Emergency Physicians (ACEP)*
+  - *Ontario Ministry of Health (MOH) & Paramedic Association of Canada (PAC)*
 
 ---
 
